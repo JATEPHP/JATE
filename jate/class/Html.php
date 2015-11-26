@@ -1,0 +1,43 @@
+<?php
+	class Html {
+		public $data;
+		public $modules;
+		public function __construct() {
+			$this->modules = array();
+			$this->data["template"]							= "";
+		  $this->data["brand"]    		= array(" "," ");
+		  $this->data["menu"]  				= "";
+		  $this->data["title"]        = "";
+		  $this->data["subtitle"]     = "";
+		  $this->data["content"]     	= "";
+		  $this->data["footer"]     	= "";
+		  $this->data["pagePath"]     = array();
+		  $this->data["css"]          = array();
+		  $this->data["js"]           = array();
+		  $this->data["jsVariables"]  = array();
+		}
+		public function uniforma() {
+			$this->data["pagePath"]        	= json_encode($this->data["pagePath"]);
+			$tempStr = "";
+				for ($i=0; $i < count($this->data["css"]); $i++) {
+					$tempStr = $tempStr.'<link rel="stylesheet" href="'.$this->data["css"][$i].'">';
+				}
+				$this->data["css"] = $tempStr;
+			$tempStr = "";
+				for ($i=0; $i < count($this->data["js"]); $i++) {
+					$tempStr = $tempStr.'<script src="'.$this->data["js"][$i].'"></script>';
+				}
+				$this->data["js"] = $tempStr;
+			$tempStr = "";
+				$tempStr = $tempStr.'<script type="text/javascript">';
+				for ($i=0; $i < count($this->data["jsVariables"]); $i++) {
+					$tempStr = $tempStr." ".$this->data["jsVariables"][$i][0]." = ".$this->data["jsVariables"][$i][1].";\n";
+				}
+				$tempStr = $tempStr.'</script>';
+				$this->data["jsVariables"] = $tempStr;
+		}
+		public function draw() {
+
+		}
+  }
+?>
