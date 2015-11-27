@@ -1,7 +1,7 @@
 <?php
 	require_once("jate.php");
 
-	//CLASSI
+	//CLASSES
 	$connection = new Connection(
 		$_GLOBAL["config"]["connection"]["server"],
 		$_GLOBAL["config"]["connection"]["database"],

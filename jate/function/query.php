@@ -19,7 +19,7 @@
 			var_dump($connection->database->errorInfo());
 			exit(0);
 		}
-    return $query->fetchAll();
+    return $query->fetchAll(PDO::FETCH_ASSOC);
 	}
 	function c_insert( $_q, $_err ) {
 		global $connection;
@@ -28,5 +28,5 @@
 		$result = $query->execute();
     return $result;
 	}
-	
+
 ?>
