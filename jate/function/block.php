@@ -8,4 +8,7 @@
 		return ob_get_clean();
 	}
 
+	function jBlockEnd() {
+		return ob_get_clean();
+	}
 ?>

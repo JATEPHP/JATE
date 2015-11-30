@@ -17,27 +17,37 @@
 		  $this->data["jsVariables"]  = array();
 		}
 		public function uniforma() {
-			$this->data["pagePath"]        	= json_encode($this->data["pagePath"]);
+			$this->addDipendences();
+			$this->data["pagePath"] = json_encode($this->data["pagePath"]);
 			$tempStr = "";
-				for ($i=0; $i < count($this->data["css"]); $i++) {
-					$tempStr = $tempStr.'<link rel="stylesheet" href="'.$this->data["css"][$i].'">';
-				}
-				$this->data["css"] = $tempStr;
+			for ($i=0; $i < count($this->data["css"]); $i++) {
+				$tempStr = $tempStr.'<link rel="stylesheet" href="'.$this->data["css"][$i].'">';
+			}
+			$this->data["css"] = $tempStr;
 			$tempStr = "";
-				for ($i=0; $i < count($this->data["js"]); $i++) {
-					$tempStr = $tempStr.'<script src="'.$this->data["js"][$i].'"></script>';
-				}
-				$this->data["js"] = $tempStr;
+			for ($i=0; $i < count($this->data["js"]); $i++) {
+				$tempStr = $tempStr.'<script src="'.$this->data["js"][$i].'"></script>';
+			}
+			$this->data["js"] = $tempStr;
 			$tempStr = "";
-				$tempStr = $tempStr.'<script type="text/javascript">';
-				for ($i=0; $i < count($this->data["jsVariables"]); $i++) {
-					$tempStr = $tempStr." ".$this->data["jsVariables"][$i][0]." = ".$this->data["jsVariables"][$i][1].";\n";
-				}
-				$tempStr = $tempStr.'</script>';
-				$this->data["jsVariables"] = $tempStr;
+			$tempStr = $tempStr.'<script type="text/javascript">';
+			for ($i=0; $i < count($this->data["jsVariables"]); $i++) {
+				$tempStr = $tempStr." ".$this->data["jsVariables"][$i][0]." = ".$this->data["jsVariables"][$i][1].";\n";
+			}
+			$tempStr = $tempStr.'</script>';
+			$this->data["jsVariables"] = $tempStr;
 		}
 		public function draw() {
 
+		}
+		public function addModule( $_m ) {
+			array_push($this->modules, $_m);
+		}
+		private function addDipendences() {
+			foreach ($this->modules as $i) {
+				$this->data["css"] = array_merge($this->data["css"], $i->getCss());
+				$this->data["js"] = array_merge($this->data["js"], $i->getJs());
+			}
 		}
   }
 ?>
