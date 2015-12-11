@@ -4,7 +4,7 @@
 		public $modules;
 		public function __construct() {
 			$this->modules = array();
-			$this->data["template"]							= "";
+			$this->data["template"]			= "";
 		  $this->data["brand"]    		= array(" "," ");
 		  $this->data["menu"]  				= "";
 		  $this->data["title"]        = "";
@@ -41,12 +41,13 @@
 
 		}
 		public function addModule( $_m ) {
-			array_push($this->modules, $_m);
+			$this->modules[$_m->name] = $_m;
 		}
 		private function addDipendences() {
 			foreach ($this->modules as $i) {
 				$this->data["css"] = array_merge($this->data["css"], $i->getCss());
 				$this->data["js"] = array_merge($this->data["js"], $i->getJs());
+				$this->data["jsVariables"] = array_merge($this->data["jsVariables"], $i->getJsVariables());
 			}
 		}
   }

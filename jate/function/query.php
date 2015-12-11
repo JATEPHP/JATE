@@ -10,10 +10,10 @@
 	}
 	function c_query( $_q, $_err ) {
 		global $connection;
-		//echo ":".$_q.":<br>";
 		$query = $connection->database->prepare($_q);
 		$result = $query->execute();
 		if(!$result) {
+			echo ":".$_q.":<br>";
 			echo "something wrong: ".$_err;
 			var_dump($query->errorInfo());
 			var_dump($connection->database->errorInfo());
@@ -21,12 +21,15 @@
 		}
     return $query->fetchAll(PDO::FETCH_ASSOC);
 	}
-	function c_insert( $_q, $_err ) {
+	function b_query( $_q, $_err ) {
 		global $connection;
-		//echo ":".$_q.":<br>";
 		$query = $connection->database->prepare($_q);
 		$result = $query->execute();
-    return $result;
+		if(!$result)
+		echo ":".$_q.":<br>";
+		return $result;
 	}
-
+	function c_insert( $_q, $_err ) {
+    return b_query( $_q, $_err );
+	}
 ?>

@@ -22,4 +22,14 @@
 		}
 		return $max_depth;
 	}
+	function array_slash($_d) {
+		if (is_array($_d)) {
+			foreach ($_d as $k => $v) {
+				$_d[$k] = array_slash($v);
+			}
+		} else if (is_string ($_d)) {
+			return addslashes($_d);
+		}
+		return $_d;
+	}
 ?>

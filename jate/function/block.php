@@ -11,4 +11,5 @@
 	function jBlockEnd() {
 		return ob_get_clean();
 	}
+
 ?>
