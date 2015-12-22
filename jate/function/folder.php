@@ -47,4 +47,12 @@
 			require_once($_dir."/".$i);
 		}
 	}
+	function require_js( $_dir = "./" ) {
+		$tempArray = array();
+		$temp = subFolder_file($_dir);
+		foreach ($temp as $i) {
+			array_push($tempArray, $_dir."/".$i);
+		}
+		return $tempArray;
+	}
 ?>
