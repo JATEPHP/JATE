@@ -1,17 +1,25 @@
 <?php
 	session_start();
+	//FUNCTIONS
+	function requireComponent($_path) {
+		if(file_exists($_path))
+			require_once($_path);
+	}
+	function requireComponents($_path) {
+		if(file_exists($_path))
+			require_subfolder($_path);
+	}
 	//REQUIRE
 	//jateStuff
-	require_once("jate/config.php");
-	require_once("jate/function/folder.php");
-	require_subfolder("jate/function");
-	require_subfolder("jate/class");
+	requireComponent("jate/config.php");
+	requireComponent("jate/function/folder.php");
+	requireComponents("jate/function");
+	requireComponents("jate/class");
 	//common
-	require_once("config.php");
-	require_once("function/folder.php");
-	require_subfolder("function");
-	require_subfolder("class");
-	require_once("page/Template.php");
-	require_subfolder("page");
-
+	requireComponent("config.php");
+	requireComponent("function/folder.php");
+	requireComponents("function");
+	requireComponents("class");
+	requireComponent("page/Template.php");
+	requireComponents("page");
 ?>

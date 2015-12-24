@@ -1,11 +1,11 @@
 <?php
-	$_GLOBAL["config"] = array();
-	$_GLOBAL["config"]["connection"] = array();
-	$_GLOBAL["config"]["connection"]["user"] = "root";
-	$_GLOBAL["config"]["connection"]["password"] = "";
-	$_GLOBAL["config"]["connection"]["database"] = "";
-	$_GLOBAL["config"]["connection"]["server"] = "";
-	$_GLOBAL["config"]["encrypt"] = array();
-	$_GLOBAL["config"]["encrypt"]["password"] = "";
-	$_GLOBAL["all"] = "";
+	$GLOBALS["config"] = array();
+	$GLOBALS["config"]["connection"] = array();
+	$GLOBALS["config"]["connection"]["user"] = "root";
+	$GLOBALS["config"]["connection"]["password"] = "";
+	$GLOBALS["config"]["connection"]["database"] = "";
+	$GLOBALS["config"]["connection"]["server"] = "";
+	$GLOBALS["config"]["encrypt"] = array();
+	$GLOBALS["config"]["encrypt"]["password"] = "";
+	$GLOBALS["all"] = "";
 ?>

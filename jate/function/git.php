@@ -1,5 +1,6 @@
 <?php
 	function getGitLog( $_dir = "./") {
+		if(!file_exists($_dir)) return array();
 		chdir($_dir);
 		$git_history = [];
 		$git_logs = [];
@@ -20,6 +21,7 @@
 					$tag = explode(':', $line);
 					$tag = explode('/', $tag[1]);
           $tag = explode(',', $tag[2]);
+          $tag = explode(')', $tag[0]);
           $tag = trim($tag[0]);
           $git_history[$last_hash]['tag'] = $tag;
 	        }
