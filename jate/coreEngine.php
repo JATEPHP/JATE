@@ -11,10 +11,10 @@
 	}
 	//REQUIRE
 	//jateStuff
-	requireComponent("jate/config.php");
-	requireComponent("jate/function/folder.php");
-	requireComponents("jate/function");
-	requireComponents("jate/class");
+	requireComponent ($GLOBALS["JATEPath"]."jate/config.php");
+	requireComponent ($GLOBALS["JATEPath"]."jate/function/folder.php");
+	requireComponents($GLOBALS["JATEPath"]."jate/function");
+	requireComponents($GLOBALS["JATEPath"]."jate/class");
 	//common
 	requireComponent("config.php");
 	requireComponent("function/folder.php");

@@ -4,7 +4,7 @@ Just Another Template Engine
 ##HOW TO INSTALL
 ######BOWER
 ```
-bower install jate
+bower install JATE
 ```
 
 ##NATIVE

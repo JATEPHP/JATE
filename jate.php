@@ -1,12 +1,13 @@
 <?php
+	$GLOBALS["JATEPath"] = "";
 	$commonLocations = array(
-		"bower_components/JATE/jate/coreEngine.php",
-		"jate/coreEngine.php"
+		"bower_components/JATE/",
+		""
 	);
 	foreach ($commonLocations as $i)
-		if(file_exists($i)) {
-			require_once($i);
+		if(file_exists($i."jate/coreEngine.php")) {
+			$GLOBALS["JATEPath"] = $i;
+			require_once($i."jate/coreEngine.php");
 			break;
 		}
-
 ?>
