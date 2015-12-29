@@ -4,10 +4,17 @@
 	function requireComponent($_path) {
 		if(file_exists($_path))
 			require_once($_path);
+		else
+			requireError($_path);
 	}
 	function requireComponents($_path) {
 		if(file_exists($_path))
 			require_subfolder($_path);
+		else
+			requireError($_path);
+	}
+	function requireError( $_p ) {
+		// echo "Error load ($_p)<br>";
 	}
 	//REQUIRE
 	//jateStuff
@@ -17,7 +24,6 @@
 	requireComponents($GLOBALS["JATEPath"]."jate/class");
 	//common
 	requireComponent("config.php");
-	requireComponent("function/folder.php");
 	requireComponents("function");
 	requireComponents("class");
 	requireComponent("page/Template.php");
