@@ -4,6 +4,11 @@
 		chdir($_dir);
 		$git_history = [];
 		$git_logs = [];
+		$a = str_replace('\\', '/', exec("git rev-parse --show-toplevel"));
+		$b = str_replace('\\', '/', getcwd ());
+		if( $a != $b )
+			return array();
+
 		exec("git log --decorate=full --tags", $git_logs);
 		$last_hash = null;
 		foreach ($git_logs as $line) {
@@ -14,7 +19,10 @@
           $hash = explode(' ', $line);
           $hash = trim(end($hash));
           $git_history[$hash] = [
-              'message' => ''
+						'tag' => '0.0.0',
+						'author' => '',
+						'date' => '',
+            'message' => ''
           ];
           $last_hash = $hash;
 	       if (strpos($line, 'tag') !== false) {
