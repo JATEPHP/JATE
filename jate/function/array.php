@@ -9,6 +9,16 @@
 		}
 		return $_d;
 	}
+	function unutf8ize($_d) {
+		if (is_array($_d)) {
+			foreach ($_d as $k => $v) {
+				$_d[$k] = unutf8ize($v);
+			}
+		} else if (is_string ($_d)) {
+			return utf8_decode($_d);
+		}
+		return $_d;
+	}
 	function array_depth( $_a ) {
 		$max_depth = 1;
 		foreach ($_a as $value) {
