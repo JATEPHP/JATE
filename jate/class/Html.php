@@ -5,16 +5,16 @@
 		public function __construct() {
 			$this->modules = array();
 			$this->data["template"]			= "";
-		  $this->data["brand"]    		= array(" "," ");
-		  $this->data["menu"]  				= "";
-		  $this->data["title"]        = "";
-		  $this->data["subtitle"]     = "";
-		  $this->data["content"]     	= "";
-		  $this->data["footer"]     	= "";
-		  $this->data["pagePath"]     = array();
-		  $this->data["css"]          = array();
-		  $this->data["js"]           = array();
-		  $this->data["jsVariables"]  = array();
+			$this->data["brand"]				= array(" "," ");
+			$this->data["menu"]					= "";
+			$this->data["title"]				= "";
+			$this->data["subtitle"]		 	= "";
+			$this->data["content"]		 	= "";
+			$this->data["footer"]		 		= "";
+			$this->data["pagePath"]		 	= array();
+			$this->data["css"]					= array();
+			$this->data["js"]					 	= array();
+			$this->data["jsVariables"]	= array();
 		}
 		public function uniforma() {
 			$this->addDipendences();
@@ -50,5 +50,5 @@
 				$this->data["jsVariables"] = array_merge($this->data["jsVariables"], $i->getJsVariables());
 			}
 		}
-  }
+	}
 ?>

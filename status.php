@@ -36,10 +36,10 @@
 								<div class="date"><b>Date:</b> <?=$i["date"]?><br></div>
 								<div class="message"><b>Message:</b> <?=$i["message"]?><br></div>
 								<div class="progress">
-								  <div class="progress-bar progress-bar-striped active progress-bar-danger" role="progressbar" aria-valuenow="<?=$percent?>"
-								  aria-valuemin="0" aria-valuemax="100" style="width:<?=$percent?>%">
-								    <?=$percent?>%
-								  </div>
+									<div class="progress-bar progress-bar-striped active progress-bar-danger" role="progressbar" aria-valuenow="<?=$percent?>"
+									aria-valuemin="0" aria-valuemax="100" style="width:<?=$percent?>%">
+										<?=$percent?>%
+									</div>
 								</div>
 							</div>
 						</div>

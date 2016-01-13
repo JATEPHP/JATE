@@ -1,6 +1,7 @@
 # JATE
 Just Another Template Engine
 
+[![Code Climate](https://codeclimate.com/repos/56967a41b175617550007660/badges/345708f215bf82bc7fdf/gpa.svg)](https://codeclimate.com/repos/56967a41b175617550007660/feed)
 ## HOW TO INSTALL
 ###### BOWER
 ```
