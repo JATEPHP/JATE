@@ -16,6 +16,8 @@
 			$this->data["js"]					 			= array();
 			$this->data["jsVariables"]			= array();
 			$this->data["metaDescription"]	= array();
+			$this->data["metaKeywords"]			= array();
+			$this->data["metaAuthor"]				= array();
 		}
 		public function uniforma() {
 			$this->addDipendences();

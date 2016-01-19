@@ -9,6 +9,8 @@
 		public $content;
 		public $jsVariables;
 		public $metaDescription;
+		public $metaKeywords;
+		public $metaAuthor;
 		public function init() {
 			if(!isset($this->brand)) 						$this->brand = "";
 			if(!isset($this->title)) 						$this->title = "";
@@ -19,6 +21,8 @@
 			if(!isset($this->content))					$this->content = "";
 			if(!isset($this->jsVariables))			$this->jsVariables = "";
 			if(!isset($this->metaDescription))	$this->metaDescription = "";
+			if(!isset($this->metaKeywords))			$this->metaKeywords = "";
+			if(!isset($this->metaAuthor))				$this->metaAuthor = "";
 		}
 		public function draw() {
 			$temp = "";
@@ -31,7 +35,10 @@
 					<meta http-equiv="X-UA-Compatible" content="IE=edge">
 					<meta name="viewport" content="width=device-width, initial-scale=1">
 					<title><?=$this->title?></title>
-					<?=$this->metaDescription?>
+					<meta name="description" content="<?=$this->metaDescription?>">
+					<meta name="keywords" content="<?=$this->metaKeywords?>">
+					<meta name="author" content="<?=$this->metaAuthor?>">
+					<link rel="shortcut icon" type="image/png" href="img/favicon.png">
 					<?=$this->css?>
 				</head>
 				<body>

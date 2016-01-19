@@ -12,6 +12,9 @@
 				"https://code.jquery.com/jquery-1.11.3.min.js",
 				"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
 			));
+			$this->data["metaDescription"] = "Beautiful description .";
+			$this->data["metaKeywords"] = "JATE,PHP,JS,CSS";
+			$this->data["metaAuthor"] = "XaBerr";
 		}
 	}
 ?>
