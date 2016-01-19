@@ -32,7 +32,7 @@
 		if (is_dir($_dir)) {
 				if ($dh = opendir($_dir)) {
 						while (($file = readdir($dh)) !== false) {
-								if( ($file !='.') && ($file !='..') && is_dir($file) ) {
+								if( ($file !='.') && ($file !='..') && !is_file($file) ) {
 								array_push($temp,$file);
 							 }
 						}

@@ -7,12 +7,12 @@ Just Another Template Engine
 ```
 bower install JATE
 ```
-Not to move the entire project folder from the bower can copy and paste the file only _jate.php_ and place it in the root of your project ensuring that the files pointed to are in the right path. Once done just include _jate.php_ in _index.php_ of your project to be able to take advantage of its capabilities.
+Just can copy and paste the file _jate.php_ in the root of your project and be sure that the files point in the right path. Once done include _jate.php_ in _index.php_ of your project to be able to take advantage of its capabilities.
 ###### MANUAL
-Just download and uncompress zip file from GitHub.
+Download and uncompress zip file from GitHub.
 ## NATIVE
-A system in PHP to better handle HTML, CSS and JS.
-Recommend the use of Bootstrap.
+JATE is system in PHP for simply manage HTML, CSS and JS.
+Recommend the use of Bootstrap3.
 
 
 ## GETTING STARTED
@@ -34,7 +34,7 @@ JATE/
 ```
 The **jate/** folder is the only one reserved for engine.
 All others folders are containers for our PHP, HTML, JS, CSS.
-Every file in these folders (except **css/**, **js/**) is space included in the project.
+Every file in these folders (except **css/**, **js/**) is auto-included in the project.
 Config.php is used to set the connection settings to the database and other parameters.
 
 ## BASIC TEMPLATE
@@ -44,15 +44,15 @@ _home.php_, _index.php_, _template.php_ and _gui.php_.
 
 Index -> Shorter.
 
-Template -> template of all pages.
+Template -> Common settings in all other pages.
 
-Home -> is a common inherited from the page template.
+Home -> Inherited from template, is the 1st true page of your web app.
 
-Gui -> It is the page where it is injected the html code processed by template.php.
+Gui -> It is the page where it is injected the html code processed by jate.
 
 
-The page Template that contains the Template class must inherit from the class Html.
-The basic class Html, has provided these parameters to be injected into the gui.
+The page Template contains the Template class must inherit from the class Html.
+The basic class Html, has provided these parameters to be injected into the Gui.
 ```
 $this->modules = array();
 $this->data["template"]     = "";
