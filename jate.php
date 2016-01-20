@@ -2,6 +2,7 @@
 	$GLOBALS["JATEPath"] = "";
 	$commonLocations = array(
 		"bower_components/JATE/",
+		"vendor/xaberr/jate/",
 		""
 	);
 	foreach ($commonLocations as $i)

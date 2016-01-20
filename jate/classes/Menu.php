@@ -8,7 +8,7 @@
 		`flag_active` bit(1) DEFAULT b'1'
 	) ENGINE=MyISAM AUTO_INCREMENT DEFAULT CHARSET=utf8;
 	***/
-	require_once($GLOBALS["JATEPath"]."jate/class/Module.php");
+	require_once($GLOBALS["JATEPath"]."jate/classes/Module.php");
 	class Menu extends Module {
 		public $name;
 		public $data;
