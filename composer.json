@@ -1,6 +1,8 @@
 {
-	"name": "XaBerr/JATE",
+	"name": "xaberr/jate",
 	"description": "Just Another Template Engine",
+	"keywords": ["template","engine","jate"],
+	"homepage": "https://github.com/xaberr/jate",
 	"require": {
 		"php": ">=5.5.0"
 	}
