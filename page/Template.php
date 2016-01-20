@@ -4,7 +4,7 @@
 			parent::__construct();
 			$this->data["brand"] = array("JATE","");
 			$this->data["title"] = "JATE";
-			$this->data["template"] = "gui/template.php";
+			$this->data["template"] = "gui/tradictional.php";
 			$this->data["css"] = array_merge( $this->data["css"], array(
 				"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
 			));

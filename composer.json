@@ -1,0 +1,7 @@
+{
+	"name": "XaBerr/JATE",
+	"description": "Just Another Template Engine",
+	"require": {
+		"php": ">=5.5.0"
+	}
+}
