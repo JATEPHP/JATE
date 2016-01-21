@@ -20,6 +20,7 @@ function requireError( $_p ) {
 		echo "Error load ($_p)<br>";
 }
 function isPhp ( $_file ) {
+	if(!is_file($_file)) return false;
 	$info = pathinfo($_file);
 	return ($info["extension"] == "php") || ($info["extension"] == "PHP");
 }

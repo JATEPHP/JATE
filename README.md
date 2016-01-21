@@ -3,6 +3,9 @@ Just Another Template Engine
 
 [![Code Climate](https://codeclimate.com/repos/56967a41b175617550007660/badges/345708f215bf82bc7fdf/gpa.svg)](https://codeclimate.com/repos/56967a41b175617550007660/feed)
 [![Latest Unstable Version](https://poser.pugx.org/xaberr/jate/v/unstable)](https://packagist.org/packages/xaberr/jate)
+[![License](https://poser.pugx.org/xaberr/jate/license)](https://packagist.org/packages/xaberr/jate)
+[![This is a forkable respository](https://img.shields.io/badge/forkable-yes-brightgreen.svg)](https://basicallydan.github.io/forkability/?u=XaBerr&r=JATE&l=PHP)
+
 ## HOW TO INSTALL
 ###### BOWER
 ```
