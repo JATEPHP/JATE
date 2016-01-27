@@ -21,22 +21,21 @@
 		}
 		public function uniforma() {
 			$this->addDipendences();
-			$this->data["pagePath"] = json_encode($this->data["pagePath"]);
+			$this->data["css"]			= array_unique($this->data["css"]);
+			$this->data["js"]				= array_unique($this->data["js"]);
+			$this->data["pagePath"]	= json_encode($this->data["pagePath"]);
 			$tempStr = "";
-			for ($i=0; $i < count($this->data["css"]); $i++) {
-				$tempStr = $tempStr.'<link rel="stylesheet" href="'.$this->data["css"][$i].'">';
-			}
+			foreach ($this->data["css"] as $i)
+				$tempStr = $tempStr.'<link rel="stylesheet" href="'.$i.'">';
 			$this->data["css"] = $tempStr;
 			$tempStr = "";
-			for ($i=0; $i < count($this->data["js"]); $i++) {
-				$tempStr = $tempStr.'<script src="'.$this->data["js"][$i].'"></script>';
-			}
+			foreach ($this->data["js"] as $i)
+				$tempStr = $tempStr.'<script src="'.$i.'"></script>';
 			$this->data["js"] = $tempStr;
 			$tempStr = "";
 			$tempStr = $tempStr.'<script type="text/javascript">';
-			for ($i=0; $i < count($this->data["jsVariables"]); $i++) {
-				$tempStr = $tempStr." ".$this->data["jsVariables"][$i][0]." = ".$this->data["jsVariables"][$i][1].";\n";
-			}
+			foreach ($this->data["jsVariables"] as $i)
+				$tempStr = $tempStr." ".$i[0]." = ".$i[1].";\n";
 			$tempStr = $tempStr.'</script>';
 			$this->data["jsVariables"] = $tempStr;
 		}

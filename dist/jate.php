@@ -1,9 +1,9 @@
 <?php
 	$GLOBALS["JATEPath"] = "";
 	$commonLocations = array(
-		"bower_components/JATE/",
-		"vendor/xaberr/jate/",
-		""
+		"bower_components/JATE/dist/",
+		"vendor/xaberr/jate/dist/",
+		"../../dist/"
 	);
 	foreach ($commonLocations as $i)
 		if(file_exists($i."jate/coreEngine.php")) {
