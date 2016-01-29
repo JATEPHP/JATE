@@ -1,7 +1,7 @@
 # JATE
 Just Another Template Engine
 
-[![Code Climate](https://codeclimate.com/repos/56967a41b175617550007660/badges/345708f215bf82bc7fdf/gpa.svg)](https://codeclimate.com/repos/56967a41b175617550007660/feed)
+[![Code Climate](https://codeclimate.com/github/XaBerr/JATE/badges/gpa.svg)](https://codeclimate.com/github/XaBerr/JATE)
 [![Latest Unstable Version](https://poser.pugx.org/xaberr/jate/v/unstable)](https://packagist.org/packages/xaberr/jate)
 [![License](https://poser.pugx.org/xaberr/jate/license)](https://packagist.org/packages/xaberr/jate)
 [![This is a forkable respository](https://img.shields.io/badge/forkable-yes-brightgreen.svg)](https://basicallydan.github.io/forkability/?u=XaBerr&r=JATE&l=PHP)
@@ -11,22 +11,22 @@ Just Another Template Engine
 ```
 bower install JATE
 ```
-Copy and paste the file _jate.php_ from _bower_components/JATE/_ in the root of your project and be sure that the files point in the right path. Once done include _jate.php_ in _index.php_ of your project to be able to take advantage of its capabilities.
+Copy and paste the file _jate.php_ from _bower_components/JATE/dist/_ in the root of your project and be sure that the files point in the right path. Once done include _jate.php_ in _index.php_ of your project to be able to take advantage of its capabilities.
 ###### COMPOSER
 ```
 composer require xaberr/jate:dev-master
 ```
-Copy and paste the file _jate.php_ from _vendor/xaberr/jate/_ in the root of your project and be sure that the files point in the right path. Once done include _jate.php_ in _index.php_ of your project to be able to take advantage of its capabilities.
+Copy and paste the file _jate.php_ from _vendor/xaberr/jate/dist/_ in the root of your project and be sure that the files point in the right path. Once done include _jate.php_ in _index.php_ of your project to be able to take advantage of its capabilities.
 ###### MANUAL
 Download and uncompress zip file from GitHub.
 ## NATIVE
 JATE is system in PHP for simply manage HTML, CSS and JS.
-Recommend the use of Bootstrap3.
+Recommend the use of Bootstrap3, all examples use it.
 
 
-## GETTING STARTED
+<!-- ## GETTING STARTED
 ###### WHAT'S INCLUDED
-Zip file contains a root of basic project.
+Zip file contains some examples. a root of basic project. ############################################################ qui
 ```
 JATE/
 ├─classes/
@@ -87,4 +87,4 @@ _pagePath_ is an array contain the logical level of the page, such as: documents
 
 _css_ and _js_ are arrays contains the relative path of the file.
 
-_jsVariables_ contains an array of arrays containing the pair variable name, value.
+_jsVariables_ contains an array of arrays containing the pair variable name, value. -->
