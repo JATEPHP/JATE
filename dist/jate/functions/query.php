@@ -1,9 +1,9 @@
 <?php
-	function q_query( $_db, $_q, $_err ) {
-		$query = $_db->prepare($_q);
+	function q_query( $_db, $_query, $_err ) {
+		$query = $_db->prepare($_query);
 		$result = $query->execute();
 		if(!$result) {
-			echo "$_q<br>";
+			echo "$_query<br>";
 			echo "something wrong: ".$_err;
 			var_dump($query->errorInfo());
 			var_dump($db->errorInfo());
@@ -11,12 +11,12 @@
 		}
 		return $query->fetchAll();
 	}
-	function c_query( $_q, $_err ) {
+	function c_query( $_query, $_err ) {
 		global $connection;
-		$query = $connection->database->prepare($_q);
+		$query = $connection->database->prepare($_query);
 		$result = $query->execute();
 		if(!$result) {
-			echo "$_q<br>";
+			echo "$_query<br>";
 			echo "something wrong: ".$_err;
 			var_dump($query->errorInfo());
 			var_dump($connection->database->errorInfo());
@@ -24,19 +24,19 @@
 		}
 		return $query->fetchAll(PDO::FETCH_ASSOC);
 	}
-	function b_query( $_q, $_err ) {
+	function b_query( $_query, $_err ) {
 		global $connection;
-		$query = $connection->database->prepare($_q);
+		$query = $connection->database->prepare($_query);
 		$result = $query->execute();
 		if(!$result) {
-			echo "$_q<br>";
+			echo "$_query<br>";
 			echo "something wrong: ".$_err;
 			var_dump($query->errorInfo());
 			var_dump($connection->database->errorInfo());
 		}
 		return $result;
 	}
-	function c_insert( $_q, $_err ) {
-		return b_query( $_q, $_err );
+	function c_insert( $_query, $_err ) {
+		return b_query( $_query, $_err );
 	}
 ?>

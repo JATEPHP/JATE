@@ -3,10 +3,10 @@
 		if(!file_exists($_dir)) return array();
 		chdir($_dir);
 		$git_history = [];
-		$git_logs = [];
-		$a = str_replace('\\', '/', exec("git rev-parse --show-toplevel"));
-		$b = str_replace('\\', '/', getcwd ());
-		if( $a != $b )
+		$git_logs	= [];
+		$gitPath	= str_replace('\\', '/', exec("git rev-parse --show-toplevel"));
+		$rootPath	= str_replace('\\', '/', getcwd ());
+		if( $gitPath != $rootPath )
 			return array();
 
 		exec("git log --decorate=full --tags", $git_logs);

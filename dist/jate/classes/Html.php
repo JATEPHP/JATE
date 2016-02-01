@@ -42,8 +42,8 @@
 		public function draw() {
 
 		}
-		public function addModule( $_m ) {
-			$this->modules[$_m->name] = $_m;
+		public function addModule( $_mod ) {
+			$this->modules[$_mod->name] = $_mod;
 		}
 		private function addDipendences() {
 			foreach ($this->modules as $i) {

@@ -15,9 +15,9 @@ function requireComponents($_path) {
 	} else
 		requireError($_path);
 }
-function requireError( $_p ) {
+function requireError( $_path ) {
 	if( $GLOBALS["DEBUG"] == 1 )
-		echo "Error load ($_p)<br>";
+		echo "Error load ($_path)<br>";
 }
 function isPhp ( $_file ) {
 	if(!is_file($_file)) return false;
