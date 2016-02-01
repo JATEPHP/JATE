@@ -9,15 +9,16 @@
 		$GLOBALS["config"]["connection"]["password"]
 	);
 	$page = new Html();
+	$webApp = new webApp();
 
 	//FETCH
 	if(!isset($_GET["page"])) $_GET["page"] = "home";
-	switch ($_GET["page"]) {
-		case 'home': 						$page = new Home(); 					break;
-		default: 								$page = new Page404();				break;
-	}
-
+	$webApp->addPages([
+		["home","Home"]
+	]);
+	$page = $webApp->fetchPage($_GET["page"]);
 	$page->uniforma();
+
 	//TEMPLATE
 	require_once($page->data["template"]);
 	$gui = new GUI();
