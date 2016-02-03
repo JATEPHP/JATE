@@ -8,8 +8,8 @@
 		$GLOBALS["config"]["connection"]["user"],
 		$GLOBALS["config"]["connection"]["password"]
 	);
-	$page = new Html();
-	$webApp = new webApp();
+	$webApp	= new WebApp();
+	$page		= new Html();
 
 	//FETCH
 	if(!isset($_GET["page"])) $_GET["page"] = "home";
@@ -19,7 +19,7 @@
 	]);
 	$page = $webApp->fetchPage($_GET["page"]);
 	$page->uniforma();
-	
+
 	//TEMPLATE
 	require_once($page->data["template"]);
 	$gui = new GUI();

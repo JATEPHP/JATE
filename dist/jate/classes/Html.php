@@ -45,7 +45,7 @@
 		public function addModule( $_mod ) {
 			$this->modules[$_mod->name] = $_mod;
 		}
-		private function addDipendences() {
+		public function addDipendences() {
 			foreach ($this->modules as $i) {
 				$this->data["css"] = array_merge($this->data["css"], $i->getCss());
 				$this->data["js"] = array_merge($this->data["js"], $i->getJs());

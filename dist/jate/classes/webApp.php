@@ -1,5 +1,5 @@
 <?php
-	class webApp {
+	class WebApp {
 		public $pages;
 		public $defaultPage;
 		public function __construct() {
