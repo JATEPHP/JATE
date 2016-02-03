@@ -1,21 +1,20 @@
 <?php
 	function utf8ize($_array) {
-		if (is_array($_array)) {
-			foreach ($_array as $k => $v) {
-				$_array[$k] = utf8ize($v);
-			}
-		} else if (is_string ($_array)) {
-			return utf8_encode($_array);
-		}
-		return $_array;
+		return travelStringArray($_array,"utf8_encode");
 	}
 	function unutf8ize($_array) {
+		return travelStringArray($_array,"utf8_decode");
+	}
+	function arraySlash($_array) {
+		return travelStringArray($_array,"addslashes");
+	}
+	function travelStringArray ( $_array, $_function ) {
 		if (is_array($_array)) {
 			foreach ($_array as $k => $v) {
-				$_array[$k] = unutf8ize($v);
+				$_array[$k] = travelStringArray($v, $_function);
 			}
 		} else if (is_string ($_array)) {
-			return utf8_decode($_array);
+			return call_user_func($_function,$_array);
 		}
 		return $_array;
 	}
@@ -30,15 +29,5 @@
 			}
 		}
 		return $max_depth;
-	}
-	function array_slash($_array) {
-		if (is_array($_array)) {
-			foreach ($_array as $k => $v) {
-				$_array[$k] = array_slash($v);
-			}
-		} else if (is_string ($_array)) {
-			return addslashes($_array);
-		}
-		return $_array;
 	}
 ?>
