@@ -14,19 +14,19 @@
 		public $data;
 		public function __construct() {
 			$this->name = get_class($this);
-			$this->data = array();
+			$this->data = [];
 		}
 		public function init() {//TODO: make me more efficent
 			$menu = c_query("SELECT * FROM menu WHERE flag_active = 1 ORDER BY `order`","Menu,getMenu,menu");
-			$temp = array();
+			$temp = [];
 			foreach ($menu as $i) {
-				$submenu = array();
+				$submenu = [];
 				if($i["fk_menu"] == 0) {
-					array_push($temp, array("label" => $i["label"], "link" => $i["link"], "submenu" => array()));
+					array_push($temp, array("label" => $i["label"], "link" => $i["link"], "submenu" => []));
 					$submenu = c_query("SELECT * FROM menu WHERE fk_menu = ".$i["pk_menu"],"Menu,getMenu,submenu");
 					if($submenu)
 					foreach ($submenu as $j) {
-						array_push( $temp[count($temp)-1]["submenu"], array("label" => $j["label"], "link" => $j["link"], array()) );
+						array_push( $temp[count($temp)-1]["submenu"], array("label" => $j["label"], "link" => $j["link"], []) );
 					}
 				}
 			}

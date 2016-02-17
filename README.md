@@ -65,7 +65,7 @@ _home.php_, _index.php_, _template.php_ and _gui.php_.
 The page Template contains the Template class must inherit from the class Html.
 The basic class Html, has provided these parameters to be injected into the Gui.
 ```
-$this->modules = array();
+$this->modules = [];
 $this->data["template"]        = "";
 $this->data["brand"]           = array(" "," ");
 $this->data["menu"]            = "";
@@ -73,13 +73,13 @@ $this->data["title"]           = "";
 $this->data["subtitle"]        = "";
 $this->data["content"]         = "";
 $this->data["footer"]          = "";
-$this->data["pagePath"]        = array();
-$this->data["css"]             = array();
-$this->data["js"]              = array();
-$this->data["jsVariables"]     = array();
-$this->data["metaDescription"] = array();
-$this->data["metaKeywords"]    = array();
-$this->data["metaAuthor"]      = array();
+$this->data["pagePath"]        = [];
+$this->data["css"]             = [];
+$this->data["js"]              = [];
+$this->data["jsVariables"]     = [];
+$this->data["metaDescription"] = [];
+$this->data["metaKeywords"]    = [];
+$this->data["metaAuthor"]      = [];
 ```
 _brand_ is an array contain the name and image of the brand.
 

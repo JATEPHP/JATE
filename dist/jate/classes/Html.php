@@ -3,7 +3,7 @@
 		public $data;
 		public $modules;
 		public function __construct() {
-			$this->modules = array();
+			$this->modules = [];
 			$this->data["template"]					= "";
 			$this->data["brand"]						= array(" "," ");
 			$this->data["menu"]							= "";
@@ -11,13 +11,13 @@
 			$this->data["subtitle"]		 			= "";
 			$this->data["content"]				 	= "";
 			$this->data["footer"]		 				= "";
-			$this->data["pagePath"]				 	= array();
-			$this->data["css"]							= array();
-			$this->data["js"]					 			= array();
-			$this->data["jsVariables"]			= array();
-			$this->data["metaDescription"]	= array();
-			$this->data["metaKeywords"]			= array();
-			$this->data["metaAuthor"]				= array();
+			$this->data["pagePath"]				 	= [];
+			$this->data["css"]							= [];
+			$this->data["js"]					 			= [];
+			$this->data["jsVariables"]			= [];
+			$this->data["metaDescription"]	= [];
+			$this->data["metaKeywords"]			= [];
+			$this->data["metaAuthor"]				= [];
 		}
 		public function uniforma() {
 			$this->addDipendences();
@@ -26,17 +26,17 @@
 			$this->data["pagePath"]	= json_encode($this->data["pagePath"]);
 			$tempStr = "";
 			foreach ($this->data["css"] as $i)
-				$tempStr = $tempStr.'<link rel="stylesheet" href="'.$i.'">';
+				$tempStr .= '<link rel="stylesheet" href="'.$i.'">';
 			$this->data["css"] = $tempStr;
 			$tempStr = "";
 			foreach ($this->data["js"] as $i)
-				$tempStr = $tempStr.'<script src="'.$i.'"></script>';
+				$tempStr .= '<script src="'.$i.'"></script>';
 			$this->data["js"] = $tempStr;
 			$tempStr = "";
-			$tempStr = $tempStr.'<script type="text/javascript">';
+			$tempStr .= '<script type="text/javascript">';
 			foreach ($this->data["jsVariables"] as $i)
-				$tempStr = $tempStr." ".$i[0]." = ".$i[1].";\n";
-			$tempStr = $tempStr.'</script>';
+				$tempStr .= " ".$i[0]." = ".$i[1].";\n";
+			$tempStr .= '</script>';
 			$this->data["jsVariables"] = $tempStr;
 		}
 		public function draw() {

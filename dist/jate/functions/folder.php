@@ -18,7 +18,7 @@
 		return $temp;
 	}
 	function fetchInSubFolder( $_dir = "./", $_function) {
-		$temp = array();
+		$temp = [];
 		if (is_dir($_dir)) {
 				if ($dirOpened = opendir($_dir)) {
 						while (($file = readdir($dirOpened)) !== false)
@@ -36,7 +36,7 @@
 			require_once($_dir."/".$i);
 	}
 	function require_js( $_dir = "./" ) {
-		$tempArray = array();
+		$tempArray = [];
 		$temp = subFolder_file($_dir);
 		foreach ($temp as $i)
 			array_push($tempArray, $_dir."/".$i);

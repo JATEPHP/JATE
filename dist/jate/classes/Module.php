@@ -1,14 +1,14 @@
 <?php
 	class Module {
 		public $name;
-		public $requires		= array();
-		public $dipendence	= array();
-		public $data				= array();
+		public $requires		= [];
+		public $dipendence	= [];
+		public $data				= [];
 		public function __construct(){}
 		// abstract public function init();
 		// abstract public function draw();
 		public function getCss() {
-			$temp = array();
+			$temp = [];
 			foreach ($this->requires as $i)
 				$temp = array_merge( $temp, $i->getCss() );
 			foreach ($this->dipendence as $i)
@@ -17,7 +17,7 @@
 			return $temp;
 		}
 		public function getJs() {
-			$temp = array();
+			$temp = [];
 			foreach ($this->requires as $i)
 				$temp = array_merge( $temp, $i->getJs() );
 			foreach ($this->dipendence as $i)
@@ -26,7 +26,7 @@
 			return $temp;
 		}
 		public function getJsVariables() {
-			$temp = array();
+			$temp = [];
 			foreach ($this->requires as $i)
 				$temp = array_merge( $temp, $i->getJsVariables() );
 			foreach ($this->dipendence as $i)

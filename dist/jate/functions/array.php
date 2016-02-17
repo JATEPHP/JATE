@@ -19,15 +19,15 @@
 		return $_array;
 	}
 	function array_depth( $_array ) {
-		$max_depth = 1;
+		$maxDepth = 1;
 		foreach ($_array as $value) {
 			if (is_array($value)) {
 				$depth = array_depth($value) + 1;
-				if ($depth > $max_depth) {
-					$max_depth = $depth;
+				if ($depth > $maxDepth) {
+					$maxDepth = $depth;
 				}
 			}
 		}
-		return $max_depth;
+		return $maxDepth;
 	}
 ?>
