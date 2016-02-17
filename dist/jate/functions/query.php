@@ -22,7 +22,7 @@
 			echo "$_query<br>";
 			echo "something wrong: ".$_error;
 			var_dump($query->errorInfo());
-			var_dump($db->errorInfo());
+			var_dump($_database->errorInfo());
 			exit();
 		}
 		return $query->fetchAll(PDO::FETCH_ASSOC);

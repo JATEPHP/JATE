@@ -8,22 +8,10 @@
 		// abstract public function init();
 		// abstract public function draw();
 		public function getCss() {
-			$temp = [];
-			foreach ($this->requires as $i)
-				$temp = array_merge( $temp, $i->getCss() );
-			foreach ($this->dipendence as $i)
-				if (!is_array($i) && strpos($i, '.css') !== FALSE)
-					array_push($temp,$i);
-			return $temp;
+			return $this->getRequire("getCss",".css");
 		}
 		public function getJs() {
-			$temp = [];
-			foreach ($this->requires as $i)
-				$temp = array_merge( $temp, $i->getJs() );
-			foreach ($this->dipendence as $i)
-				if (!is_array($i) && strpos($i, '.js') !== FALSE)
-					array_push($temp,$i);
-			return $temp;
+			return $this->getRequire("getJs",".js");
 		}
 		public function getJsVariables() {
 			$temp = [];
@@ -31,6 +19,15 @@
 				$temp = array_merge( $temp, $i->getJsVariables() );
 			foreach ($this->dipendence as $i)
 				if (is_array($i))
+					array_push($temp,$i);
+			return $temp;
+		}
+		private function getRequire( $_function, $_extenction) {
+			$temp = [];
+			foreach ($this->requires as $i)
+				$temp = array_merge( $temp, $i->$_function() );
+			foreach ($this->dipendence as $i)
+				if (!is_array($i) && strpos($i, $_extenction) !== FALSE)
 					array_push($temp,$i);
 			return $temp;
 		}
