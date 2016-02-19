@@ -2,9 +2,11 @@
 	class WebApp {
 		public $pages;
 		public $defaultPage;
+		public $currentPage;
 		public function __construct() {
 			$this->pages = [];
 			$this->defaultPage = ["Page404",[]];
+			$this->currentPage = null;
 		}
 		public function addPage( $_page ) {
 			$label = "";
@@ -29,7 +31,8 @@
 			$temp = $this->defaultPage;
 			if(isset($this->pages[$_label]))
 				$temp = $this->pages[$_label];
-			return new $temp[0]($temp[1]);
+			$this->currentPage = new $temp[0]($temp[1]);
+			return $this->currentPage;
 		}
 		public function setDefaultPage( $_page ) {
 			$this->defaultPage = $_page;

@@ -42,9 +42,7 @@
 					<?=$this->css?>
 				</head>
 				<body>
-					<div class="col-xs-12 background">
-					</div>
-					<div class="col-xs-12 no-background">
+					<div class="col-xs-12">
 						<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
 							<div class="container-fluid">
 								<div class="navbar-header">
@@ -65,15 +63,17 @@
 								</div>
 							</div>
 						</nav>
-						<div class="row my-page">
+						<div class="row">
 							<div class="col-lg-12">
-								<div class="row box">
+								<div class="row">
 									<div class="col-lg-12" id="page">
 										<?=$this->content?>
 									</div>
-								</div>
-								<div class="row box" id="footer">
-									<?=$this->footer?>
+									<div class="row" >
+										<div class="col-lg-12" id="footer">
+											<?=$this->footer?>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

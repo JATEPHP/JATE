@@ -9,7 +9,6 @@
 		$GLOBALS["config"]["connection"]["password"]
 	);
 	$webApp	= new WebApp();
-	$page		= new Html();
 
 	//FETCH
 	if(!isset($_GET["page"])) $_GET["page"] = "home";
