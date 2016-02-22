@@ -10,6 +10,7 @@
 			$this->data["title"]						= "";
 			$this->data["subtitle"]		 			= "";
 			$this->data["content"]				 	= "";
+			$this->data["outContent"]		 		= "";
 			$this->data["footer"]		 				= "";
 			$this->data["pagePath"]				 	= [];
 			$this->data["css"]							= [];

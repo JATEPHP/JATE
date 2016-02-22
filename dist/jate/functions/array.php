@@ -8,6 +8,9 @@
 	function arraySlash($_array) {
 		return travelStringArray($_array,"addslashes");
 	}
+	function arrayHtmlParser($_array) {
+		return travelStringArray($_array,"htmlParser");
+	}
 	function travelStringArray ( $_array, $_function ) {
 		if (is_array($_array)) {
 			foreach ($_array as $k => $v) {

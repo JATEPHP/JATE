@@ -27,6 +27,7 @@
 	$gui->title			 			= $page->data["title"];
 	$gui->subtitle				= $page->data["subtitle"];
 	$gui->content		 			= $page->data["content"];
+	$gui->outContent		 	= $page->data["outContent"];
 	$gui->pagePath				= $page->data["pagePath"];
 	$gui->css							= $page->data["css"];
 	$gui->js							= $page->data["js"];

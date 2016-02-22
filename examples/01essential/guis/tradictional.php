@@ -7,6 +7,7 @@
 		public $footer;
 		public $menu;
 		public $content;
+		public $outContent;
 		public $jsVariables;
 		public $metaDescription;
 		public $metaKeywords;
@@ -19,6 +20,7 @@
 			if(!isset($this->footer))						$this->footer = "";
 			if(!isset($this->menu))							$this->menu = "<li><a href='#'>Link</a></li>";
 			if(!isset($this->content))					$this->content = "";
+			if(!isset($this->outContent))				$this->outContent = "";
 			if(!isset($this->jsVariables))			$this->jsVariables = "";
 			if(!isset($this->metaDescription))	$this->metaDescription = "";
 			if(!isset($this->metaKeywords))			$this->metaKeywords = "";
@@ -78,6 +80,7 @@
 							</div>
 						</div>
 					</div>
+					<?=$this->outContent?>
 					<?=$this->js?>
 					<?=$this->jsVariables?>
 				</body>

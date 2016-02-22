@@ -10,6 +10,7 @@
 	requireComponents	($GLOBALS["JATEPath"]."jate/classes");
 	requireModules		($GLOBALS["JATEPath"]."jate/modules");
 	requireComponent	("config.php");
+	requireComponent	("function/string.php");
 	requireComponents	("functions");
 	requireComponents	("classes");
 	requireModules		("modules");
