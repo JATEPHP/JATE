@@ -26,6 +26,22 @@
 			if(!isset($this->metaKeywords))			$this->metaKeywords = "";
 			if(!isset($this->metaAuthor))				$this->metaAuthor = "";
 		}
+		public function setPage( $_page ) {
+			$this->brand						= $_page->data["brand"];
+			$this->menu							= $_page->data["menu"];
+			$this->title			 			= $_page->data["title"];
+			$this->subtitle					= $_page->data["subtitle"];
+			$this->content		 			= $_page->data["content"];
+			$this->outContent		 		= $_page->data["outContent"];
+			$this->pagePath					= $_page->data["pagePath"];
+			$this->css							= $_page->data["css"];
+			$this->js								= $_page->data["js"];
+			$this->jsVariables			= $_page->data["jsVariables"];
+			$this->footer						= $_page->data["footer"];
+			$this->metaDescription	= $_page->data["metaDescription"];
+			$this->metaKeywords			= $_page->data["metaKeywords"];
+			$this->metaAuthor				= $_page->data["metaAuthor"];
+		}
 		public function draw() {
 			$temp = "";
 			jBlock();

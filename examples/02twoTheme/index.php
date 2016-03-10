@@ -17,26 +17,15 @@
 		["newPage","NewPage"]
 	]);
 	$page = $webApp->fetchPage($_GET["page"]);
-	$page->uniforma();
 
-	//TEMPLATE
-	require_once($page->data["template"]);
-	$gui = new GUI();
-	$gui->init();
-	$gui->brand						= $page->data["brand"];
-	$gui->menu						= $page->data["menu"];
-	$gui->title			 			= $page->data["title"];
-	$gui->subtitle				= $page->data["subtitle"];
-	$gui->content		 			= $page->data["content"];
-	$gui->outContent		 	= $page->data["outContent"];
-	$gui->pagePath				= $page->data["pagePath"];
-	$gui->css							= $page->data["css"];
-	$gui->js							= $page->data["js"];
-	$gui->jsVariables			= $page->data["jsVariables"];
-	$gui->footer					= $page->data["footer"];
-	$gui->metaDescription	= $page->data["metaDescription"];
-	$gui->metaKeywords		= $page->data["metaKeywords"];
-	$gui->metaAuthor			= $page->data["metaAuthor"];
-	$output = $gui->draw();
-	echo minify_output($output);
+	//PRINT
+	if( !isset($GLOBALS["PRINT"]) || $GLOBALS["PRINT"] === true ) {
+		$page->uniforma();
+		require_once($page->data["template"]);
+		$gui = new GUI();
+		$gui->init();
+		$gui->setPage($page);
+		$output = $gui->draw();
+		echo minify_output($output);
+	}
 ?>

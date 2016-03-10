@@ -69,5 +69,31 @@
 					$success = true;
 			return $success;
 		}
+		public function loginWithUser() {
+			$this->init();
+			$temp = [];
+			$utente = "";
+			if(!isset($_SESSION["username"]))
+				$_SESSION["username"] ="guest";
+			$utente = $_SESSION["username"];
+			$blackList = c_query(
+				"SELECT utenti.*,utenti_sezioni.*
+				FROM utenti
+				INNER JOIN utenti_x_sezioni
+				ON utenti.pk_utenti = utenti_x_sezioni.fk_utenti
+				INNER JOIN utenti_sezioni
+				ON utenti_sezioni.pk_utenti_sezioni = utenti_x_sezioni.fk_utenti_sezioni
+				WHERE utenti.username = '$utente'"
+				, "Template,printMenu,blackList");
+			foreach ($this->data["menu"] as $i) {
+				$success = true;
+				$k = $i["label"];
+				foreach ($blackList as $j)
+					if( $j["sezione"] == $k)
+						$success = false;
+				if($success) array_push($temp,$i);
+			}
+			$this->data["menu"] = $temp;
+		}
 	}
 ?>
