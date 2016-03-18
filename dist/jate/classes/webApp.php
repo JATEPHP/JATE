@@ -1,12 +1,14 @@
 <?php
 	class WebApp {
-		public $pages;
-		public $defaultPage;
+		private $pages;
+		private $defaultPage;
 		public $currentPage;
+		public $connection;
 		public function __construct() {
 			$this->pages = [];
-			$this->defaultPage = ["Page404",[]];
-			$this->currentPage = null;
+			$this->defaultPage	= ["Page404",[]];
+			$this->currentPage	= null;
+			$this->connection		= null;
 		}
 		public function addPage( $_page ) {
 			$label = "";
@@ -36,6 +38,12 @@
 		}
 		public function setDefaultPage( $_page ) {
 			$this->defaultPage = $_page;
+		}
+		public function draw() {
+			$this->currentPage->uniforma();
+			$gui = new GUI();
+			$gui->init($this->currentPage);
+			$gui->draw($this->currentPage->data["template"]);
 		}
 	}
 ?>

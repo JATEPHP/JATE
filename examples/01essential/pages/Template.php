@@ -2,9 +2,10 @@
 	class Template extends Html {
 		public function __construct() {
 			parent::__construct();
-			$this->data["brand"] = array("JATE","");
-			$this->data["title"] = "JATE";
-			$this->data["template"] = "guis/tradictional.php";
+			$this->data["brand"]		= "JATE";
+			$this->data["brandImg"] = "";
+			$this->data["title"]		= "JATE";
+			$this->data["template"] = "guis/tradictional.html";
 			$this->data["css"] = array_merge( $this->data["css"], array(
 				"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
 			));

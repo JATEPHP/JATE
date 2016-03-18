@@ -9,7 +9,8 @@
 		if(file_exists($_path)) {
 			$files = subFolder_file($_path);
 			foreach ($files as $i) {
-				requireComponent($_path."/".$i);
+				if(isPhp($_path."/".$i))
+					requireComponent($_path."/".$i);
 			}
 		} else
 			requireError($_path);

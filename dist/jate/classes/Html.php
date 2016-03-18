@@ -5,7 +5,8 @@
 		public function __construct() {
 			$this->modules = [];
 			$this->data["template"]					= "";
-			$this->data["brand"]						= array(" "," ");
+			$this->data["brand"]						= "";
+			$this->data["brandImg"]						= "";
 			$this->data["menu"]							= "";
 			$this->data["title"]						= "";
 			$this->data["subtitle"]		 			= "";
