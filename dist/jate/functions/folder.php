@@ -33,7 +33,7 @@
 	function require_subfolder( $_dir = "./" ) {
 		$temp = subFolder_file($_dir);
 		foreach ($temp as $i)
-			require_once($_dir."/".$i);
+			jRequire($_dir."/".$i);
 	}
 	function require_js( $_dir = "./" ) {
 		$tempArray = [];

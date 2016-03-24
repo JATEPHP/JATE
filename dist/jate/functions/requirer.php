@@ -1,7 +1,7 @@
 <?php
 	function requireComponent($_path) {
 		if(file_exists($_path) && isPhp($_path))
-			require_once($_path);
+			jRequire($_path);
 		else
 			requireError($_path);
 	}
@@ -16,7 +16,7 @@
 			requireError($_path);
 	}
 	function requireError( $_path ) {
-		if( $GLOBALS["DEBUG"] == 1 )
+		if( $jConfig["DEBUG"] == 1 )
 			echo "Error load ($_path)<br>";
 	}
 	function isPhp ( $_file ) {
@@ -29,5 +29,8 @@
 		foreach ($subFolders as $i) {
 			requireComponents($_path."/".$i);
 		}
+	}
+	function jRequire( $_path ) {
+		require_once( $_path );
 	}
 ?>

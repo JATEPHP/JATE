@@ -1,5 +1,5 @@
 <?php
-	class WebApp {
+	class WebApp extends Module {
 		private $pages;
 		private $defaultPage;
 		public $currentPage;

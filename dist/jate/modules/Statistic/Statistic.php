@@ -1,6 +1,5 @@
 <?php
-	require_once($GLOBALS["JATEPath"]."jate/classes/Module.php");
-	class Statistic extends ExternalModule {
+	class Statistic extends Module {
 		public $name;
 		public $data;
 		public function __construct( $_webApp ) {

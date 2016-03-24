@@ -1,12 +1,12 @@
 <?php
-	class Html {
+	class Html extends Module {
 		public $data;
 		public $modules;
 		public function __construct() {
 			$this->modules = [];
 			$this->data["template"]					= "";
 			$this->data["brand"]						= "";
-			$this->data["brandImg"]						= "";
+			$this->data["brandImg"]					= "";
 			$this->data["menu"]							= "";
 			$this->data["title"]						= "";
 			$this->data["subtitle"]		 			= "";

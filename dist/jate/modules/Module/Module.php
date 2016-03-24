@@ -5,6 +5,7 @@
 		public $dipendence	= [];
 		public $data				= [];
 		public function __construct(){}
+		// abstract public function config();
 		// abstract public function init();
 		// abstract public function draw();
 		public function getCss() {

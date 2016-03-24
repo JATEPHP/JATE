@@ -1,12 +1,13 @@
 <?php
-	$GLOBALS["config"] = [];
-	$GLOBALS["config"]["connection"] = [];
-	$GLOBALS["config"]["connection"]["user"] = "root";
-	$GLOBALS["config"]["connection"]["password"] = "";
-	$GLOBALS["config"]["connection"]["database"] = "";
-	$GLOBALS["config"]["connection"]["server"] = "";
-	$GLOBALS["config"]["encrypt"] = [];
-	$GLOBALS["config"]["encrypt"]["password"] = "";
-	$GLOBALS["all"] = "";
-	$GLOBALS["DEBUG"] = 1;
+	$jConfig = [];
+	$jConfig["config"] = [];
+	$jConfig["config"]["connection"] = [];
+	$jConfig["config"]["connection"]["user"] = "root";
+	$jConfig["config"]["connection"]["password"] = "";
+	$jConfig["config"]["connection"]["database"] = "";
+	$jConfig["config"]["connection"]["server"] = "";
+	$jConfig["config"]["encrypt"] = [];
+	$jConfig["config"]["encrypt"]["password"] = "";
+	$jConfig["all"] = "";
+	$jConfig["DEBUG"] = 1;
 ?>

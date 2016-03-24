@@ -1,7 +1,6 @@
 <?php
-	// require_once($GLOBALS["JATEPath"]."jate/classes/Module.php");
-	class GUI {// extends Module
-		private $data;
+	class GUI extends Module {
+		public $data;
 		public function __construct() {
 			$this->data = [];
 		}

@@ -1,5 +1,4 @@
 <?php
-	require_once($GLOBALS["JATEPath"]."jate/classes/Module.php");
 	class Menu extends Module {
 		public $name;
 		public $data;

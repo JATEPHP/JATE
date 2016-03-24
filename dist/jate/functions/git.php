@@ -1,5 +1,5 @@
 <?php
-	function getGitLog( $_dir = "./") {
+	function getGitLog( $_dir = "./" ) {
 		if(!file_exists($_dir)) return [];
 		$currentDir = getcwd();
 		chdir($_dir);
@@ -11,14 +11,13 @@
 			chdir($currentDir);
 			return [];
 		}
-
 		exec("git log --decorate=full --tags", $git_logs);
 		$last_hash = null;
 		foreach ($git_logs as $line) {
 			$line = trim($line);
 			if (!empty($line)) {
 				// Commit
-				if (strpos($line, 'commit') !== false) {
+				if (strpos($line, 'commit') === 0) {
 					$hash = explode(' ', $line);
 					$hash = trim(end($hash));
 					$git_history[$hash] = [
@@ -28,21 +27,21 @@
 						'message' => ''
 					];
 					$last_hash = $hash;
-				 if (strpos($line, 'tag') !== false) {
-					$tag = explode(':', $line);
-					$tag = explode('/', $tag[1]);
-					$tag = explode(',', $tag[2]);
-					$tag = explode(')', $tag[0]);
-					$tag = trim($tag[0]);
-					$git_history[$last_hash]['tag'] = $tag;
+					if (strpos($line, 'tag') !== false) {
+						$tag = explode(':', $line);
+						$tag = explode('/', $tag[1]);
+						$tag = explode(',', $tag[2]);
+						$tag = explode(')', $tag[0]);
+						$tag = trim($tag[0]);
+						$git_history[$last_hash]['tag'] = $tag;
 					}
 				}
-				else if (strpos($line, 'Author') !== false) {
+				else if (strpos($line, 'Author') === 0) {
 					$author = explode(':', $line);
 					$author = trim(end($author));
 					$git_history[$last_hash]['author'] = $author;
 				}
-				else if (strpos($line, 'Date') !== false) {
+				else if (strpos($line, 'Date') === 0) {
 					$date = explode(':', $line, 2);
 					$date = trim(end($date));
 					$git_history[$last_hash]['date'] = date('d/m/Y H:i:s A', strtotime($date));
