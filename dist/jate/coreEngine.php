@@ -1,11 +1,14 @@
 <?php
 	session_start();
-	$jConfig["DEBUG"] = 1;
+	//USER STUFF
+	require_once("config.php");
+	$jConfig	= new JConfig();
 
 	//JATE SUFF
-	require_once			($jConfig["JATEPath"]."jate/functions/requirer.php");
+	require_once			(end($GLOBALS["JATEPath"])."jate/functions/requirer.php");
 	requireComponent	("functions/folder.php");
-	requireComponent	("config.php");
+
+	//JATE SUFF
 	requireComponent	("modules/Module/Module.php");
 	requireComponents	("functions");
 	requireModules		("modules");
@@ -15,5 +18,4 @@
 	requireModules		("modules",false);
 	requireComponent	("pages/Template.php",false);
 	requireComponents	("pages",false);
-
 ?>

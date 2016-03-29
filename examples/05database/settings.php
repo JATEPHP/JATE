@@ -2,12 +2,12 @@
 	require_once("jate.php");
 
 	$connection = new Connection(
-			"127.0.0.1"
-		, "db-test"
-		, "root"
-		, ""
+			$jConfig->connection["server"]
+		, $jConfig->connection["database"]
+		, $jConfig->connection["user"]
+		, $jConfig->connection["password"]
 	);
-	
+
 	$webApp	= new WebApp();
 	$webApp->addPages([
 		["home","Home"]

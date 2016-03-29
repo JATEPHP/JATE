@@ -1,13 +1,15 @@
 <?php
-	$jConfig = [];
-	$jConfig["config"] = [];
-	$jConfig["config"]["connection"] = [];
-	$jConfig["config"]["connection"]["user"] = "root";
-	$jConfig["config"]["connection"]["password"] = "";
-	$jConfig["config"]["connection"]["database"] = "";
-	$jConfig["config"]["connection"]["server"] = "";
-	$jConfig["config"]["encrypt"] = [];
-	$jConfig["config"]["encrypt"]["password"] = "";
-	$jConfig["all"] = "";
-	$jConfig["DEBUG"] = 0;
+	class JConfig {
+		public $connection;
+		public $all;
+		public $DEBUG;
+		public function __construct() {
+			$this->connection["user"]			= "root";
+			$this->connection["password"] = "";
+			$this->connection["database"] = "db-test";
+			$this->connection["server"]		= "127.0.0.1";
+			$this->all		= "";
+			$this->DEBUG	= 0;
+		}
+	}
 ?>

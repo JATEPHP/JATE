@@ -1,5 +1,6 @@
 <?php
-	$jConfig["JATEPath"] = "";
+	if(!isset($GLOBALS["JATEPath"]))
+		$GLOBALS["JATEPath"] = [];
 	$commonLocations = array(
 		"bower_components/JATE/dist/",
 		"vendor/xaberr/jate/dist/",
@@ -7,7 +8,7 @@
 	);
 	foreach ($commonLocations as $i)
 		if(file_exists($i."jate/coreEngine.php")) {
-			$jConfig["JATEPath"] = $i;
+			array_push($GLOBALS["JATEPath"], $i);
 			require_once($i."jate/coreEngine.php");
 			break;
 		}
