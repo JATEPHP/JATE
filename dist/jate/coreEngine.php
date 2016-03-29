@@ -2,16 +2,18 @@
 	session_start();
 	$jConfig["DEBUG"] = 1;
 
-	//jateStuff
+	//JATE SUFF
 	require_once			($jConfig["JATEPath"]."jate/functions/requirer.php");
-	requireComponent	($jConfig["JATEPath"]."jate/functions/folder.php");
-	requireComponent	($jConfig["JATEPath"]."jate/config.php");
-	requireComponent	($jConfig["JATEPath"]."jate/modules/Module/Module.php");
-	requireComponents	($jConfig["JATEPath"]."jate/functions");
-	requireModules		($jConfig["JATEPath"]."jate/modules");
+	requireComponent	("functions/folder.php");
 	requireComponent	("config.php");
+	requireComponent	("modules/Module/Module.php");
+	requireComponents	("functions");
 	requireModules		("modules");
-	requireComponent	("pages/Template.php");
-	requireComponents	("pages");
+
+	//USER STUFF
+	requireComponent	("config.php",false);
+	requireModules		("modules",false);
+	requireComponent	("pages/Template.php",false);
+	requireComponents	("pages",false);
 
 ?>
