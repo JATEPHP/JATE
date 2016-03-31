@@ -1,9 +1,7 @@
 <?php
 	class Html extends Module {
-		public $data;
-		public $modules;
 		public function __construct() {
-			$this->modules = [];
+			parent::__construct();
 			$this->data["template"]					= "";
 			$this->data["brand"]						= "";
 			$this->data["brandImg"]					= "";
@@ -40,19 +38,6 @@
 				$tempStr .= " ".$i[0]." = ".$i[1].";\n";
 			$tempStr .= '</script>';
 			$this->data["jsVariables"] = $tempStr;
-		}
-		public function draw() {
-
-		}
-		public function addModule( $_mod ) {
-			$this->modules[$_mod->name] = $_mod;
-		}
-		public function addDipendences() {
-			foreach ($this->modules as $i) {
-				$this->data["css"] = array_merge($this->data["css"], $i->getCss());
-				$this->data["js"] = array_merge($this->data["js"], $i->getJs());
-				$this->data["jsVariables"] = array_merge($this->data["jsVariables"], $i->getJsVariables());
-			}
 		}
 	}
 ?>

@@ -4,6 +4,7 @@
 		public $database;
 		public $info;
 		public function __construct() {
+			parent::__construct();
 			$args = func_get_args();
 			$count = func_num_args();
 			if (method_exists($this,$func='__construct'.$count))

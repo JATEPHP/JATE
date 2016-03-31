@@ -1,10 +1,7 @@
 <?php
 	class Menu extends Module {
-		public $name;
-		public $data;
 		public function __construct() {
-			$this->name = get_class($this);
-			$this->data = [];
+			parent::__construct();
 		}
 		public function init() {
 			$menu = c_query("SELECT * FROM menu WHERE flag_active = 1 ORDER BY `order`","Menu,getMenu,menu");
@@ -46,7 +43,7 @@
 			}
 			return $temp;
 		}
-		private function isSubString( $_string, $_list) {
+		protected function isSubString( $_string, $_list) {
 			$success = false;
 			foreach ($_list as $i)
 				if(strpos($_string,$i) !== false)

@@ -1,8 +1,7 @@
 <?php
 	class GUI extends Module {
-		public $data;
 		public function __construct() {
-			$this->data = [];
+			parent::__construct();
 		}
 		public function init( $_page ) {
 			$this->data = $_page->data;
@@ -12,7 +11,7 @@
 			$render = $this->overlayTag($page);
 			echo minify_output($render);
 		}
-		private function overlayTag( $_page ) {
+		protected function overlayTag( $_page ) {
 			foreach($this->data as $key => $value) {
 				$_page = str_replace("<_".$key."_>", "$value", $_page);
 			}

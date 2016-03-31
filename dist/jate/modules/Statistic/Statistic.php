@@ -1,11 +1,10 @@
 <?php
 	class Statistic extends Module {
-		public $name;
-		public $data;
 		public function __construct( $_webApp ) {
+			parent::__construct();
 			$pages = [];
-			$pages = $_webApp->pages;
 			$stats = [];
+			$pages = $_webApp->pages;
 			foreach ( $pages as $k => $v ) {
 				$temp = new $v[0]($v[1]);
 				$temp->addDipendences();

@@ -1,10 +1,11 @@
 <?php
 	class WebApp extends Module {
-		private $pages;
-		private $defaultPage;
+		protected $pages;
+		protected $defaultPage;
 		public $currentPage;
 		public $connection;
 		public function __construct() {
+			parent::__construct();
 			$this->pages = [];
 			$this->defaultPage	= ["Page404",[]];
 			$this->currentPage	= null;
