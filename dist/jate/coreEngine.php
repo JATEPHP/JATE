@@ -1,11 +1,14 @@
 <?php
 	session_start();
-	//USER STUFF
-	require_once("config.php");
-	$jConfig	= new JConfig();
+
 
 	//JATE SUFF
 	require_once			(end($GLOBALS["JATEPath"])."jate/functions/requirer.php");
+	//USER STUFF
+	requireComponent	("modules/JConfig/JConfig.php");
+	$jConfig	= new JConfig();
+	$jConfig->import("config.json");
+	//JATE STUFF
 	requireComponent	("functions/folder.php");
 
 	//JATE SUFF

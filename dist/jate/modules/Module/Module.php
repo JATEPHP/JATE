@@ -28,15 +28,24 @@
 					array_push($temp,$i);
 			return $temp;
 		}
+		public function addModules( $_mods ) {
+			foreach ($_mods as $value)
+				$this->addModule($value);
+		}
 		public function addModule( $_mod ) {
 			$this->modules[$_mod->name] = $_mod;
 		}
+		public function addFiles( $_files ) {
+			foreach ($_files as $value)
+				$this->addFile($value);
+		}
+		public function addFile( $_file ) {
+			array_push($this->files, $_file);
+		}
 		protected function addDipendences() {
-			foreach ($this->modules as $i) {
-				$this->data["css"] = array_merge($this->data["css"], $i->getCss());
-				$this->data["js"] = array_merge($this->data["js"], $i->getJs());
-				$this->data["jsVariables"] = array_merge($this->data["jsVariables"], $i->getJsVariables());
-			}
+			$this->data["css"] = $this->getCss();
+			$this->data["js"] = $this->getJs();
+			$this->data["jsVariables"] = $this->getJsVariables();
 		}
 		protected function getRequire( $_function, $_extenction) {
 			$temp = [];

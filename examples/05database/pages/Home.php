@@ -5,13 +5,14 @@
 			$this->data["content"] = $this->makePage();
 		}
 		public function makePage() {
-			$outString = c_query("SELECT * FROM test","Error!");
+			$result = c_query("SELECT name FROM test","Error 01");
+			$output = $result[0]["name"];
 			jBlock();
 			?>
 			<div class="row" style="margin-top:70px;">
 				<div class="col-lg-12">
 					<div class="well well-sm">
-						<?=$outString[0]["name"]?>
+						<?=$output?>
 					</div>
 				</div>
 			</div>

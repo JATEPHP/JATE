@@ -1,0 +1,15 @@
+{
+		"connection" : {
+				 "enable" : false
+			,  "user" : ""
+			,  "password" : ""
+			,  "database" : ""
+			,  "server" : ""
+		}
+	, "all" : "@!ALL!@"
+	, "DEBUG" : 0
+	, "pages" : [
+			["Home","Home"]
+		, ["Page404","Page404"]
+	]
+}
