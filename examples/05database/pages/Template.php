@@ -14,6 +14,19 @@
 			$this->data["metaDescription"] = "Beautiful description .";
 			$this->data["metaKeywords"] = "JATE,PHP,JS,CSS";
 			$this->data["metaAuthor"] = "XaBerr";
+			$this->makeConnection();
+		}
+		public function makeConnection() {
+			global $jConfig;
+			$connection = null;
+			if($jConfig->connection["enable"])
+				$connection = new Connection(
+						$jConfig->connection["server"]
+					, $jConfig->connection["database"]
+					, $jConfig->connection["user"]
+					, $jConfig->connection["password"]
+				);
+			$this->addConnection("base",$connection);
 		}
 	}
 ?>

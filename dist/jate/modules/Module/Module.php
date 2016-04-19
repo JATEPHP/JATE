@@ -21,11 +21,11 @@
 		}
 		public function getJsVariables() {
 			$temp = [];
-			foreach ($this->modules as $i)
-				$temp = array_merge( $temp, $i->getJsVariables() );
 			foreach ($this->files as $i)
 				if (is_array($i))
 					array_push($temp,$i);
+			foreach ($this->modules as $i)
+				$temp = array_merge( $temp, $i->getJsVariables() );
 			return $temp;
 		}
 		public function addModules( $_mods ) {
@@ -49,11 +49,11 @@
 		}
 		protected function getRequire( $_function, $_extenction) {
 			$temp = [];
-			foreach ($this->modules as $i)
-				$temp = array_merge( $temp, $i->$_function() );
 			foreach ($this->files as $i)
 				if (!is_array($i) && strpos($i, $_extenction) !== FALSE)
 					array_push($temp,$i);
+			foreach ($this->modules as $i)
+				$temp = array_merge( $temp, $i->$_function() );
 			return $temp;
 		}
 	}

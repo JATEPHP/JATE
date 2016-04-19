@@ -1,5 +1,6 @@
 <?php
-	class Html extends Module {
+	requireComponent("../Query/Query.php");
+	class Html extends Query {
 		public function __construct() {
 			parent::__construct();
 			$this->data["template"]					= "";

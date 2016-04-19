@@ -9,8 +9,9 @@
 			foreach ($menu as $i) {
 				$submenu = [];
 				if($i["fk_menu"] == 0) {
+					$pk_menu = $i["pk_menu"];
 					array_push($temp, array("label" => $i["label"], "link" => $i["link"], "submenu" => []));
-					$submenu = c_query("SELECT * FROM menu WHERE fk_menu = ".$i["pk_menu"],"Menu,getMenu,submenu");
+					$submenu = c_query("SELECT * FROM menu WHERE fk_menu = $pk_menu ORDER BY `order`","Menu,getMenu,submenu");
 					if($submenu)
 					foreach ($submenu as $j)
 						array_push( $temp[count($temp)-1]["submenu"], array("label" => $j["label"], "link" => $j["link"], []) );

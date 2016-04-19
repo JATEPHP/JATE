@@ -21,11 +21,11 @@
 		}
 		return $_array;
 	}
-	function array_depth( $_array ) {
+	function arrayDepth( $_array ) {
 		$maxDepth = 1;
 		foreach ($_array as $value) {
 			if (is_array($value)) {
-				$depth = array_depth($value) + 1;
+				$depth = arrayDepth($value) + 1;
 				if ($depth > $maxDepth) {
 					$maxDepth = $depth;
 				}

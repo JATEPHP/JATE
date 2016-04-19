@@ -12,7 +12,7 @@
 		return ob_get_clean();
 	}
 
-	function minify_output($_buffer) {
+	function minifyOutput($_buffer) {
 		$search = array ( '/\>[^\S ]+/s', '/[^\S ]+\</s', '/(\s)+/s' );
 		$replace = array ( '>', '<', '\\1' );
 		if (preg_match("/\<html/i",$_buffer) == 1 && preg_match("/\<\/html\>/i",$_buffer) == 1)

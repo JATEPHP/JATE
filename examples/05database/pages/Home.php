@@ -5,7 +5,7 @@
 			$this->data["content"] = $this->makePage();
 		}
 		public function makePage() {
-			$result = c_query("SELECT name FROM test","Error 01");
+			$result = $this->queryFetch("SELECT name FROM test");
 			$output = $result[0]["name"];
 			jBlock();
 			?>

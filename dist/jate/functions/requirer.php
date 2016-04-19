@@ -9,7 +9,7 @@
 	function requireComponents( $_path, $_local = true, $_stack = null ) {
 		$path = getJFolder($_path, $_local, debug_backtrace());
 		if(file_exists($path)) {
-			$files = subFolder_file($path);
+			$files = subFolderFile($path);
 			foreach ($files as $i) {
 				if(isPhp($path."/".$i))
 					requireComponent($path."/".$i, false, 0);
@@ -29,7 +29,7 @@
 	}
 	function requireModules( $_path, $_local = true, $_stack = null ) {
 		$path = getJFolder($_path, $_local, debug_backtrace());
-		$subFolders = subFolder_dir($path);
+		$subFolders = subFolderDir($path);
 		foreach ($subFolders as $i) {
 			requireComponents($path."/".$i, false, 0);
 		}

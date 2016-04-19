@@ -9,7 +9,7 @@
 		public function draw( $_template ) {
 			$page = file_get_contents($_template);
 			$render = $this->overlayTag($page);
-			echo minify_output($render);
+			echo minifyOutput($render);
 		}
 		protected function overlayTag( $_page ) {
 			foreach($this->data as $key => $value) {
