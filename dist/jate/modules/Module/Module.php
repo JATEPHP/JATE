@@ -3,11 +3,13 @@
 		public $name;
 		public $modules;
 		public $files;
+		public $required;
 		public $data;
 		public function __construct() {
 			$this->name			= get_class($this);
 			$this->modules	= [];
 			$this->files		= [];
+			$this->required	= [];
 			$this->data			= [];
 		}
 		// abstract public function config();
@@ -21,11 +23,14 @@
 		}
 		public function getJsVariables() {
 			$temp = [];
-			foreach ($this->files as $i)
+			foreach ($this->required as $i)
 				if (is_array($i))
 					array_push($temp,$i);
 			foreach ($this->modules as $i)
 				$temp = array_merge( $temp, $i->getJsVariables() );
+			foreach ($this->files as $i)
+				if (is_array($i))
+					array_push($temp,$i);
 			return $temp;
 		}
 		public function addModules( $_mods ) {
@@ -42,6 +47,13 @@
 		public function addFile( $_file ) {
 			array_push($this->files, $_file);
 		}
+		public function addFilesRequired( $_files ) {
+			foreach ($_files as $value)
+				$this->addFileRequired($value);
+		}
+		public function addFileRequired( $_file ) {
+			array_push($this->required, $_file);
+		}
 		protected function addDipendences() {
 			$this->data["css"] = $this->getCss();
 			$this->data["js"] = $this->getJs();
@@ -49,11 +61,14 @@
 		}
 		protected function getRequire( $_function, $_extenction) {
 			$temp = [];
-			foreach ($this->files as $i)
+			foreach ($this->required as $i)
 				if (!is_array($i) && strpos($i, $_extenction) !== FALSE)
 					array_push($temp,$i);
 			foreach ($this->modules as $i)
 				$temp = array_merge( $temp, $i->$_function() );
+			foreach ($this->files as $i)
+				if (!is_array($i) && strpos($i, $_extenction) !== FALSE)
+					array_push($temp,$i);
 			return $temp;
 		}
 	}

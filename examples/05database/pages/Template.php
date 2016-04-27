@@ -6,7 +6,7 @@
 			$this->data["brandImg"] = "";
 			$this->data["title"]		= "JATE";
 			$this->data["template"] = "guis/tradictional.html";
-			$this->addFiles([
+			$this->addFilesRequired([
 					"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
 				, "https://code.jquery.com/jquery-1.11.3.min.js"
 				, "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
