@@ -19,7 +19,7 @@
 			$data = json_decode($data);
 			$this->overlay($data);
 		}
-		private function overlay( $_data ) {
+		protected function overlay( $_data ) {
 			$this->connection["enable"]		= $_data->connection->enable;
 			$this->connection["user"]			= $_data->connection->user;
 			$this->connection["password"] = $_data->connection->password;

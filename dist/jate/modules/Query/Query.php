@@ -33,14 +33,14 @@
 			return $temp->fetchAll(PDO::FETCH_COLUMN, 0);
 		}
 
-		private function stdQuery($_query) {
+		protected function stdQuery( $_query ) {
 			$database = $this->currentConnection->database;
-			$error = "Errore query [$_query]";
+			$error = "Error query [$_query]";
 			$query = $database->prepare($_query);
 			$_result = $query->execute();
 			if(!$_result) {
 				echo "$_query<br>";
-				echo "Something wrong: ".$error;
+				echo "Something wrong: $error";
 				var_dump($query->errorInfo());
 				var_dump($database->errorInfo());
 				exit();

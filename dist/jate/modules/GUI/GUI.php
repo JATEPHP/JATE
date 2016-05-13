@@ -12,9 +12,9 @@
 			echo minifyOutput($render);
 		}
 		protected function overlayTag( $_page ) {
-			foreach($this->data as $key => $value) {
-				$_page = str_replace("<_".$key."_>", "$value", $_page);
-			}
+			foreach($this->data as $key => $value)
+				if(!is_array($value))
+					$_page = str_replace("<_${key}_>", "$value", $_page);
 			return $_page;
 		}
 	}
