@@ -10,6 +10,10 @@
 		public function addConnection( $_name, $_connection ) {
 			$this->connection["$_name"] = $_connection;
 			$this->currentConnection = $_connection;
+
+			foreach ($this->modules as &$module)
+				if(isset($module->currentConnection))
+					$module->addConnection($_name, $_connection);
 		}
 		public function setConnection( $_name ) {
 			$this->currentConnection = $this->connection["$_name"];
