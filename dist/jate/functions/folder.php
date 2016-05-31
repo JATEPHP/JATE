@@ -1,6 +1,6 @@
 <?php
 	function subFolder( $_dir = "./" ) {
-		$temp = fetchInSubFolder($_dir, function( $_file ) {
+		$temp = fetchInSubFolder($_dir, function() {
 			return true;
 		});
 		return $temp;

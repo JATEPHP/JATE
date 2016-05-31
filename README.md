@@ -25,3 +25,20 @@ Download and uncompress zip file from GitHub.
 ## NATIVE
 JATE is system in PHP for simply manage HTML, CSS and JS.
 Recommend the use of Bootstrap3, all examples use it.
+## WHAT IS JATE?
+JATE is a new light and hackable CMS.
+It's simple to lern and simple to customize.
+JATE contains the minimum of libraries and functions to get you started.
+## HOW DOES IT TO WORK?
+There are 3 main sections.
+ - the libraries that are contained in dist/jate.
+ - the pages that are contained in pages.
+ - the modules that you can create that are contained in modules.
+
+On your pages must have a template page that inherits from html.<br>
+It will be the one that sets the gui.<br>
+Each additional page is inherited from template.<br>
+So you will not have to rewrite the same page layout code.<br>
+Each time you add a page, remember to connect the parameter php "page =" with the class in config.json file.<br>
+Check out the examples to see more detail.<br>
+Check out the dist/jate/functions all functions ready to go.<br>

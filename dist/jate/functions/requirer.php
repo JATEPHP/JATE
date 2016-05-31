@@ -1,12 +1,12 @@
 <?php
-	function requireComponent( $_path, $_local = true, $_stack = null ) {
+	function requireComponent( $_path, $_local = true ) {
 		$path = getJFolder($_path, $_local, debug_backtrace());
 		if(file_exists($path) && isPhp($path))
 			jRequire($path, false, 0);
 		else
 			requireError($_path);
 	}
-	function requireComponents( $_path, $_local = true, $_stack = null ) {
+	function requireComponents( $_path, $_local = true ) {
 		$path = getJFolder($_path, $_local, debug_backtrace());
 		if(file_exists($path)) {
 			$files = subFolderFile($path);
@@ -27,14 +27,14 @@
 		$info = pathinfo($_file);
 		return ($info["extension"] == "php") || ($info["extension"] == "PHP");
 	}
-	function requireModules( $_path, $_local = true, $_stack = null ) {
+	function requireModules( $_path, $_local = true ) {
 		$path = getJFolder($_path, $_local, debug_backtrace());
 		$subFolders = subFolderDir($path);
 		foreach ($subFolders as $i) {
 			requireComponents($path."/".$i, false, 0);
 		}
 	}
-	function jRequire( $_path, $_local = true, $_stack = null ) {
+	function jRequire( $_path, $_local = true ) {
 		$path = getJFolder($_path, $_local, debug_backtrace());
 		require_once( $path );
 	}
