@@ -18,16 +18,16 @@
 						array_push( $temp[count($temp)-1]["submenu"], array("label" => $j["label"], "link" => $j["link"], []) );
 				}
 			}
-			$this->data["menu"] = $temp;
+			$this->tags["menu"] = $temp;
 			return $temp;
 		}
 		public function draw() {
 			$temp = "";
 			$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-			foreach ($this->data["menu"] as $i) {
+			foreach ($this->tags["menu"] as $i) {
 				$active = $this->isSubString($actual_link,array_merge(array_column($i["submenu"], 'link'), array($i["link"])))? "active" : "";
 				if( is_array($i["submenu"]) && count($i["submenu"])<1)
-						$temp .= "<li class='$active'><a href='".$i["link"]."'>".$i["label"]."</a></li>";
+						$temp .= "<li class='$active'><a href='$i[link]'>$i[label]</a></li>";
 				else {
 					$temp .= "<li class='dropdown $active'>";
 					$temp .=
@@ -37,8 +37,8 @@
 						'</a>'.
 						'<ul class="dropdown-menu">';
 					foreach ($i["submenu"] as $j)
-						$temp .= '<li><a href="'.$j["link"].'">'.$j["label"].'</a></li>';
-					$temp .= '</ul></li>';
+						$temp .= "<li><a href='$j[link]'>$j[label]</a></li>";
+					$temp .= "</ul></li>";
 				}
 			}
 			return $temp;
@@ -66,7 +66,7 @@
 				ON user_section.pk_user_section = user_x_section.fk_user_section
 				WHERE user.username = '$user'"
 			);
-			foreach ($this->data["menu"] as $i) {
+			foreach ($this->tags["menu"] as $i) {
 				$success = true;
 				$k = $i["label"];
 				foreach ($blackList as $j)
@@ -75,7 +75,7 @@
 				if($success)
 					array_push($temp,$i);
 			}
-			$this->data["menu"] = $temp;
+			$this->tags["menu"] = $temp;
 		}
 	}
 ?>

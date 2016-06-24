@@ -2,7 +2,7 @@
 	class Home extends Template {
 		public function __construct() {
 			parent::__construct();
-			$this->data["content"] = $this->makePage();
+			$this->tags["content"] = $this->makePage();
 		}
 		public function makePage() {
 			$result = $this->queryFetch("SELECT name FROM test");

@@ -4,41 +4,41 @@
 		public function __construct() {
 			parent::__construct();
 			$this->data["template"]					= "";
-			$this->data["brand"]						= "";
-			$this->data["brandImg"]					= "";
-			$this->data["menu"]							= "";
-			$this->data["title"]						= "";
-			$this->data["subtitle"]		 			= "";
-			$this->data["content"]				 	= "";
-			$this->data["outContent"]		 		= "";
-			$this->data["footer"]		 				= "";
-			$this->data["pagePath"]				 	= [];
-			$this->data["css"]							= [];
-			$this->data["js"]					 			= [];
-			$this->data["jsVariables"]			= [];
-			$this->data["metaDescription"]	= [];
-			$this->data["metaKeywords"]			= [];
-			$this->data["metaAuthor"]				= [];
+			$this->tags["brand"]						= "";
+			$this->tags["brandImg"]					= "";
+			$this->tags["menu"]							= "";
+			$this->tags["title"]						= "";
+			$this->tags["subtitle"]		 			= "";
+			$this->tags["content"]				 	= "";
+			$this->tags["outContent"]		 		= "";
+			$this->tags["footer"]		 				= "";
+			$this->tags["pagePath"]				 	= [];
+			$this->tags["css"]							= [];
+			$this->tags["js"]					 			= [];
+			$this->tags["jsVariables"]			= [];
+			$this->tags["metaDescription"]	= [];
+			$this->tags["metaKeywords"]			= [];
+			$this->tags["metaAuthor"]				= [];
 		}
 		public function uniforma() {
 			$this->addDipendences();
-			$this->data["css"]			= array_unique($this->data["css"]);
-			$this->data["js"]				= array_unique($this->data["js"]);
-			$this->data["pagePath"]	= json_encode($this->data["pagePath"]);
+			$this->tags["css"]			= array_unique($this->tags["css"]);
+			$this->tags["js"]				= array_unique($this->tags["js"]);
+			$this->tags["pagePath"]	= json_encode($this->tags["pagePath"]);
 			$tempStr = "";
-			foreach ($this->data["css"] as $i)
-				$tempStr .= '<link rel="stylesheet" href="'.$i.'">';
-			$this->data["css"] = $tempStr;
+			foreach ($this->tags["css"] as $i)
+				$tempStr .= "<link rel='stylesheet' href='$i'>";
+			$this->tags["css"] = $tempStr;
 			$tempStr = "";
-			foreach ($this->data["js"] as $i)
-				$tempStr .= '<script src="'.$i.'"></script>';
-			$this->data["js"] = $tempStr;
+			foreach ($this->tags["js"] as $i)
+				$tempStr .= "<script src='$i'></script>";
+			$this->tags["js"] = $tempStr;
 			$tempStr = "";
-			$tempStr .= '<script type="text/javascript">';
-			foreach ($this->data["jsVariables"] as $i)
-				$tempStr .= " ".$i[0]." = ".$i[1].";\n";
-			$tempStr .= '</script>';
-			$this->data["jsVariables"] = $tempStr;
+			$tempStr .= "<script type='text/javascript'>";
+			foreach ($this->tags["jsVariables"] as $i)
+				$tempStr .= " $i[0] = $i[1];\n";
+			$tempStr .= "</script>";
+			$this->tags["jsVariables"] = $tempStr;
 		}
 	}
 ?>

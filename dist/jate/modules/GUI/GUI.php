@@ -4,7 +4,7 @@
 			parent::__construct();
 		}
 		public function init( $_page ) {
-			$this->data = $_page->data;
+			$this->tags = $_page->tags;
 		}
 		public function draw( $_template ) {
 			$page = file_get_contents($_template);
@@ -12,7 +12,7 @@
 			echo minifyOutput($render);
 		}
 		protected function overlayTag( $_page ) {
-			foreach($this->data as $key => $value)
+			foreach($this->tags as $key => $value)
 				if(!is_array($value))
 					$_page = str_replace("<_${key}_>", "$value", $_page);
 			return $_page;

@@ -55,9 +55,9 @@
 			array_push($this->required, $_file);
 		}
 		protected function addDipendences() {
-			$this->data["css"] = $this->getCss();
-			$this->data["js"] = $this->getJs();
-			$this->data["jsVariables"] = $this->getJsVariables();
+			$this->tags["css"] = $this->getCss();
+			$this->tags["js"] = $this->getJs();
+			$this->tags["jsVariables"] = $this->getJsVariables();
 		}
 		protected function getRequire( $_function, $_extenction) {
 			$temp = [];
