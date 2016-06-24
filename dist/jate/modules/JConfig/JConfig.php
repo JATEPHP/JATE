@@ -14,20 +14,34 @@
 			$this->DEBUG	= 0;
 			$this->pages	= [];
 		}
-		public function import( $_path ) {
+		public function import( $_path, $_type = "misc" ) {
 			$data = file_get_contents($_path);
 			$data = json_decode($data);
-			$this->overlay($data);
+			if( $_type == "connection" )
+				$this->overlayConnection($data);
+			else
+				$this->overlayMisc($data);
 		}
-		protected function overlay( $_data ) {
-			$this->connection["enable"]		= $_data->connection->enable;
-			$this->connection["user"]			= $_data->connection->user;
-			$this->connection["password"] = $_data->connection->password;
-			$this->connection["database"] = $_data->connection->database;
-			$this->connection["server"]		= $_data->connection->server;
-			$this->all		= $_data->all;
-			$this->DEBUG	= $_data->DEBUG;
-			$this->pages	= $_data->pages;
+		protected function overlayConnection( $_data ) {
+			$this->connection = $this->obj2array($_data);
+		}
+		protected function overlayMisc( $_data ) {
+			$this->importObject($_data);
+		}
+		protected function obj2array ( &$_instance ) {
+			$clone	= (array) $_instance;
+			$return	= [];
+			$return['___SOURCE_KEYS_'] = $clone;
+			while ( list ($key, $value) = each ($clone) ) {
+				$temp		= explode ("\0", $key);
+				$newkey	= $temp[count($temp)-1];
+				$return[$newkey] = &$return['___SOURCE_KEYS_'][$key];
+			}
+			return $return;
+		}
+		protected function importObject( $_object ) {
+			foreach (get_object_vars($_object) as $key => $value)
+				$this->$key = $value;
 		}
 	}
 ?>
