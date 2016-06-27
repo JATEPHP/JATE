@@ -39,6 +39,6 @@ On your pages must have a template page that inherits from html.<br>
 It will be the one that sets the gui.<br>
 Each additional page is inherited from template.<br>
 So you will not have to rewrite the same page layout code.<br>
-Each time you add a page, remember to connect the parameter php "page =" with the class in config.json file.<br>
+Each time you add a page, remember to connect the parameter php with the class in config/router.json file.<br>
 Check out the examples to see more detail.<br>
 Check out the dist/jate/functions all functions ready to go.<br>

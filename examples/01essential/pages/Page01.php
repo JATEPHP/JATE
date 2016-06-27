@@ -1,8 +1,8 @@
 <?php
-	class Page404 extends Template {
+	class Page01 extends Template {
 		public function __construct() {
 			parent::__construct();
-			$this->tags["title"]		= "JATE - 404";
+			$this->tags["title"]		= "JATE - Page01";
 			$this->tags["content"] = $this->makePage();
 		}
 		public function makePage() {
@@ -11,7 +11,7 @@
 			<div class="row" style="margin-top:70px;">
 				<div class="col-lg-12">
 					<div class="well well-sm">
-						404 Page not found!
+						Page 1!
 					</div>
 				</div>
 			</div>

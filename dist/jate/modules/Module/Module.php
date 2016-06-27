@@ -11,6 +11,7 @@
 			$this->files		= [];
 			$this->required	= [];
 			$this->data			= [];
+			$this->tags			= [];
 		}
 		// abstract public function config();
 		// abstract public function init();

@@ -2,6 +2,7 @@
 	class Home extends Template {
 		public function __construct() {
 			parent::__construct();
+			$this->tags["title"]		= "JATE - Home";
 			$this->tags["content"] = $this->makePage();
 		}
 		public function makePage() {
