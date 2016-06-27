@@ -4,8 +4,8 @@
 			parent::__construct();
 			$this->tags["brand"]		= "JATE";
 			$this->tags["brandImg"] = "";
-			$this->tags["title"]		= "JATE - 01essential";
-			$this->data["template"] = "guis/tradictional.html";
+			$this->tags["title"]		= "JATE - 05database";
+			$this->data["template"] = "bundles/views/tradictional.html";
 			$this->addFilesRequired([
 					"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
 				, "https://code.jquery.com/jquery-1.11.3.min.js"

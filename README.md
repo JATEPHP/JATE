@@ -32,13 +32,12 @@ JATE contains the minimum of libraries and functions to get you started.
 ## HOW DOES IT TO WORK?
 There are 3 main sections.
  - the libraries that are contained in dist/jate.
- - the pages that are contained in pages.
+ - the pages that are contained in bundles divided into MVC.
  - the modules that you can create that are contained in modules.
 
-On your pages must have a template page that inherits from html.<br>
-It will be the one that sets the gui.<br>
-Each additional page is inherited from template.<br>
-So you will not have to rewrite the same page layout code.<br>
-Each time you add a page, remember to connect the parameter php with the class in config/router.json file.<br>
+You start by creating an html interface in _bundles/views_.<br>
+Then you have to continue creating a model that ignetterà tags in the view in _bundles/models_.<br>
+Creates a class for each page that you want to have in your app in _bundles/controller_.<br>
+Each time you add a page, remember to connect it with the class in config/router.json file.<br>
 Check out the examples to see more detail.<br>
 Check out the dist/jate/functions all functions ready to go.<br>

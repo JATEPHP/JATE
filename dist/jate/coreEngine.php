@@ -23,6 +23,6 @@
 	//USER STUFF
 	requireComponent	("config.php",false);
 	requireModules		("modules",false);
-	requireComponent	("pages/Template.php",false);
-	requireComponents	("pages",false);
+	requireComponents	("bundles/models",false);
+	requireComponents	("bundles/controllers",false);
 ?>
