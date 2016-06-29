@@ -18,8 +18,8 @@
 			requireError($_path);
 	}
 	function requireError( $_path ) {
-		global $jConfig;
-		if( $jConfig->DEBUG == 1 )
+		global $DEBUG;
+		if( $DEBUG == 1 )
 			echo "Error load ($_path)<br>";
 	}
 	function isPhp ( $_file ) {

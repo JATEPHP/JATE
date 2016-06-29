@@ -1,6 +1,6 @@
 <?php
 	class Template extends Html {
-		public function __construct( $_parameters = NULL ) {
+		public function __construct( $_parameters ) {
 			parent::__construct( $_parameters );
 			$this->tags["brand"]		= "JATE";
 			$this->tags["brandImg"] = "";
@@ -18,9 +18,9 @@
 			$this->tags["menu"] = $this->makeMenu();
 		}
 		public function makeConnection() {
-			global $jConfig;
+			$jConfig = $this->parameters["app"];
 			$connection = null;
-			if($jConfig->connection["enable"])
+			if( $jConfig != null && $jConfig->connection["enable"])
 				$connection = new Connection(
 						$jConfig->connection["server"]
 					, $jConfig->connection["database"]

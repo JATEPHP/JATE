@@ -3,13 +3,13 @@
 		protected $pages;
 		protected $defaultPage;
 		public $currentPage;
-		public $connection;
+		public $jConfig;
 		public function __construct() {
 			parent::__construct();
 			$this->pages = [];
 			$this->defaultPage	= ["Page404",[]];
 			$this->currentPage	= null;
-			$this->connection		= null;
+			$this->$jConfig			= null;
 		}
 		public function addPage( $_page ) {
 			$path		= "";
@@ -46,7 +46,7 @@
 				$temp[1] = array_merge($temp[1], $parameters);
 			else
 				$temp[1] = $parameters;
-			$this->currentPage = new $temp[0]($temp[1]);
+			$this->currentPage = new $temp[0](["app" => $this->jConfig, "page" => $temp[1]]);
 			return $this->currentPage;
 		}
 		public function setDefaultPage( $_page ) {
@@ -76,6 +76,12 @@
 					return $variables;
 			}
 			return null;
+		}
+		public function newConfig( $_path = "config/") {
+			$this->jConfig = new JConfig();
+			$this->jConfig->import("${_path}connection.json","connection");
+			$this->jConfig->import("${_path}misc.json");
+			$this->jConfig->import("${_path}router.json");
 		}
 	}
 ?>

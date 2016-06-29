@@ -1,7 +1,7 @@
 <?php
 	class Page404 extends Template {
-		public function __construct() {
-			parent::__construct();
+		public function __construct( $_parameters ) {
+			parent::__construct( $_parameters );
 			$this->tags["title"]		= "JATE - 404";
 			$this->tags["content"] = $this->makePage();
 		}

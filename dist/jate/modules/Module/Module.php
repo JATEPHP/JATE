@@ -6,13 +6,15 @@
 		public $required;
 		public $data;
 		public $tags;
+		public $connection;
 		public function __construct() {
-			$this->name			= get_class($this);
-			$this->modules	= [];
-			$this->files		= [];
-			$this->required	= [];
-			$this->data			= [];
-			$this->tags			= [];
+			$this->name				= get_class($this);
+			$this->modules		= [];
+			$this->files			= [];
+			$this->required		= [];
+			$this->data				= [];
+			$this->tags				= [];
+			$this->connection	= null;
 		}
 		// abstract public function config();
 		// abstract public function init();

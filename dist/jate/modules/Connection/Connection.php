@@ -1,6 +1,5 @@
 <?php
 	class Connection extends Module {
-		public $connection;
 		public $database;
 		public $info;
 		public function __construct() {
@@ -11,7 +10,6 @@
 				call_user_func_array(array($this,$func),$args);
 		}
 		public function __construct0() {
-			$this->connection = null;
 			$this->database = null;
 		}
 		public function __construct4( $_srv, $_db, $_usr, $_pass) {

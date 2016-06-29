@@ -1,6 +1,7 @@
 <?php
 	require_once("jate.php");
 	$webApp = new WebApp();
-	$webApp->addPages($jConfig->pages);
-	$webApp->setDefaultPage($jConfig->pages[0]);
+	$webApp->newConfig();
+	$webApp->addPages($webApp->jConfig->pages);
+	$webApp->setDefaultPage($webApp->jConfig->pages[0]);
 ?>
