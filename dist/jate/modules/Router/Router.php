@@ -4,11 +4,12 @@
 			parent::__construct();
 		}
 		public function getPage() {
-			$base			= $_SERVER["REDIRECT_BASE"];
 			$request	= $_SERVER["REQUEST_URI"];
+			$base			= $_SERVER["PHP_SELF"];
+			$base			= str_replace("/index.php", "", $base);
 			$url			= str_replace($base, "", $request);
-			$url			= explode("/",$url);
-			return $url[1];
+			$url			= explode("/", $url);
+			return $url;
 		}
 	}
 ?>

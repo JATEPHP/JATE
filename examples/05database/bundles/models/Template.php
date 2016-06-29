@@ -1,7 +1,7 @@
 <?php
 	class Template extends Html {
-		public function __construct() {
-			parent::__construct();
+		public function __construct( $_parameters = NULL ) {
+			parent::__construct( $_parameters );
 			$this->tags["brand"]		= "JATE";
 			$this->tags["brandImg"] = "";
 			$this->tags["title"]		= "JATE - 05database";

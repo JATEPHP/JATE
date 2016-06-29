@@ -1,7 +1,8 @@
 <?php
 	requireComponent("../Query/Query.php");
 	class Html extends Query {
-		public function __construct() {
+		public $parameters;
+		public function __construct( $_parameters = null ) {
 			parent::__construct();
 			$this->data["template"]					= "";
 			$this->tags["brand"]						= "";
@@ -19,6 +20,7 @@
 			$this->tags["metaDescription"]	= [];
 			$this->tags["metaKeywords"]			= [];
 			$this->tags["metaAuthor"]				= [];
+			$this->parameters								= $_parameters;
 		}
 		public function uniforma() {
 			$this->addDipendences();

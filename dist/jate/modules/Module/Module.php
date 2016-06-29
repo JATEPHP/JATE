@@ -5,6 +5,7 @@
 		public $files;
 		public $required;
 		public $data;
+		public $tags;
 		public function __construct() {
 			$this->name			= get_class($this);
 			$this->modules	= [];

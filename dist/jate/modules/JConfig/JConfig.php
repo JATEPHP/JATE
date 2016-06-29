@@ -4,6 +4,7 @@
 		public $all;
 		public $DEBUG;
 		public $pages;
+		public $server;
 		public function __construct() {
 			$this->connection["enable"]		= false;
 			$this->connection["user"]			= "";
@@ -13,6 +14,10 @@
 			$this->all		= "";
 			$this->DEBUG	= 0;
 			$this->pages	= [];
+			$this->server	= [];
+			$this->server["HTTP_HOST"]		= $_SERVER["HTTP_HOST"];
+			$this->server["REQUEST_URI"]	= $_SERVER["REQUEST_URI"];
+			$this->server["PHP_SELF"]			= $_SERVER["PHP_SELF"];
 		}
 		public function import( $_path, $_type = "misc" ) {
 			$data = file_get_contents($_path);

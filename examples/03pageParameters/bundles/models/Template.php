@@ -4,7 +4,7 @@
 			parent::__construct( $_parameters );
 			$this->tags["brand"]		= "JATE";
 			$this->tags["brandImg"] = "";
-			$this->tags["title"]		= "JATE - 01essential";
+			$this->tags["title"]		= "JATE - 06items";
 			$this->data["template"] = "bundles/views/tradictional.html";
 			$this->addFilesRequired([
 					"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -37,7 +37,13 @@
 					<a href="Home">Home</a>
 				</li>
 				<li>
-					<a href="Page1">Page 1</a>
+					<a href="Items/1">Items 1</a>
+				</li>
+				<li>
+					<a href="Items/2">Items 2</a>
+				</li>
+				<li>
+					<a href="Items/3">Items 3</a>
 				</li>
 			<?php
 			$temp = jBlockEnd();
