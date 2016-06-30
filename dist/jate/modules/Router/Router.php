@@ -4,9 +4,8 @@
 			parent::__construct();
 		}
 		public function getPage() {
-			$request	= $_SERVER["REQUEST_URI"];
-			$base			= $_SERVER["PHP_SELF"];
-			$base			= str_replace("/index.php", "", $base);
+			$request	= $this->parameters["app"]->server["REQUEST_URI"];
+			$base			= $this->parameters["app"]->server["RELATIVE"];
 			$url			= str_replace($base, "", $request);
 			$url			= explode("/", $url);
 			return $url;

@@ -8,14 +8,13 @@
 			$menu = $this->queryFetch("SELECT * FROM menu WHERE flag_active = 1 ORDER BY `order`");
 			$temp = [];
 			foreach ($menu as $i) {
-				$submenu = [];
 				if($i["fk_menu"] == 0) {
 					$pk_menu = $i["pk_menu"];
-					array_push($temp, array("label" => $i["label"], "link" => $i["link"], "submenu" => []));
+					array_push($temp, array("label" => $i["label"], "link" => $i["link"], "submenu" => [], "relative" => false));
 					$submenu = $this->queryFetch("SELECT * FROM menu WHERE fk_menu = $pk_menu ORDER BY `order`");
 					if($submenu)
 					foreach ($submenu as $j)
-						array_push( $temp[count($temp)-1]["submenu"], array("label" => $j["label"], "link" => $j["link"], []) );
+						array_push( $temp[count($temp)-1]["submenu"], array("label" => $j["label"], "link" => $j["link"], "submenu" => [], "relative" => false) );
 				}
 			}
 			$this->tags["menu"] = $temp;
@@ -23,11 +22,17 @@
 		}
 		public function draw() {
 			$temp = "";
-			$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+			$host = $this->parameters["app"]->server["HTTP_HOST"];
+			$uri	= $this->parameters["app"]->server["REQUEST_URI"];
+			$actualLink	= "http://$host$uri";
+			$relative		= $this->parameters["app"]->server["RELATIVE"];
 			foreach ($this->tags["menu"] as $i) {
-				$active = $this->isSubString($actual_link,array_merge(array_column($i["submenu"], 'link'), array($i["link"])))? "active" : "";
+				$prePath = "";
+				if($i["relative"])
+					$prePath = $relative;
+				$active = $this->isSubString($actualLink, array_merge(array_column($i["submenu"], 'link'), array($i["link"]))) ? "active" : "";
 				if( is_array($i["submenu"]) && count($i["submenu"])<1)
-						$temp .= "<li class='$active'><a href='$i[link]'>$i[label]</a></li>";
+						$temp .= "<li class='$active'><a href='$prePath$i[link]'>$i[label]</a></li>";
 				else {
 					$temp .= "<li class='dropdown $active'>";
 					$temp .=
@@ -36,8 +41,12 @@
 						'<span class="caret"></span>'.
 						'</a>'.
 						'<ul class="dropdown-menu">';
-					foreach ($i["submenu"] as $j)
-						$temp .= "<li><a href='$j[link]'>$j[label]</a></li>";
+					foreach ($i["submenu"] as $j) {
+						$prePath = "";
+						if($j["relative"])
+							$prePath = $relative;
+						$temp .= "<li><a href='$prePath$j[link]'>$j[label]</a></li>";
+					}
 					$temp .= "</ul></li>";
 				}
 			}
@@ -53,7 +62,6 @@
 		public function loginWithUser() {
 			$this->init();
 			$temp = [];
-			$user = "";
 			if(!isset($_SESSION["username"]))
 				$_SESSION["username"] ="guest";
 			$user = $_SESSION["username"];

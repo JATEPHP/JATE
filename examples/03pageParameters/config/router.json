@@ -1,9 +1,8 @@
 {
 	"pages" : [
 			["Page404",				"Page404"	]
-		, ["/",							"Home"		]
-		, ["/Home",					"Home"		]
-		, ["/Home/$info",		"Home"		]
+		, ["/",							"Home",		["from router.json"]]
+		, ["/Home",					"Home",		["from router.json"]]
 		, ["/Items/$item",	"Items"		]
 	]
 }

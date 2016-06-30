@@ -1,7 +1,6 @@
 <?php
 	requireComponent("../Query/Query.php");
 	class Html extends Query {
-		public $parameters;
 		public function __construct( $_parameters = [ "app" => null, "page" => null] ) {
 			parent::__construct();
 			$this->data["template"]					= "";

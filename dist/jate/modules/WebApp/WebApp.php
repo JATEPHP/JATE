@@ -9,33 +9,32 @@
 			$this->pages = [];
 			$this->defaultPage	= ["Page404",[]];
 			$this->currentPage	= null;
-			$this->$jConfig			= null;
+			$this->jConfig			= null;
 		}
 		public function addPage( $_page ) {
-			$path		= "";
-			$class	= "";
 			$param	= [];
+			$path		= $_page;
+			$class	= $_page;
 			if(is_array($_page)) {
 				$path		= $_page[0];
 				$class	= $_page[1];
 				if(isset($_page[2]))
 					$param = $_page[2];
-			} else {
-				$path		= $_page;
-				$class	= $_page;
 			}
-			$this->pages[$path] = [$class,$param];
+			$this->pages[$path] = [$class, $param];
 		}
 		public function addPages( $_pages ) {
 			foreach ($_pages as $i)
 				$this->addPage($i);
 		}
-		public function fetchPage( $_stack ) {
+		public function fetchPage(  ) {
+			$router = new Router();
+			$router->parameters = [ "app" => &$this->jConfig, "page" => null];
+			$stack = $router->getPage();
 			$parameters = [];
-			$temp	= $this->defaultPage;
-			$variables = null;
+			$temp				= $this->defaultPage;
 			foreach ($this->pages as $key => $value) {
-				$variables = $this->pathSeeker(explode("/", $key), $_stack);
+				$variables = $this->pathSeeker(explode("/", $key), $stack);
 				if(is_array($variables)) {
 					$temp = $value;
 					$parameters = $variables;

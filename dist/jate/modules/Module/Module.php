@@ -7,6 +7,7 @@
 		public $data;
 		public $tags;
 		public $connection;
+		public $parameters;
 		public function __construct() {
 			$this->name				= get_class($this);
 			$this->modules		= [];
@@ -15,6 +16,7 @@
 			$this->data				= [];
 			$this->tags				= [];
 			$this->connection	= null;
+			$this->parameters = null;
 		}
 		// abstract public function config();
 		// abstract public function init();
@@ -43,6 +45,7 @@
 		}
 		public function addModule( $_mod ) {
 			$this->modules[$_mod->name] = $_mod;
+			$this->modules[$_mod->name]->parameters = &$this->parameters;
 		}
 		public function addFiles( $_files ) {
 			foreach ($_files as $value)

@@ -13,7 +13,7 @@
 					<div class="well well-sm">
 						Home!<br>
 						<?php
-							var_dump($this->parameters["page"]);
+							arrayDump($this->parameters["page"], "PARAMETERS");
 						?>
 					</div>
 				</div>

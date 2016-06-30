@@ -18,6 +18,7 @@
 			$this->server["HTTP_HOST"]		= $_SERVER["HTTP_HOST"];
 			$this->server["REQUEST_URI"]	= $_SERVER["REQUEST_URI"];
 			$this->server["PHP_SELF"]			= $_SERVER["PHP_SELF"];
+			$this->server["RELATIVE"]			= str_replace("/index.php", "", $_SERVER["PHP_SELF"]);
 		}
 		public function import( $_path, $_type = "misc" ) {
 			$data = file_get_contents($_path);

@@ -23,7 +23,7 @@
 			return true;
 		}
 		public function queryInsert( $_query ) {
-			$temp = $this->stdQuery($_query);
+			$this->stdQuery($_query);
 			return $this->currentConnection->database->lastInsertId();
 		}
 
