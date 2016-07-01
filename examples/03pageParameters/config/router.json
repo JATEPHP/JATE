@@ -1,6 +1,6 @@
 {
 	"pages" : [
-			["Page404",				"Page404"	]
+			["/Page404",			"Page404"	]
 		, ["/",							"Home",		["from router.json"]]
 		, ["/Home",					"Home",		["from router.json"]]
 		, ["/Items/$item",	"Items"		]

@@ -22,6 +22,7 @@
 					$param = $_page[2];
 			}
 			$this->pages[$path] = [$class, $param];
+			return $this->pages[$path];
 		}
 		public function addPages( $_pages ) {
 			foreach ($_pages as $i)
@@ -49,7 +50,7 @@
 			return $this->currentPage;
 		}
 		public function setDefaultPage( $_page ) {
-			$this->defaultPage = $_page;
+			$this->defaultPage = $this->addPage($_page);
 		}
 		public function draw() {
 			$this->currentPage->uniforma();

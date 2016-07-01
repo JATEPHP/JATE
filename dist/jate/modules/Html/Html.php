@@ -20,6 +20,7 @@
 			$this->tags["metaKeywords"]			= [];
 			$this->tags["metaAuthor"]				= [];
 			$this->parameters								= $_parameters;
+			$this->tags["base"]							= $_parameters["app"]->server["RELATIVE"]."/";
 		}
 		public function uniforma() {
 			$this->addDipendences();
