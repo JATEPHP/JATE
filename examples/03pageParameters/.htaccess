@@ -21,3 +21,12 @@ DirectoryIndex index.php
 		RedirectMatch 302 ^/$ /index.php/
 	</IfModule>
 </IfModule>
+
+<IfModule mod_headers.c>
+	<FilesMatch "\.(jpg|jpeg|png|gif|swf)$">
+		Header set Cache-Control "max-age=36288000, public"
+	</FilesMatch>
+	<FilesMatch "\.(js|css|swf)$">
+		Header set Cache-Control "max-age=36288000"
+	</FilesMatch>
+</IfModule>
