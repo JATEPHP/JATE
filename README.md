@@ -38,7 +38,7 @@ There are 3 main sections.
 
 You start by creating an html interface in _bundles/views_.<br>
 You can add some <code><\_JATEtags\_></code> that will be replaced by the code.
-```php
+```html
 <!DOCTYPE html>
 <html>
   <head>
