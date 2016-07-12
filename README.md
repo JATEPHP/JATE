@@ -38,7 +38,7 @@ There are 3 main sections.
 
 You start by creating an html interface in _bundles/views_.<br>
 You can add some <code><\_JATEtags\_></code> that will be replaced by the code.
-```
+```php
 <!DOCTYPE html>
 <html>
   <head>
@@ -53,7 +53,8 @@ You can add some <code><\_JATEtags\_></code> that will be replaced by the code.
 </html>
 ```
 Then you have to continue creating a model that injects tags in the view in _bundles/models_.<br>Add here all the things in common that your pages. For example css and js files.
-```
+```php
+<?php
 class Template extends Html {
   public function __construct( $_parameters ) {
     parent::__construct( $_parameters );
@@ -65,9 +66,11 @@ class Template extends Html {
     ]);
   }
 }
+?>
 ```
 Creates a class for each page that you want to have in your app in _bundles/controller_.<br>
-```
+```php
+<?php
 class Home extends Template {
   public function __construct( $_parameters ) {
     parent::__construct( $_parameters );
@@ -89,16 +92,17 @@ class Home extends Template {
     return $temp;
   }
 }
+?>
 ```
 Each time you add a page, remember to connect it with the class in config/router.json file.<br>Each page has 3 columns: url, class name, array of parameters (<code>$\_parameters</code>). You can add a <code>/$nameVar/</code> to the url to indicate that value will be passed as the <code>$\_parameters["nameVar"]</code> variable to the class as an additional parameter (ex. $item).
-```
+```json
 {
   "pages" : [
-      [  "/Page404",      "Page404"           ]
-    , [  "/",             "Home"              ]
-    , [  "/Home",         "Home"              ]
-    , [  "/Page1",        "Page01",  [a,b,c]  ]
-    , [  "/Itmes/$item",  "Items"             ]
+      [  "/Page404",      "Page404"                 ]
+    , [  "/",             "Home"                    ]
+    , [  "/Home",         "Home"                    ]
+    , [  "/Page1",        "Page01",  ["a","b","c"]  ]
+    , [  "/Itmes/$item",  "Items"                   ]
   ]
 }
 
