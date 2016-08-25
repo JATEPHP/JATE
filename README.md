@@ -19,6 +19,10 @@ JATE requires PHP 5.4 or higher.
 ## HOW TO INSTALL
 Install or download JATE to the root folder of your project.
 ### DOWNLOADS
+###### GIT
+```
+git clone git@github.com:XaBerr/JATE.git
+```
 ###### BOWER
 ```
 bower install JATE
@@ -28,7 +32,7 @@ bower install JATE
 composer require xaberr/jate:dev-master
 ```
 ###### MANUAL
-Download and uncompress zip file from GitHub.
+Download and uncompress [zip](https://github.com/XaBerr/JATE/archive/master.zip) file from GitHub.
 ## GETTING STARTED
 Copy and paste an example in your root.<br>
 There are 3 main sections.

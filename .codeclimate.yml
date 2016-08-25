@@ -16,9 +16,9 @@ engines:
         enabled: false
 ratings:
   paths:
-  - "**.js"
-  - "**.php"
+    - "**.js"
+    - "**.php"
 exclude_paths:
-- git/**/*
-- examples/**/*
-- dist/jate/modules/Pug/**/*
+  - git/**/*
+  - examples/**/*
+  - dist/jate/modules/Pug/**/*
