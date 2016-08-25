@@ -10,10 +10,10 @@ Just Another Template Engine
 [![This is a forkable respository](https://img.shields.io/badge/forkable-yes-brightgreen.svg)](https://basicallydan.github.io/forkability/?u=XaBerr&r=JATE&l=PHP)
 
 ## WHAT IS JATE?
-JATE is a new light and hackable CMS for PHP.
-It's simple to lern and simple to customize.
+JATE is a new light and hackable framework for PHP.
+It's simple to lern and simple to customize, it is thought to write less.
 JATE contains the minimum of libraries and functions to get you started.
-Recommend the use of Bootstrap3, all examples use it.
+Recommend the use of Bootstrap3, all examples use it. Now there is also integration with [PUG](http://www.jade-lang.com) (ex JADE).
 ## REQUIREMENTS
 JATE requires PHP 5.4 or higher.
 ## HOW TO INSTALL

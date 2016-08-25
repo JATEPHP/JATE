@@ -21,3 +21,4 @@ ratings:
 exclude_paths:
 - git/**/*
 - examples/**/*
+- dist/jate/modules/Pug/**/*
