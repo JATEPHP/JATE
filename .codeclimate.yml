@@ -21,4 +21,5 @@ ratings:
 exclude_paths:
   - git/**/*
   - examples/**/*
-  - dist/jate/modules/Pug/**/*
+  - dist/jate/modules/ExternalModules/**/*
+  - dist/jate/modules/Parsedown/Parsedown/**/*
