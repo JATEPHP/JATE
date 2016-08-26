@@ -6,14 +6,7 @@
 			$this->tags["content"] = $this->makePage();
 		}
 		public function makePage() {
-			jBlock();
-			?>
-			.row(style="margin-top:70px;")
-				.col-lg-12
-					.well.well-sm
-						p Page 1!
-			<?php
-			$temp = jBlockClose("pug");
+			$temp = jBlockFile("bundles/views/Page01.md");
 			return $temp;
 		}
 	}

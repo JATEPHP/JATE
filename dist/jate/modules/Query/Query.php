@@ -1,4 +1,5 @@
 <?php
+	jRequire("../Module/Module.php");
 	class Query extends Module {
 		public $connection;
 		public $currentConnection;

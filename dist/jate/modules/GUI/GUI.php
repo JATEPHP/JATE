@@ -1,5 +1,6 @@
 <?php
-	use Pug as Pug;
+	jRequire("../Module/Module.php");
+	jRequire("../Pug/Pug.php");
 	class GUI extends Module {
 		public function __construct() {
 			parent::__construct();
@@ -12,8 +13,8 @@
 			$extension = explode(".",$_template);
 			$extension = $extension[count($extension)-1];
 			if($extension == "pug" || $extension == "jade") {
-				$pug = new Pug\Pug();
-				$page = $pug->render($_template);
+				$pug = new Pug();
+				$page = $pug->draw($_template);
 			} else
 				$page = file_get_contents($_template);
 			$render = $this->overlayTag($page);

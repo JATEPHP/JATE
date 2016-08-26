@@ -10,10 +10,20 @@ Just Another Template Engine
 [![This is a forkable respository](https://img.shields.io/badge/forkable-yes-brightgreen.svg)](https://basicallydan.github.io/forkability/?u=XaBerr&r=JATE&l=PHP)
 
 ## WHAT IS JATE?
-JATE is a new light and hackable framework for PHP.
-It's simple to lern and simple to customize, it is thought to write less.
-JATE contains the minimum of libraries and functions to get you started.
-Recommend the use of Bootstrap3, all examples use it. Now there is also integration with [PUG](http://www.jade-lang.com) (ex JADE).
+JATE is a new light and hackable framework for PHP.<br>
+It's simple to lern and simple to customize.<br>
+JATE contains the minimum of libraries and functions to get you started.<br>
+Recommend the use of Bootstrap3, all examples use it.<br>
+## FEAUTURES
+- Thought to write less code
+- Designed to focus only on the frontend
+- Standalone code
+- Object-oriented architecture
+- Reusable code between projects through the management modules
+- Write pages in [PUG](http://www.jade-lang.com) (ex JADE)
+- Write pages in [MARKDOWN](http://parsedown.org/).
+- Include files dynamically with `jRequire("relativePath")`
+
 ## REQUIREMENTS
 JATE requires PHP 5.4 or higher.
 ## HOW TO INSTALL
@@ -21,7 +31,7 @@ Install or download JATE to the root folder of your project.
 ### DOWNLOADS
 ###### GIT
 ```
-git clone git@github.com:XaBerr/JATE.git
+git clone https://github.com/XaBerr/JATE.git
 ```
 ###### BOWER
 ```

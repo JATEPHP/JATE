@@ -1,4 +1,5 @@
 <?php
+	jRequire("../Module/Module.php");
 	class WebApp extends Module {
 		protected $pages;
 		protected $defaultPage;

@@ -1,4 +1,5 @@
 <?php
+	jRequire("../Module/Module.php");
 	class Connection extends Module {
 		public $database;
 		public $info;

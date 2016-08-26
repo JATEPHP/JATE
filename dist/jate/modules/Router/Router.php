@@ -1,4 +1,5 @@
 <?php
+	jRequire("../Module/Module.php");
 	class Router extends Module {
 		public function __construct() {
 			parent::__construct();

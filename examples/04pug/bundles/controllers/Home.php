@@ -3,20 +3,17 @@
 		public function __construct( $_parameters ) {
 			parent::__construct( $_parameters );
 			$this->tags["title"]		= "JATE - Home";
-			$this->tags["content"] = $this->makePage();
+			$this->tags["content"]	= $this->makePage();
 		}
 		public function makePage() {
 			jBlock();
 			?>
-			<div class="row" style="margin-top:70px;">
-				<div class="col-lg-12">
-					<div class="well well-sm">
-						Hello World!
-					</div>
-				</div>
-			</div>
+			.row(style="margin-top:70px;")
+				.col-lg-12
+					.well.well-sm
+						p Hello World!
 			<?php
-			$temp = jBlockClose();
+			$temp = jBlockClose("pug");
 			return $temp;
 		}
 	}

@@ -1,15 +1,43 @@
 <?php
-
+	jRequire("../modules/Pug/Pug.php");
+	jRequire("../modules/Parsedown/Parsedown.php");
 	function jBlock() {
 		return ob_start();
 	}
 
-	function jBlockClose() {
-		return ob_get_clean();
+	function jBlockClose( $_parameter = "html" ) {
+		return jBlockEnd($_parameter);
 	}
 
-	function jBlockEnd() {
-		return ob_get_clean();
+	function jBlockFile( $_path ) {
+		$extension = explode(".", $_path);
+		$extension = $extension[count($extension)-1];
+		$extension = strtolower($extension);
+		$temp = file_get_contents($_path);
+		return jBlockParsing($extension, $temp);
+	}
+
+	function jBlockEnd( $_parameter = "html" ) {
+		$temp = ob_get_clean();
+		return jBlockParsing($_parameter, $temp);
+	}
+
+	function jBlockParsing( $_parameter = "html", $_string = "" ) {
+		switch ($_parameter) {
+			case "pug":
+			case "jade":
+				$Pug = new Pug();
+				$_string = $Pug->drawText($_string);
+			break;
+			case "md":
+			case "markdown":
+			case "parsedown":
+				$Parsedown = new Parsedown();
+				$_string = $Parsedown->drawText($_string);
+			break;
+			default: break;
+		}
+		return $_string;
 	}
 
 	function minifyOutput($_buffer) {

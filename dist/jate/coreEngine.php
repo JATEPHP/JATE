@@ -6,7 +6,6 @@
 	require_once			(end($GLOBALS["JATEPath"])."jate/functions/requirer.php");
 	requireComponent	("functions/folder.php");
 	requireComponent	("modules/JConfig/JConfig.php");
-	requireComponent	("modules/Module/Module.php");
 	requireComponents	("functions");
 	requireModules		("modules");
 

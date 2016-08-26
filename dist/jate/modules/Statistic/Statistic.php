@@ -1,4 +1,5 @@
 <?php
+	jRequire("../Module/Module.php");
 	class Statistic extends Module {
 		public function __construct( $_webApp ) {
 			parent::__construct();

@@ -8,12 +8,15 @@
 		public function makePage() {
 			jBlock();
 			?>
-			.row(style="margin-top:70px;")
-				.col-lg-12
-					.well.well-sm
-						p 404 Page not found!
+			<div class="row" style="margin-top:70px;">
+				<div class="col-lg-12">
+					<div class="well well-sm">
+						404 Page not found!
+					</div>
+				</div>
+			</div>
 			<?php
-			$temp = jBlockClose("pug");
+			$temp = jBlockClose();
 			return $temp;
 		}
 	}
