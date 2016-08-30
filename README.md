@@ -22,6 +22,7 @@ Recommend the use of Bootstrap3, all examples use it.<br>
 - Reusable code between projects through the management modules
 - Write pages in [PUG](http://www.jade-lang.com) (ex JADE)
 - Write pages in [MARKDOWN](http://parsedown.org/).
+- Write pages in [TWIG](http://twig.sensiolabs.org/).
 - Include files dynamically with `jRequire("relativePath")`
 
 ## REQUIREMENTS
@@ -121,5 +122,5 @@ Each time you add a page, remember to connect it with the class in config/router
 }
 
 ```
-Check out the examples to see more detail.<br>
+Check out the [examples](https://github.com/XaBerr/JATE/tree/master/examples) to see more detail.<br>
 Check out the dist/jate/functions all functions ready to go.<br>

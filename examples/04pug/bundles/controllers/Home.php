@@ -11,9 +11,11 @@
 			.row(style="margin-top:70px;")
 				.col-lg-12
 					.well.well-sm
-						p Hello World!
+						p= pageText
 			<?php
-			$temp = jBlockClose("pug");
+			$temp = jBlockClose( "pug" , [
+				"pageText" => "Hello World!"
+			]);
 			return $temp;
 		}
 	}

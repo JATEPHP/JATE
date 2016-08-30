@@ -5,35 +5,43 @@
 		return ob_start();
 	}
 
-	function jBlockClose( $_parameter = "html" ) {
-		return jBlockEnd($_parameter);
+	function jBlockClose( $_type = "html", $_parameters = [] ) {
+		return jBlockEnd($_type, $_parameters);
 	}
 
-	function jBlockFile( $_path ) {
+	function jBlockFile( $_path, $_parameters = [] ) {
 		$extension = explode(".", $_path);
 		$extension = $extension[count($extension)-1];
 		$extension = strtolower($extension);
+		return jBlockFileMan($_path, $extension, $_parameters);
+	}
+
+	function jBlockFileMan( $_path, $_type, $_parameters = [] ) {
 		$temp = file_get_contents($_path);
-		return jBlockParsing($extension, $temp);
+		return jBlockParsing($_type, $temp, $_parameters);
 	}
 
-	function jBlockEnd( $_parameter = "html" ) {
-		$temp = ob_get_clean();
-		return jBlockParsing($_parameter, $temp);
+	function jBlockEnd( $_type = "html", $_parameters = [] ) {
+		$text = ob_get_clean();
+		return jBlockParsing($_type, $text, $_parameters);
 	}
 
-	function jBlockParsing( $_parameter = "html", $_string = "" ) {
-		switch ($_parameter) {
+	function jBlockParsing( $_type = "html", $_string = "", $_parameters = [] ) {
+		switch ($_type) {
 			case "pug":
 			case "jade":
 				$Pug = new Pug();
-				$_string = $Pug->drawText($_string);
+				$_string = $Pug->drawText($_string, $_parameters);
 			break;
 			case "md":
 			case "markdown":
 			case "parsedown":
 				$Parsedown = new Parsedown();
 				$_string = $Parsedown->drawText($_string);
+			break;
+			case "twig":
+				$Twig = new Twig();
+				$_string = $Twig->drawText($_string, $_parameters);
 			break;
 			default: break;
 		}

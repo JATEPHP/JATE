@@ -5,15 +5,15 @@
 		public function __construct() {
 			parent::__construct();
 		}
-		public function drawFile( $_template ) {
-			return $this->draw($_template);
+		public function drawFile( $_file, $_parameters = [] ) {
+			return $this->draw($_file, $_parameters);
 		}
-		public function drawText( $_template ) {
-			return $this->draw(trim($_template));
+		public function drawText( $_text, $_parameters = [] ) {
+			return $this->draw(trim($_text), $_parameters);
 		}
-		public function draw( $_template ) {
+		public function draw( $_text, $_parameters = [] ) {
 			$pug = new Pug\Pug();
-			$page = $pug->render($_template);
+			$page = $pug->render($_text, $_parameters);
 			return $page;
 		}
 	}
