@@ -19,8 +19,10 @@
 		}
 		protected function overlayTag( $_page ) {
 			foreach($this->tags as $key => $value)
-				if(!is_array($value))
+				if(!is_array($value)) {
 					$_page = str_replace("<_${key}_>", "$value", $_page);
+					$_page = str_replace("&lt;_${key}_&gt;", "$value", $_page);
+				}
 			return $_page;
 		}
 		protected function parsingFile( $_file, $_type = "html" ) {
