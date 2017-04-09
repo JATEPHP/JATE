@@ -47,9 +47,9 @@ Download and uncompress [zip](https://github.com/XaBerr/JATE/archive/master.zip)
 ## GETTING STARTED
 Copy and paste an example in your root.<br>
 There are 3 main sections.
- - the libraries that are contained in dist/jate.
- - the pages that are contained in bundles divided into MVC.
- - the modules that you can create that are contained in modules.
+ - the libraries that are contained in _dist/jate_.
+ - the pages that are contained in _/bundles_ divided into MVC.
+ - the modules that are contained in _/modules_.
 
 You start by creating an html interface in _bundles/views_.<br>
 You can add some <code><\_JATEtags\_></code> that will be replaced by the code.
@@ -123,4 +123,4 @@ Each time you add a page, remember to connect it with the class in config/router
 
 ```
 Check out the [examples](https://github.com/XaBerr/JATE/tree/master/examples) to see more detail.<br>
-Check out the dist/jate/functions all functions ready to go.<br>
+Check out the _dist/jate/functions_ all functions ready to go.<br>
