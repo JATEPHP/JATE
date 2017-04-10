@@ -40,25 +40,39 @@
 			return $temp;
 		}
 		public function addModules( $_mods ) {
+			if(!is_array($_mods))
+				throw new InvalidArgumentException("Parameter must be an array.");
 			foreach ($_mods as $value)
 				$this->addModule($value);
 		}
 		public function addModule( $_mod ) {
+			if(!is_object($_mod))
+				throw new InvalidArgumentException("Parameter must be a class.");
+			if(! is_subclass_of ($_mod, "Module"))
+				throw new InvalidArgumentException("Parameter must be a class.");
 			$this->modules[$_mod->name] = $_mod;
 			$this->modules[$_mod->name]->parameters = &$this->parameters;
 		}
 		public function addFiles( $_files ) {
+			if(!is_array($_files))
+				throw new InvalidArgumentException("Parameter must be an array.");
 			foreach ($_files as $value)
 				$this->addFile($value);
 		}
 		public function addFile( $_file ) {
+			if(!is_string($_file))
+				throw new InvalidArgumentException("Parameter must be a string.");
 			array_push($this->files, $_file);
 		}
 		public function addFilesRequired( $_files ) {
+			if(!is_array($_files))
+				throw new InvalidArgumentException("Parameter must be an array.");
 			foreach ($_files as $value)
 				$this->addFileRequired($value);
 		}
 		public function addFileRequired( $_file ) {
+			if(!is_string($_file))
+				throw new InvalidArgumentException("Parameter must be a string.");
 			array_push($this->required, $_file);
 		}
 		protected function addDipendences() {
