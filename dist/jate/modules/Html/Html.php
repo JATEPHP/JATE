@@ -28,12 +28,15 @@
 			$this->tags["js"]				= array_unique($this->tags["js"]);
 			$this->tags["pagePath"]	= json_encode($this->tags["pagePath"]);
 			$tempStr = "";
+			$timeParameter = "?t=".time();
+			$time = ($this->parameters["app"]->cache->css == true) ? "" : $timeParameter;
 			foreach ($this->tags["css"] as $i)
-				$tempStr .= "<link rel='stylesheet' href='$i'>";
+				$tempStr .= "<link rel='stylesheet' href='$i$time'>";
 			$this->tags["css"] = $tempStr;
 			$tempStr = "";
+			$time = ($this->parameters["app"]->cache->js == true) ? "" : $timeParameter;
 			foreach ($this->tags["js"] as $i)
-				$tempStr .= "<script src='$i'></script>";
+				$tempStr .= "<script src='$i$time'></script>";
 			$this->tags["js"] = $tempStr;
 			$tempStr = "";
 			$tempStr .= "<script type='text/javascript'>";

@@ -1,5 +1,8 @@
 {
 		"all" : "@!ALL!@"
 	, "DEBUG" : 0
-
+	, "cache": {
+			"css" : false
+		, "js" : true
+	}
 }
