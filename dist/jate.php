@@ -1,15 +1,21 @@
 <?php
-	if(isset($GLOBALS["JATEPath"]))
+	if(!isset($GLOBALS["JATEPath"]))
 		$GLOBALS["JATEPath"] = [];
-	$commonLocations = array(
-		"bower_components/JATE/dist/",
-		"vendor/xaberr/jate/dist/",
-		"../../dist/"
-	);
-	foreach ($commonLocations as $i)
-		if(file_exists($i."jate/coreEngine.php")) {
-			array_push($GLOBALS["JATEPath"], $i);
-			require_once($i."jate/coreEngine.php");
+	$commonLocations = [
+			"bower_components/JATE/dist/"
+		, "vendor/xaberr/jate/dist/"
+		, "../../dist/"
+		, "../dist/"
+		, dirname(__FILE__)."/"
+	];
+	$jSuccess = false;
+	foreach ($commonLocations as $path)
+		if(file_exists("${path}jate/coreEngine.php")) {
+			array_push($GLOBALS["JATEPath"], $path);
+			require_once("${path}jate/coreEngine.php");
+			$jSuccess = true;
 			break;
 		}
+	if( !$jSuccess )
+		throw new Exception("JATE can't find coreEngine.php.");
 ?>
