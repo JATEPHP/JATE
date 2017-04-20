@@ -14,8 +14,18 @@
 			$this->database = null;
 		}
 		public function __construct4( $_srv, $_db, $_usr, $_pass) {
-			$this->connection = "mysql:host=$_srv;dbname=$_db";
-			$this->database = new PDO( $this->connection, $_usr, $_pass,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
+			$this->connectionPDO($_srv, $_db, $_usr, $_pass);
+		}
+		protected function connectionPDO( $_srv, $_db, $_usr, $_pass) {
+			$connection = "mysql:host=$_srv;dbname=$_db";
+			$this->database = new PDO( $connection, $_usr, $_pass, [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"] );
+			$this->setConnectionParameters( $_srv, $_db, $_usr, $_pass);
+		}
+		protected function connectionMYSQLI( $_srv, $_db, $_usr, $_pass) {
+			$this->database = new mysqli_connect($_server, $_usr, $_pass, $_db);
+			$this->setConnectionParameters( $_srv, $_db, $_usr, $_pass);
+		}
+		protected function setConnectionParameters( $_srv, $_db, $_usr, $_pass) {
 			$this->info = [];
 			$this->info["server"]		= $_srv;
 			$this->info["database"]	= $_db;

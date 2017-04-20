@@ -27,17 +27,14 @@
 			$this->stdQuery($_query);
 			return $this->currentConnection->database->lastInsertId();
 		}
-
 		public function queryFetch( $_query ) {
 			$temp = $this->stdQuery($_query);
 			return $temp->fetchAll(PDO::FETCH_ASSOC);
 		}
-
 		public function queryArray( $_query ) {
 			$temp = $this->stdQuery($_query);
 			return $temp->fetchAll(PDO::FETCH_COLUMN, 0);
 		}
-
 		protected function stdQuery( $_query ) {
 			$database = $this->currentConnection->database;
 			$error = "Error query [$_query]";

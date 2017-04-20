@@ -60,8 +60,8 @@
 				$this->addFile($value);
 		}
 		public function addFile( $_file ) {
-			if(!is_string($_file))
-				throw new InvalidArgumentException("Parameter must be a string.");
+			if(!(is_string($_file) || is_array($_file)))
+				throw new InvalidArgumentException("Parameter must be a string or an array.");
 			array_push($this->files, $_file);
 		}
 		public function addFilesRequired( $_files ) {
