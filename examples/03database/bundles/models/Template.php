@@ -26,6 +26,7 @@
 					, $jConfig->connection["database"]
 					, $jConfig->connection["user"]
 					, $jConfig->connection["password"]
+					, $jConfig->connection["engine"]
 				);
 			$this->addConnection("base",$connection);
 		}

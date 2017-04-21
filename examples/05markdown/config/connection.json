@@ -4,4 +4,8 @@
 	,  "password" :	""
 	,  "database" :	""
 	,  "server" :		""
+	, "engine" : {
+			"pdo" :		false
+		, "mysqli" : true
+	}
 }

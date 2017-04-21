@@ -20,34 +20,16 @@
 			$this->currentConnection = $this->connection["$_name"];
 		}
 		public function query( $_query ) {
-			$this->stdQuery($_query);
-			return true;
+			return $this->currentConnection->database->query($_query);
 		}
 		public function queryInsert( $_query ) {
-			$this->stdQuery($_query);
-			return $this->currentConnection->database->lastInsertId();
+			return $this->currentConnection->database->queryInsert($_query);
 		}
 		public function queryFetch( $_query ) {
-			$temp = $this->stdQuery($_query);
-			return $temp->fetchAll(PDO::FETCH_ASSOC);
+			return $this->currentConnection->database->queryFetch($_query);
 		}
 		public function queryArray( $_query ) {
-			$temp = $this->stdQuery($_query);
-			return $temp->fetchAll(PDO::FETCH_COLUMN, 0);
-		}
-		protected function stdQuery( $_query ) {
-			$database = $this->currentConnection->database;
-			$error = "Error query [$_query]";
-			$query = $database->prepare($_query);
-			$_result = $query->execute();
-			if(!$_result) {
-				echo "$_query<br>";
-				echo "Something wrong: $error";
-				var_dump($query->errorInfo());
-				var_dump($database->errorInfo());
-				exit();
-			}
-			return $query;
+			return $this->currentConnection->database->queryArray($_query);
 		}
 	}
 ?>
