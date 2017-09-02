@@ -8,17 +8,17 @@
     public function __construct() {
       parent::__construct();
       $this->pages = [];
-      $this->defaultPage  = ["Page404",[]];
-      $this->currentPage  = null;
-      $this->jConfig      = null;
+      $this->defaultPage = ["Page404",[]];
+      $this->currentPage = null;
+      $this->jConfig     = null;
     }
     public function addPage( $_page ) {
-      $param  = [];
-      $path    = $_page;
-      $class  = $_page;
+      $param = [];
+      $path  = $_page;
+      $class = $_page;
       if(is_array($_page)) {
-        $path    = $_page[0];
-        $class  = $_page[1];
+        $path  = $_page[0];
+        $class = $_page[1];
         if(isset($_page[2]))
           $param = $_page[2];
       }
@@ -29,12 +29,12 @@
       foreach ($_pages as $i)
         $this->addPage($i);
     }
-    public function fetchPage(  ) {
+    public function fetchPage() {
       $router = new Router();
       $router->parameters = [ "app" => &$this->jConfig, "page" => null];
       $stack = $router->getPage();
       $parameters = [];
-      $temp        = $this->defaultPage;
+      $temp = $this->defaultPage;
       foreach ($this->pages as $key => $value) {
         $variables = $this->pathSeeker(explode("/", $key), $stack);
         if(is_array($variables)) {
@@ -66,7 +66,9 @@
       $pathLength = count($_path);
       if($urlLength == $pathLength) {
         while($cont < $urlLength) {
-          if( $_path[$cont] == $_url[$cont] )
+          if(
+            ($this->jConfig->urlCaseSensitive && $_path[$cont] == $_url[$cont]) ||
+            (!$this->jConfig->urlCaseSensitive && strtolower($_path[$cont]) == strtolower($_url[$cont])) )
             $cont++;
           else if( strpos($_path[$cont], "\$") !== false ) {
             $variables[str_replace('$', "", $_path[$cont])] = $_url[$cont];

@@ -1,8 +1,9 @@
 {
   "all":   "@!ALL!@",
   "DEBUG": 0,
+  "urlCaseSensitive": false,
   "cache": {
-    "css": false,
+    "css": true,
     "js":  true
   }
 }
