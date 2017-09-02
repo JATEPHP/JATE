@@ -1,11 +1,11 @@
 {
-		"enable" :		true
-	, "user" :			"root"
-	, "password" :	""
-	, "database" :	"db-test"
-	, "server" :		"127.0.0.1"
-	, "engine" : {
-			"pdo" :		true
-		, "mysqli" : false
-	}
+  "enable":    true,
+  "user":      "root",
+  "password":  "",
+  "database":  "db-test",
+  "server":    "127.0.0.1",
+  "engine": {
+    "pdo":    true,
+    "mysqli": false
+  }
 }

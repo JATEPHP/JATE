@@ -1,11 +1,11 @@
 {
-		 "enable" :		false
-	,  "user" :			""
-	,  "password" :	""
-	,  "database" :	""
-	,  "server" :		""
-	, "engine" : {
-			"pdo" :		false
-		, "mysqli" : true
-	}
+  "enable":    false,
+  "user":      "",
+  "password":  "",
+  "database":  "",
+  "server":    "",
+  "engine": {
+    "pdo":    true,
+    "mysqli": false
+  }
 }
