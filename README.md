@@ -75,9 +75,9 @@ class Template extends Html {
     parent::__construct( $_parameters );
     $this->data["template"] = "bundles/views/tradictional.html";
     $this->addFilesRequired([
-        "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-      , "https://code.jquery.com/jquery-1.11.3.min.js"
-      , "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+      "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css",
+      "https://code.jquery.com/jquery-1.11.3.min.js",
+      "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
     ]);
   }
 }
@@ -95,11 +95,9 @@ class Home extends Template {
   public function makePage() {
     jBlock();
     ?>
-    <div class="row" style="margin-top:70px;">
-      <div class="col-lg-12">
-        <div class="well well-sm">
-          Hello World!
-        </div>
+    <div class="col-lg-12" style="margin-top:70px;">
+      <div class="well well-sm">
+        Hello World!
       </div>
     </div>
     <?php
@@ -113,14 +111,14 @@ Each time you add a page, remember to connect it with the class in config/router
 ```json
 {
   "pages" : [
-      [  "/Page404",      "Page404"                 ]
-    , [  "/",             "Home"                    ]
-    , [  "/Home",         "Home"                    ]
-    , [  "/Page1",        "Page01",  ["a","b","c"]  ]
-    , [  "/Itmes/$item",  "Items"                   ]
+    [  "/Page404",      "Page404"                 ],
+    [  "/",             "Home"                    ],
+    [  "/Home",         "Home"                    ],
+    [  "/Page1",        "Page01",  ["a","b","c"]  ],
+    [  "/Itmes/$item",  "Items"                   ]
   ]
 }
 
 ```
 Check out the [examples](https://github.com/XaBerr/JATE/tree/master/examples) to see more detail.<br>
-Check out the _dist/jate/functions_ all functions ready to go.<br>
+Check out the [wiki](https://github.com/XaBerr/JATE/wiki) to see more detail about all functions ready to go (_dist/jate/functions_).<br>
