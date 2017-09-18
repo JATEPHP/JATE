@@ -1,19 +1,18 @@
 ---
 layout: default
 ---
-# [](#header-1)Getting Started
 # Getting Started
 
 ## Index
-  1. [Structure](1 Structure)
-  2. [Download JATE](2 Download JATE)
-  3. [Run first page](3 Run first page)
-  4. [Creating a database database](4 Creating a database database)
-  5. [View page](5 View page)
-  6. [Insert page](6 Insert page)
-  7. [The use of models](7 The use of models)
-  8. [The use of views](8 The use of views)
-  9. [Js e css](9 Js e css)
+  1. [Structure](#1-structure)
+  2. [Download JATE](#2-download-jate)
+  3. [Run first page](#3-run-first-page)
+  4. [Creating a database database](#4-creating-a-database)
+  5. [View page](#5-view-page)
+  6. [Insert page](#6-insert-page)
+  7. [The use of models](#7-the-use-of-models)
+  8. [The use of views](#8-the-use-of-views)
+  9. [Js and css](#9-js-and-css)
 
 ## 1 Structure
 ```
@@ -396,7 +395,7 @@ and then we change the function in
 ```
 By doing this, it makes the content display independent.
 
-## 9 Js e css
+## 9 Js and css
 Suppose we want to color our heroes page with a css (works similar to js).
 We create a `/projectHero/css` folder and inside we create our`Hero.css` file
 ```css
