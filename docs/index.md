@@ -304,6 +304,7 @@ let's now create this function:
     ]);
   }
 ?>
+```
 Now running the page we check if everything works properly.
 The next step is to introduce the block to insert the heroes, as before we take the `bundles/views/Insert.php` file and move it to `bundles/models/Insert.php` to modify `extends Template` in `extends Query`. We modify the \_\_construct eliminating all not necessary:
 ```php
