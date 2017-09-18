@@ -44,81 +44,12 @@ composer require xaberr/jate:dev-master
 ```
 ###### MANUAL
 Download and uncompress [zip](https://github.com/XaBerr/JATE/archive/master.zip) file from GitHub.
-## GETTING STARTED
-Copy and paste an example in your root.<br>
-There are 3 main sections.
- - the libraries that are contained in _dist/jate_.
- - the pages that are contained in _/bundles_ divided into MVC.
- - the modules that are contained in _/modules_.
 
-You start by creating an html interface in _bundles/views_.<br>
-You can add some <code><\_JATEtags\_></code> that will be replaced by the code.
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <_css_>
-    <title><_title_></title>
-  </head>
-  <body>
-    <_content_>
-    <_js_>
-  </body>
-</html>
-```
-Then you have to continue creating a model that injects tags in the view in _bundles/models_.<br>Add here all the things in common that your pages. For example css and js files.
-```php
-<?php
-class Template extends Html {
-  public function __construct( $_parameters ) {
-    parent::__construct( $_parameters );
-    $this->data["template"] = "bundles/views/tradictional.html";
-    $this->addFilesRequired([
-      "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css",
-      "https://code.jquery.com/jquery-1.11.3.min.js",
-      "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-    ]);
-  }
-}
-?>
-```
-Creates a class for each page that you want to have in your app in _bundles/controller_.<br>
-```php
-<?php
-class Home extends Template {
-  public function __construct( $_parameters ) {
-    parent::__construct( $_parameters );
-    $this->tags["title"]  .= "Home";
-    $this->tags["content"] = $this->makePage();
-  }
-  public function makePage() {
-    jBlock();
-    ?>
-    <div class="col-lg-12" style="margin-top:70px;">
-      <div class="well well-sm">
-        Hello World!
-      </div>
-    </div>
-    <?php
-    $temp = jBlockEnd();
-    return $temp;
-  }
-}
-?>
-```
-Each time you add a page, remember to connect it with the class in config/router.json file.<br>Each page has 3 columns: url, class name, array of parameters (<code>$\_parameters</code>). You can add a <code>/$nameVar/</code> to the url to indicate that value will be passed as the <code>$\_parameters["nameVar"]</code> variable to the class as an additional parameter (ex. $item).
-```json
-{
-  "pages" : [
-    [  "/Page404",      "Page404"                 ],
-    [  "/",             "Home"                    ],
-    [  "/Home",         "Home"                    ],
-    [  "/Page1",        "Page01",  ["a","b","c"]  ],
-    [  "/Itmes/$item",  "Items"                   ]
-  ]
-}
+## Other contents
 
-```
-Check out the [examples](https://github.com/XaBerr/JATE/tree/master/examples) to see more detail.<br>
-Check out the [wiki](https://github.com/XaBerr/JATE/wiki) to see more detail about all functions ready to go (_dist/jate/functions_).<br>
+#### [GETTING STARTED](http://xaberr.github.io/JATE/)
+Where to start if you do not know anything about JATE.
+#### [EXAMPLES](https://github.com/XaBerr/JATE/tree/master/examples)
+A list of sample sites.
+#### [WIKI](https://github.com/XaBerr/JATE/wiki)
+We list the functions that are available in JATE.
