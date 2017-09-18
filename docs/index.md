@@ -272,7 +272,7 @@ We take the `bundles/views/View.php` file and move it to`bundles/models/View.php
   }
 ?>
 ```
-aggiungiamo la connessione in init:
+we add the init connection:
 ```php
 <?php
   public function init( $_connession ) {
