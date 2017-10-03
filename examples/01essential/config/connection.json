@@ -5,7 +5,8 @@
   "database":  "",
   "server":    "",
   "engine": {
-    "pdo":    true,
-    "mysqli": false
+    "pdo":        true,
+    "mysqli":     false,
+    "postgresql": false
   }
 }

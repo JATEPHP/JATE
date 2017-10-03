@@ -26,6 +26,9 @@
         case "mysqli":
           $this->database = new ConnectionMysqliAdapter($_srv, $_db, $_usr, $_pass);
         break;
+        case "postgresql":
+          $this->database = new ConnectionPostgresqlAdapter($_srv, $_db, $_usr, $_pass);
+        break;
         default:
           $this->database = new ConnectionPdoAdapter($_srv, $_db, $_usr, $_pass);
         break;
