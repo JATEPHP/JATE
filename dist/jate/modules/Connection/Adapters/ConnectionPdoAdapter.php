@@ -3,8 +3,13 @@
   class ConnectionPdoAdapter implements ConnectionAdapterInterface {
       public $connection;
       public function __construct( $_srv, $_db, $_usr, $_pass ) {
-        $connection = "mysql:host=$_srv;dbname=$_db";
-        $this->connection = new PDO( $connection, $_usr, $_pass, [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"] );
+        try {
+          $connection = "mysql:host=$_srv;dbname=$_db";
+          $this->connection = new PDO( $connection, $_usr, $_pass, [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"] );
+        } catch( Exception $error ) {
+          Debug::log($error->getMessage());
+          exit();
+        }
       }
       public function query( $_query ) {
         $this->stdQuery($_query);
@@ -24,14 +29,16 @@
       }
       protected function stdQuery( $_query ) {
         $database = $this->connection;
-        $error = "Error query [$_query]";
         $query = $database->prepare($_query);
         $result = $query->execute();
         if(!$result) {
-          echo "$_query<br>";
-          echo "Something wrong: $error";
-          var_dump($query->errorInfo());
-          var_dump($database->errorInfo());
+          Debug::logStack([
+            "query" => $_query,
+            "error" => [
+              $query->errorInfo(),
+              $database->errorInfo()
+            ]
+          ]);
           exit();
         }
         return $query;

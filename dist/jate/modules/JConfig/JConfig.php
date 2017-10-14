@@ -23,6 +23,8 @@
     public function import( $_path, $_type = "misc" ) {
       $data = file_get_contents($_path);
       $data = json_decode($data);
+      if($data === NULL)
+        Debug::log("Error processing [$_path]");
       if( $_type == "connection" )
         $this->overlayConnection($data);
       else

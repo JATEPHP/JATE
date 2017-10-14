@@ -3,7 +3,12 @@
   class ConnectionMysqliAdapter implements ConnectionAdapterInterface {
       public $connection;
       public function __construct( $_srv, $_db, $_usr, $_pass ) {
-        $this->connection = new mysqli( $_srv, $_usr, $_pass, $_db );
+        try {
+          $this->connection = new mysqli( $_srv, $_usr, $_pass, $_db );
+        } catch( Exception $error ) {
+          Debug::log($error->getMessage());
+          exit();
+        }
       }
       public function query( $_query ) {
         $this->stdQuery($_query);
@@ -29,12 +34,12 @@
       }
       protected function stdQuery( $_query ) {
         $database = $this->connection;
-        $error = "Error query [$_query]";
         $result = $database->query($_query);
         if(!$result) {
-          echo "$_query<br>";
-          echo "Something wrong: $error";
-          var_dump($database->error);
+          Debug::logStack([
+            "query" => $_query,
+            "error" => $database->error
+          ]);
           exit();
         }
         return $result;

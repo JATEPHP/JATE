@@ -3,8 +3,13 @@
   class ConnectionPostgresqlAdapter implements ConnectionAdapterInterface {
       public $connection;
       public function __construct( $_srv, $_db, $_usr, $_pass ) {
-        $this->connection = pg_connect("host=$_srv dbname=$_db user=$_usr password=$_pass")
-          or die('Could not connect: '.pg_last_error());
+        try {
+          $this->connection = pg_connect("host=$_srv dbname=$_db user=$_usr password=$_pass")
+            or die('Could not connect: '.pg_last_error());
+        } catch( Exception $error ) {
+          Debug::log($error->getMessage());
+          exit();
+        }
       }
       public function query( $_query ) {
         $this->stdQuery($_query);
@@ -32,12 +37,12 @@
       }
       protected function stdQuery( $_query ) {
         $database = $this->connection;
-        $error = "Error query [$_query]";
         $result = pg_query($database, $_query);
         if(!$result) {
-          echo "$_query<br>";
-          echo "Something wrong: $error";
-          var_dump(pg_last_error());
+          Debug::logStack([
+            "query" => $_query,
+            "error" => pg_last_error()
+          ]);
           exit();
         }
         return $result;

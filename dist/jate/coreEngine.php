@@ -6,12 +6,12 @@
   require_once      (end($GLOBALS["JATEPath"])."jate/functions/requirer.php");
   requireComponent  ("functions/folder.php");
   requireComponent  ("modules/JConfig/JConfig.php");
-  requireComponents  ("functions");
+  requireComponents ("functions");
   requireModules    ("modules");
 
   //USER STUFF
   requireComponent  ("config.php",false);
   requireModules    ("modules",false);
-  requireComponents  ("bundles/models",false);
-  requireComponents  ("bundles/controllers",false);
+  requireComponents ("bundles/models",false);
+  requireComponents ("bundles/controllers",false);
 ?>
