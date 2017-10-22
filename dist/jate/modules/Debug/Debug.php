@@ -45,7 +45,7 @@
     }
     public static function pop() {
       if(count(self::$stack)>0)
-        self::$stack = array_shift(self::$stack);
+        array_shift(self::$stack);
     }
     public static function emptyStack() {
       self::$stack = [];
