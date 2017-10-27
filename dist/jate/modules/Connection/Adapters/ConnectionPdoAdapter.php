@@ -7,7 +7,7 @@
           $connection = "mysql:host=$_srv;dbname=$_db";
           $this->connection = new PDO( $connection, $_usr, $_pass, [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"] );
         } catch( Exception $error ) {
-          Debug::log($error->getMessage());
+          Debug::fatal($error->getMessage());
           exit();
         }
       }
@@ -32,7 +32,7 @@
         $query = $database->prepare($_query);
         $result = $query->execute();
         if(!$result) {
-          Debug::logStack([
+          Debug::fatalStack([
             "query" => $_query,
             "error" => [
               $query->errorInfo(),

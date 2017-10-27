@@ -21,10 +21,12 @@
       $this->server["RELATIVE"]      = str_replace("/index.php", "", $_SERVER["PHP_SELF"]);
     }
     public function import( $_path, $_type = "misc" ) {
+      if(!file_exists($_path))
+        Debug::fatal("File [$_path] not found.");
       $data = file_get_contents($_path);
       $data = json_decode($data);
       if($data === NULL)
-        Debug::log("Error processing [$_path]");
+        Debug::fatal("Error processing [$_path]");
       if( $_type == "connection" )
         $this->overlayConnection($data);
       else

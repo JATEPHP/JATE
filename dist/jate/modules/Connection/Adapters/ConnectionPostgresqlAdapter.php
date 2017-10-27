@@ -7,7 +7,7 @@
           $this->connection = pg_connect("host=$_srv dbname=$_db user=$_usr password=$_pass")
             or die('Could not connect: '.pg_last_error());
         } catch( Exception $error ) {
-          Debug::log($error->getMessage());
+          Debug::fatal($error->getMessage());
           exit();
         }
       }
@@ -39,7 +39,7 @@
         $database = $this->connection;
         $result = pg_query($database, $_query);
         if(!$result) {
-          Debug::logStack([
+          Debug::fatalStack([
             "query" => $_query,
             "error" => pg_last_error()
           ]);

@@ -1,5 +1,4 @@
 <?php
-  // requireComponent("../functions/array.php");
   class Debug {
     public static $stack;
     private static $initialized = false;
@@ -19,8 +18,15 @@
         echo $_object;
       }
     }
-    public static function log( $_object ) {
-      self::out(["error" => $_object]);
+    public static function error( $_object ) {
+      self::out(["Error" => $_object]);
+    }
+    public static function warning( $_object ) {
+      self::out(["Warning" => $_object]);
+    }
+    public static function fatal( $_object ) {
+      self::out(["Fatal error" => $_object]);
+      exit(1);
     }
     public static function logln( $_object ) {
       self::log($_object);

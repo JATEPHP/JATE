@@ -1,6 +1,7 @@
 <?php
   jRequire("../modules/Pug/Pug.php");
   jRequire("../modules/Parsedown/Parsedown.php");
+  jRequire("../modules/Debug/Debug.php");
   function jBlock() {
     return ob_start();
   }
@@ -17,6 +18,8 @@
   }
 
   function jBlockFileMan( $_path, $_type, $_parameters = [] ) {
+    if(!file_exists($_path))
+      Debug::fatal("File [$_path] not found.");
     $temp = file_get_contents($_path);
     return jBlockParsing($_type, $temp, $_parameters);
   }

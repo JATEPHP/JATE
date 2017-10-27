@@ -6,7 +6,7 @@
         try {
           $this->connection = new mysqli( $_srv, $_usr, $_pass, $_db );
         } catch( Exception $error ) {
-          Debug::log($error->getMessage());
+          Debug::fatal($error->getMessage());
           exit();
         }
       }
@@ -36,7 +36,7 @@
         $database = $this->connection;
         $result = $database->query($_query);
         if(!$result) {
-          Debug::logStack([
+          Debug::fatalStack([
             "query" => $_query,
             "error" => $database->error
           ]);
