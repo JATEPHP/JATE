@@ -15,6 +15,7 @@
     public function draw( $_template ) {
       $Parsedown = new Parsedown\Parsedown();
       $page = $Parsedown->text($_template);
+      $page = preg_replace('/[ ](?=[^>]*(?:<|$))/', "&nbsp", $page);
       return $page;
     }
   }
