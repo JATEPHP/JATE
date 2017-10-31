@@ -10,10 +10,9 @@
     $path = getJFolder($_path, $_local, debug_backtrace());
     if(file_exists($path)) {
       $files = subFolderFile($path);
-      foreach ($files as $i) {
-        if(isPhp($path."/".$i))
-          requireComponent($path."/".$i, false, 0);
-      }
+      foreach ($files as $i)
+        if(isPhp("$path/$i"))
+          requireComponent($path."/".$i, false);
     } else
       requireError($_path);
   }
@@ -30,9 +29,8 @@
   function requireModules( $_path, $_local = true ) {
     $path = getJFolder($_path, $_local, debug_backtrace());
     $subFolders = subFolderDir($path);
-    foreach ($subFolders as $i) {
-      requireComponents($path."/".$i, false, 0);
-    }
+    foreach ($subFolders as $i)
+      requireComponents("$path/$i", false);
   }
   function jRequire( $_path, $_local = true ) {
     $path = getJFolder($_path, $_local, debug_backtrace());
@@ -46,5 +44,21 @@
     } else
       $file = $_path;
     return $file;
+  }
+  function requireModulesList( $_path ) {
+    if(!file_exists($_path))
+      throw new InvalidArgumentException("File not found! [$_path]");
+    $data = file_get_contents($_path);
+    $data = json_decode($data);
+    if($data === NULL)
+      throw new Exception("Error in the file format [$_path]", 1);
+    foreach ($data as $item) {
+      if(substr($item, -1) == "*")
+        requireModules(substr($item, 0, -2), false);
+      else {
+        $path = getJFolder($item, false, debug_backtrace());
+        requireComponents("$path", false);
+      }
+    }
   }
 ?>
