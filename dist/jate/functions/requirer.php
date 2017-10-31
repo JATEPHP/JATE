@@ -47,7 +47,7 @@
   }
   function requireModulesList( $_path ) {
     if(!file_exists($_path))
-      throw new InvalidArgumentException("File not found! [$_path]");
+      return;
     $data = file_get_contents($_path);
     $data = json_decode($data);
     if($data === NULL)
