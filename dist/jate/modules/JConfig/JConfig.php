@@ -1,57 +1,19 @@
 <?php
   class JConfig {
-    public $connection;
-    public $all;
-    public $DEBUG;
-    public $pages;
-    public $server;
-    public function __construct() {
-      $this->connection["enable"]    = false;
-      $this->connection["user"]      = "";
-      $this->connection["password"] = "";
-      $this->connection["database"] = "";
-      $this->connection["server"]    = "";
-      $this->all    = "";
-      $this->DEBUG  = 0;
-      $this->pages  = [];
-      $this->server  = [];
-      $this->server["HTTP_HOST"]    = $_SERVER["HTTP_HOST"];
-      $this->server["REQUEST_URI"]  = $_SERVER["REQUEST_URI"];
-      $this->server["PHP_SELF"]      = $_SERVER["PHP_SELF"];
-      $this->server["RELATIVE"]      = str_replace("/index.php", "", $_SERVER["PHP_SELF"]);
-    }
-    public function import( $_path, $_type = "misc" ) {
+    public function __construct( $_path ) {
+      if(!is_string($_path))
+        throw new InvalidArgumentException("Path must be a string.");
       if(!file_exists($_path))
-        Debug::fatal("File [$_path] not found.");
+        throw new InvalidArgumentException("File [$_path] not found.");
       $data = file_get_contents($_path);
       $data = json_decode($data);
       if($data === NULL)
-        Debug::fatal("Error processing [$_path]");
-      if( $_type == "connection" )
-        $this->overlayConnection($data);
-      else
-        $this->overlayMisc($data);
-    }
-    protected function overlayConnection( $_data ) {
-      $this->connection = $this->obj2array($_data);
-    }
-    protected function overlayMisc( $_data ) {
-      $this->importObject($_data);
-    }
-    protected function obj2array ( &$_instance ) {
-      $clone  = (array) $_instance;
-      $return  = [];
-      $return['___SOURCE_KEYS_'] = $clone;
-      while ( list ($key, $value) = each ($clone) ) {
-        $temp    = explode ("\0", $key);
-        $newkey  = $temp[count($temp)-1];
-        $return[$newkey] = &$return['___SOURCE_KEYS_'][$key];
-      }
-      return $return;
-    }
-    protected function importObject( $_object ) {
-      foreach (get_object_vars($_object) as $key => $value)
-        $this->$key = $value;
+        throw new InvalidArgumentException("Invalid file data. [$_path]");
+      if(is_object($data))
+        foreach (get_object_vars($data) as $key => $value)
+          $this->$key = $value;
+      if(is_array($data))
+        $this->data = $data;
     }
   }
 ?>
