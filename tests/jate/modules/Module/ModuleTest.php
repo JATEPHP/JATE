@@ -52,10 +52,10 @@
       $module->addFiles(["1.css","2.js","3.css","4.js"]);
       $this->assertEquals(["2.js","4.js"], $module->getJs());
     }
-    public function testGetJsVariables() {
+    public function testGetJsVar() {
       $module = new Module();
       $module->addFiles(["1.css",["variable","2"],"3.css","4.js"]);
-      $this->assertEquals([["variable","2"]], $module->getJsVariables());
+      $this->assertEquals([["variable","2"]], $module->getJsVar());
     }
   }
 ?>

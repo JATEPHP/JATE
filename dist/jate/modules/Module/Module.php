@@ -18,22 +18,19 @@
       $this->connection  = null;
       $this->parameters = null;
     }
-    // abstract public function config();
-    // abstract public function init();
-    // abstract public function draw();
     public function getCss() {
       return $this->getRequire("getCss",".css");
     }
     public function getJs() {
       return $this->getRequire("getJs",".js");
     }
-    public function getJsVariables() {
+    public function getJsVar() {
       $temp = [];
       foreach ($this->required as $i)
         if (is_array($i))
           array_push($temp,$i);
       foreach ($this->modules as $i)
-        $temp = array_merge( $temp, $i->getJsVariables() );
+        $temp = array_merge( $temp, $i->getJsVar() );
       foreach ($this->files as $i)
         if (is_array($i))
           array_push($temp,$i);
@@ -78,7 +75,7 @@
     protected function addDipendences() {
       $this->tags["css"] = $this->getCss();
       $this->tags["js"] = $this->getJs();
-      $this->tags["jsVariables"] = $this->getJsVariables();
+      $this->tags["jsVar"] = $this->getJsVar();
     }
     protected function getRequire( $_function, $_extenction) {
       $temp = [];
