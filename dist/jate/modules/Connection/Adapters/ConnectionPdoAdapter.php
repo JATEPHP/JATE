@@ -32,7 +32,7 @@
         $query = $database->prepare($_query);
         $result = $query->execute();
         if(!$result) {
-          Debug::fatalStack([
+          Debug::fatal([
             "query" => $_query,
             "error" => [
               $query->errorInfo(),

@@ -39,7 +39,7 @@
         $database = $this->connection;
         $result = pg_query($database, $_query);
         if(!$result) {
-          Debug::fatalStack([
+          Debug::fatal([
             "query" => $_query,
             "error" => pg_last_error()
           ]);
