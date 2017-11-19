@@ -2,17 +2,17 @@
   requireComponent("../Query/Query.php");
   class Html extends Query {
     public $template;
-    public $render;
     public $app;
     public $page;
     public $tags;
+    public $jsVars;
     public function __construct( $_parameters = [ "app" => null, "page" => null] ) {
       parent::__construct($_parameters);
-      $this->template   = "";
-      $this->render     = "";
-      $this->app        = $_parameters["app"];
-      $this->page       = $_parameters["page"];
-      $this->tags       = [
+      $this->template = "";
+      $this->app      = $_parameters["app"];
+      $this->page     = $_parameters["page"];
+      $this->jsVars   = [];
+      $this->tags     = [
         "css"   => [],
         "js"    => [],
         "jsVar" => [],
@@ -21,11 +21,11 @@
     }
     public function draw() {
       $this->addDipendences();
-      $this->tags["css"]   = array_unique($this->tags["css"]);
-      $this->tags["js"]    = array_unique($this->tags["js"]);
-      $this->tags["base"]  = $this->app->server["RELATIVE"]."/";
+      $this->tags["css"]  = array_unique($this->tags["css"]);
+      $this->tags["js"]   = array_unique($this->tags["js"]);
+      $this->tags["base"] = $this->app->server["RELATIVE"]."/";
       $this->stringifyDipendences();
-      return $this->render = jBlockFile($this->template, $this->tags);
+      return jBlockFile($this->template, $this->tags);
     }
     protected function stringifyDipendences() {
       $tempStr = "";
@@ -45,6 +45,45 @@
         $tempStr .= " $i[0] = $i[1];\n";
       $tempStr .= "</script>";
       $this->tags["jsVar"] = $tempStr;
+    }
+    protected function addDipendences() {
+      $this->tags["css"]   = $this->getCss();
+      $this->tags["js"]    = $this->getJs();
+      $this->tags["jsVar"] = $this->getJsVar();
+    }
+    protected function getRequire( $_function, $_extenction) {
+      $temp = [];
+      foreach ($this->required as $i)
+        if (!is_array($i) && strpos($i, $_extenction) !== FALSE)
+          array_push($temp,$i);
+      foreach ($this->modules as $i)
+        $temp = array_merge( $temp, $i->$_function() );
+      foreach ($this->files as $i)
+        if (!is_array($i) && strpos($i, $_extenction) !== FALSE)
+          array_push($temp,$i);
+      return $temp;
+    }
+    public function getCss() {
+      return $this->getRequire("getCss",".css");
+    }
+    public function getJs() {
+      return $this->getRequire("getJs",".js");
+    }
+    public function addJsVar( $_name, $_value ) {
+      if(!is_string($_name))
+        throw new InvalidArgumentException("Parameter name must be a string.");
+      if(!is_string($_value))
+        throw new InvalidArgumentException("Parameter value must be a string.");
+      $this->jsVars[] = [$_name, $_value];
+    }
+    public function addJsVars( $_array ) {
+      if(!is_array($_array))
+        throw new InvalidArgumentException("Parameter must be an array.");
+      foreach ($_array as $value)
+        $this->addJsVar($value[0], $value[1]);
+    }
+    public function getJsVar() {
+      return $this->jsVars;
     }
   }
 ?>
