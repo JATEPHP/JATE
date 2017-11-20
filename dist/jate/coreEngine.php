@@ -10,7 +10,7 @@
   requireModules   ("modules");
 
   //USER STUFF
-  requireModulesList("config/modules.json");
-  requireComponents ("bundles/models", false);
-  requireComponents ("bundles/controllers", false);
+  // requireModulesList("config/modules.json");
+  // requireComponents ("bundles/models", false);
+  // requireComponents ("bundles/controllers", false);
 ?>

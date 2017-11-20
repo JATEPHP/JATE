@@ -1,5 +1,6 @@
 <?php
-  class Module {
+  jRequire("../Query/Query.php");
+  class Module extends Query {
     public $name;
     public $modules;
     public function __construct() {

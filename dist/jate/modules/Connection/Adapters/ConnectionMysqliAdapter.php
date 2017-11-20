@@ -36,7 +36,7 @@
         $database = $this->connection;
         $result = $database->query($_query);
         if(!$result) {
-          Debug::fatalStack([
+          Debug::fatal([
             "query" => $_query,
             "error" => $database->error
           ]);

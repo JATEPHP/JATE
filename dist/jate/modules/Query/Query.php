@@ -1,6 +1,8 @@
 <?php
-  jRequire("../Module/Module.php");
-  class Query extends Module {
+  jRequire("../Debug/Debug.php");
+  jRequire("../JConfig/JConfig.php");
+  jRequire("../Connection/Connection.php");
+  class Query {
     public $connection;
     public $currentConnection;
     public function __construct() {
@@ -8,16 +10,22 @@
       $this->connection = [];
       $this->currentConnection = null;
     }
-    public function addConnection( $_name, $_connection ) {
+    public function addConnection( $_path, $_name = "default" ) {
       Debug::push();
-      $this->connection["$_name"] = $_connection;
-      $this->currentConnection = $_connection;
+      if(!is_string($_path))
+        throw new InvalidArgumentException("Parameter must be a string.");
+      $jConfig = new JConfig($_path);
+      $connection = new Connection($jConfig);
+      $this->connection["$_name"] = $connection;
+      $this->currentConnection = $_path;
       foreach ($this->modules as &$module)
         if(isset($module->currentConnection))
-          $module->addConnection($_name, $_connection);
+          $module->addConnection($_path, $_name);
       Debug::pop();
     }
-    public function setConnection( $_name ) {
+    public function setConnection( $_name = "default" ) {
+      if(!isset($this->connection["$_name"]))
+        throw new InvalidArgumentException("This connection name does not exist.");
       $this->currentConnection = $this->connection["$_name"];
     }
     public function query( $_query ) {
