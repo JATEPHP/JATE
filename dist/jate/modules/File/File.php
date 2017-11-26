@@ -27,17 +27,17 @@
       foreach ($_files as $value)
         $this->addFileRequired($value);
     }
-    private function isCorrectPath( $_file ) {
-      if(!is_string($_file))
-        throw new InvalidArgumentException("Path must be a string.");
-      if(!file_exists($_file))
-        throw new InvalidArgumentException("File [$_file] not found.");
-    }
     public function getFiles() {
       return $this->files["attached"];
     }
     public function getFilesRequired() {
       return $this->files["required"];
+    }
+    protected function isCorrectPath( $_file ) {
+      if(!is_string($_file))
+        throw new InvalidArgumentException("Path must be a string.");
+      if(!file_exists($_file))
+        throw new InvalidArgumentException("File [$_file] not found.");
     }
   }
 ?>

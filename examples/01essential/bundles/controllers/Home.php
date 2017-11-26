@@ -1,7 +1,7 @@
 <?php
   class Home extends Template {
-    public function __construct( $_parameters ) {
-      parent::__construct( $_parameters );
+    public function init() {
+      parent::init();
       $this->tags["title"]  .= "Home";
       $this->tags["content"] = $this->makePage();
     }
