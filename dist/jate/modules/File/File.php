@@ -1,5 +1,5 @@
 <?php
-  class File {
+  trait File {
     private $files;
     public function __construct() {
       $this->files = [

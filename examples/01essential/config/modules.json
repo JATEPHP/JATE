@@ -1,2 +1,4 @@
 [
+  "bundles/models",
+  "bundles/controllers"
 ]

@@ -24,15 +24,15 @@
       foreach ($this->pages as $page) {
         $urlParameters = $this->pathSeeker(explode("/", $page[0]), $this->url);
         if(is_array($urlParameters)) {
-          $pageSelected = $page[1];
-          $parameters = $urlParameters;
+          if(isset($page[2]) && is_array($page[2]))
+            $urlParameters = array_merge($urlParameters, $page[2]);
+          $pageSelected = [
+            $page[1],
+            $urlParameters
+          ];
           break;
         }
       }
-      if( isset($pageSelected[1]) && is_array($pageSelected[1]) )
-        $pageSelected[1] = array_merge($pageSelected[1], $parameters);
-      else
-        $pageSelected[1] = $parameters;
       if( $pageSelected !== null )
         return $pageSelected;
       else

@@ -1,6 +1,6 @@
 <?php
-  requireComponent("../Query/Query.php");
-  class Html extends Query {
+  requireComponent("../Module/Module.php");
+  class Html extends Module {
     public $template;
     public $app;
     public $page;

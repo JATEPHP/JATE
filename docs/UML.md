@@ -7,7 +7,8 @@
 + addJsVar()
 + addJsVars()
 
-# Module : Query
+# Module
+## File, Query
 + addModule( module : class )
 + addModules( modules : array )
 

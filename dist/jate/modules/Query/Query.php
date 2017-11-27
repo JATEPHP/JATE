@@ -2,7 +2,7 @@
   jRequire("../Debug/Debug.php");
   jRequire("../JConfig/JConfig.php");
   jRequire("../Connection/Connection.php");
-  class Query {
+  trait Query {
     public $connection;
     public $currentConnection;
     public function __construct() {
