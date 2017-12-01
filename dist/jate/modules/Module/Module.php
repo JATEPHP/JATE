@@ -2,12 +2,19 @@
   jRequire("../Query/Query.php");
   jRequire("../File/File.php");
   class Module {
-    use Query, File;
+    use Query {
+      Query::__construct as private __queryConstruct;
+    }
+    use File {
+      File::__construct as private __fileConstruct;
+    }
     public $name;
     public $modules;
     public function __construct() {
       $this->name    = get_class($this);
       $this->modules = [];
+      $this->__queryConstruct();
+      $this->__fileConstruct();
     }
     public function addModules( $_modules ) {
       if(!is_array($_modules))

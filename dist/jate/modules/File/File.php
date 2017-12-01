@@ -36,8 +36,11 @@
     protected function isCorrectPath( $_file ) {
       if(!is_string($_file))
         throw new InvalidArgumentException("Path must be a string.");
-      if(!file_exists($_file))
+      if(!(file_exists($_file) || $this->isCorrectUrl($_file)))
         throw new InvalidArgumentException("File [$_file] not found.");
+    }
+    protected function isCorrectUrl( $_url ) {
+      return strpos(@get_headers($_url)[0],'200') === false ? false : true;
     }
   }
 ?>

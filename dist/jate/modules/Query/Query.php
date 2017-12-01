@@ -6,7 +6,6 @@
     public $connection;
     public $currentConnection;
     public function __construct() {
-      parent::__construct();
       $this->connection = [];
       $this->currentConnection = null;
     }
@@ -15,12 +14,14 @@
       if(!is_string($_path))
         throw new InvalidArgumentException("Parameter must be a string.");
       $jConfig = new JConfig($_path);
-      $connection = new Connection($jConfig);
-      $this->connection["$_name"] = $connection;
-      $this->currentConnection = $_path;
-      foreach ($this->modules as &$module)
-        if(isset($module->currentConnection))
-          $module->addConnection($_path, $_name);
+      if($jConfig->enable) {
+        $connection = new Connection($jConfig);
+        $this->connection["$_name"] = $connection;
+        $this->currentConnection = $_path;
+        foreach ($this->modules as &$module)
+          if(isset($module->currentConnection))
+            $module->addConnection($_path, $_name);
+      }
       Debug::pop();
     }
     public function setConnection( $_name = "default" ) {

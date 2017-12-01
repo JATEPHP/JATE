@@ -1,7 +1,7 @@
 <?php
   class Page404 extends Template {
-    public function __construct( $_parameters ) {
-      parent::__construct( $_parameters );
+    public function init() {
+      parent::init();
       $this->tags["title"]  .= "Page404";
       $this->tags["content"] = $this->makePage();
     }

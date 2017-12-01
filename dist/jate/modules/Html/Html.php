@@ -1,6 +1,7 @@
 <?php
+  requireComponent("../ServerVars/ServerVars.php");
   requireComponent("../Module/Module.php");
-  class Html extends Module {
+  abstract class Html extends Module {
     public $template;
     public $app;
     public $page;
@@ -19,11 +20,13 @@
         "base"  => ""
       ];
     }
+    abstract public function init();
     public function draw() {
+      $server = new ServerVars();
       $this->addDipendences();
       $this->tags["css"]  = array_unique($this->tags["css"]);
       $this->tags["js"]   = array_unique($this->tags["js"]);
-      $this->tags["base"] = $this->app->server["RELATIVE"]."/";
+      $this->tags["base"] = $server->server["RELATIVE"]."/";
       $this->stringifyDipendences();
       return jBlockFile($this->template, $this->tags);
     }
@@ -71,18 +74,20 @@
     protected function addDipendences() {
       $this->tags["css"]   = $this->getCss();
       $this->tags["js"]    = $this->getJs();
-      $this->tags["jsVar"] = $this->getJsVar();
+      $this->tags["jsVar"] = $this->getJsVars();
     }
     protected function getRequire( $_function, $_extenction) {
       $temp = [];
-      foreach ($this->required as $i)
+      $filesRequired = $this->getFilesRequired();
+      $files         = $this->getFiles();
+      foreach ($filesRequired as $i)
         if (!is_array($i) && strpos($i, $_extenction) !== FALSE)
-          array_push($temp,$i);
+          $temp[] = $i;
       foreach ($this->modules as $i)
         $temp = array_merge( $temp, $i->$_function() );
-      foreach ($this->files as $i)
+      foreach ($files as $i)
         if (!is_array($i) && strpos($i, $_extenction) !== FALSE)
-          array_push($temp,$i);
+          $temp[] = $i;
       return $temp;
     }
   }

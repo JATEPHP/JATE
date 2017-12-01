@@ -6,13 +6,14 @@
     private $misc;
     public function __construct() {
       $configPath   = "config";
-      $this->misc   = new JConfig("$configPath/misc.json");
+      $this->misc   = new JConfig("$configPath/app.json");
       $this->router = new Router("$configPath/router.json", $this->misc->urlCaseSensitive);
     }
     public function draw() {
       $pageSelected = $this->router->getPage();
       $currentPage = new $pageSelected[0](["app" => $this->misc, "page" => $pageSelected[1]]);
-      minifyOutput($currentPage->draw());
+      $currentPage->init();
+      echo minifyOutput($currentPage->draw());
     }
   }
 ?>

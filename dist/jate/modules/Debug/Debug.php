@@ -45,7 +45,7 @@
         "file" => $debugInfo[1]["file"],
         "line" => $debugInfo[1]["line"],
         "function" => $debugInfo[1]["function"],
-        "class" => $debugInfo[1]["class"]
+        "class" => isset($debugInfo[1]["class"]) ? $debugInfo[1]["class"] : ""
       ];
       self::$stack[] = $debugInfo;
     }

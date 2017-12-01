@@ -7,7 +7,7 @@
         "https://code.jquery.com/jquery-1.11.3.min.js",
         "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
       ]);
-      $this->data["template"] = "bundles/views/tradictional.html";
+      $this->template = "bundles/views/tradictional.twig";
       $this->tags = [
         "title"    => "JATE - ",
         "brand"    => "JATE",

@@ -1,5 +1,5 @@
 <?php
-  require_once("main.php");
-  $webApp->fetchPage();
+  require_once("jate.php");
+  $webApp = new WebApp();
   $webApp->draw();
 ?>

@@ -18,8 +18,10 @@
   }
 
   function jBlockFileMan( $_path, $_type, $_parameters = [] ) {
+    if(!is_string($_path))
+      throw new InvalidArgumentException("Path must be a string.");
     if(!file_exists($_path))
-      Debug::fatal("File [$_path] not found.");
+      throw new InvalidArgumentException("File [$_path] not found.");
     $temp = file_get_contents($_path);
     return jBlockParsing($_type, $temp, $_parameters);
   }
