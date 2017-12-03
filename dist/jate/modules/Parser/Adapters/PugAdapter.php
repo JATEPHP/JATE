@@ -1,10 +1,7 @@
 <?php
   use Pug as Pug;
-  jRequire("../Module/Module.php");
-  class Pug extends Module {
-    public function __construct() {
-      parent::__construct();
-    }
+  jRequire("ParserInterface.php");
+  class PugAdapter implements ParserInterface {
     public function drawFile( $_file, $_parameters = [] ) {
       return $this->draw($_file, $_parameters);
     }

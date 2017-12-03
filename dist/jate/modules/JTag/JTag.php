@@ -1,7 +1,6 @@
 <?php
   jRequire("../Module/Module.php");
-  jRequire("../Pug/Pug.php");
-  jRequire("../Twig/Twig.php");
+  jRequire("../Parser/Parser.php");
   class JTag extends Module {
     public function __construct() {
       parent::__construct();

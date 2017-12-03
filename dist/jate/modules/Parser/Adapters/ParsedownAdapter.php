@@ -1,0 +1,19 @@
+<?php
+  jRequire("ParserInterface.php");
+  jRequire("../../ExternalModules/Parsedown/Parsedown.php");
+  use Parsedown as Parsedown;
+  class ParsedownAdapter implements ParserInterface {
+    public function drawFile( $_file, $_parameters = [] ) {
+      return $this->draw($_file);
+    }
+    public function drawText( $_text, $_parameters = [] ) {
+      return $this->draw(trim($_text));
+    }
+    public function draw( $_text, $_parameters = [] ) {
+      $Parsedown = new Parsedown\Parsedown();
+      $page = $Parsedown->text($_text);
+      $page = preg_replace('/[ ](?=[^>]*(?:<|$))/', "&nbsp", $page);
+      return $page;
+    }
+  }
+?>

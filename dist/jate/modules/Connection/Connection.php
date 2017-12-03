@@ -17,14 +17,14 @@
     protected function setConnection ( $_srv, $_db, $_usr, $_pass, $_type ) {
       switch ($_type) {
         case "mysqli":
-          $this->database = new ConnectionMysqliAdapter($_srv, $_db, $_usr, $_pass);
+          $this->database = new MysqliAdapter($_srv, $_db, $_usr, $_pass);
         break;
         case "postgresql":
-          $this->database = new ConnectionPostgresqlAdapter($_srv, $_db, $_usr, $_pass);
+          $this->database = new PostgresqlAdapter($_srv, $_db, $_usr, $_pass);
         break;
         case "pdo":
         default:
-          $this->database = new ConnectionPdoAdapter($_srv, $_db, $_usr, $_pass);
+          $this->database = new PdoAdapter($_srv, $_db, $_usr, $_pass);
         break;
       }
       $this->setConnectionParameters( $_srv, $_db, $_usr, $_pass);

@@ -1,6 +1,5 @@
 <?php
-  jRequire("../modules/Pug/Pug.php");
-  jRequire("../modules/Parsedown/Parsedown.php");
+  jRequire("../modules/Parser/Parser.php");
   jRequire("../modules/Debug/Debug.php");
   function jBlock() {
     return ob_start();
@@ -35,17 +34,17 @@
     switch ($_type) {
       case "pug":
       case "jade":
-        $Pug = new Pug();
+        $Pug = new PugAdapter();
         $_string = $Pug->drawText($_string, $_parameters);
       break;
       case "md":
       case "markdown":
       case "parsedown":
-        $Parsedown = new Parsedown();
+        $Parsedown = new ParsedownAdapter();
         $_string = $Parsedown->drawText($_string);
       break;
       case "twig":
-        $Twig = new Twig();
+        $Twig = new TwigAdapter();
         $_string = $Twig->drawText($_string, $_parameters);
       break;
       default: break;

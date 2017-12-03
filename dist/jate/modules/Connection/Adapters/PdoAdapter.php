@@ -1,10 +1,11 @@
 <?php
   jRequire("ConnectionInterface.php");
-  class ConnectionMysqliAdapter implements ConnectionAdapterInterface {
+  class PdoAdapter implements ConnectionAdapterInterface {
       public $connection;
       public function __construct( $_srv, $_db, $_usr, $_pass ) {
         try {
-          $this->connection = new mysqli( $_srv, $_usr, $_pass, $_db );
+          $connection = "mysql:host=$_srv;dbname=$_db";
+          $this->connection = new PDO( $connection, $_usr, $_pass, [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"] );
         } catch( Exception $error ) {
           Debug::fatal($error->getMessage());
           exit();
@@ -16,33 +17,31 @@
       }
       public function queryInsert( $_query ) {
         $this->stdQuery($_query);
-        return $this->connection->insert_id;
+        return $this->connection->lastInsertId();
       }
       public function queryFetch( $_query ) {
-        $result = $this->stdQuery($_query);
-        $rows = [];
-        while($row = $result->fetch_assoc())
-          $rows[] = $row;
-        return $rows;
+        $temp = $this->stdQuery($_query);
+        return $temp->fetchAll(PDO::FETCH_ASSOC);
       }
       public function queryArray( $_query ) {
-        $result = $this->stdQuery($_query);
-        $rows = [];
-        while($row = $result->fetch_array())
-          $rows[] = $row;
-        return $rows;
+        $temp = $this->stdQuery($_query);
+        return $temp->fetchAll(PDO::FETCH_COLUMN, 0);
       }
       protected function stdQuery( $_query ) {
         $database = $this->connection;
-        $result = $database->query($_query);
+        $query = $database->prepare($_query);
+        $result = $query->execute();
         if(!$result) {
           Debug::fatal([
             "query" => $_query,
-            "error" => $database->error
+            "error" => [
+              $query->errorInfo(),
+              $database->errorInfo()
+            ]
           ]);
           exit();
         }
-        return $result;
+        return $query;
       }
   }
 ?>

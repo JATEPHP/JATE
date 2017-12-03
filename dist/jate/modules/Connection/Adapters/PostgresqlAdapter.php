@@ -1,11 +1,11 @@
 <?php
   jRequire("ConnectionInterface.php");
-  class ConnectionPdoAdapter implements ConnectionAdapterInterface {
+  class PostgresqlAdapter implements ConnectionAdapterInterface {
       public $connection;
       public function __construct( $_srv, $_db, $_usr, $_pass ) {
         try {
-          $connection = "mysql:host=$_srv;dbname=$_db";
-          $this->connection = new PDO( $connection, $_usr, $_pass, [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"] );
+          $this->connection = pg_connect("host=$_srv dbname=$_db user=$_usr password=$_pass")
+            or die('Could not connect: '.pg_last_error());
         } catch( Exception $error ) {
           Debug::fatal($error->getMessage());
           exit();
@@ -17,31 +17,35 @@
       }
       public function queryInsert( $_query ) {
         $this->stdQuery($_query);
-        return $this->connection->lastInsertId();
+        return $this->stdQuery("SELECT lastval()");
       }
       public function queryFetch( $_query ) {
-        $temp = $this->stdQuery($_query);
-        return $temp->fetchAll(PDO::FETCH_ASSOC);
+        $result = $this->stdQuery($_query);
+        $rows = [];
+        while($row = pg_fetch_assoc($result))
+          $rows[] = $row;
+        pg_free_result($result);
+        return $rows;
       }
       public function queryArray( $_query ) {
-        $temp = $this->stdQuery($_query);
-        return $temp->fetchAll(PDO::FETCH_COLUMN, 0);
+        $result = $this->stdQuery($_query);
+        $rows = [];
+        while($row = pg_fetch_array($result))
+          $rows[] = $row;
+        pg_free_result($result);
+        return $rows;
       }
       protected function stdQuery( $_query ) {
         $database = $this->connection;
-        $query = $database->prepare($_query);
-        $result = $query->execute();
+        $result = pg_query($database, $_query);
         if(!$result) {
           Debug::fatal([
             "query" => $_query,
-            "error" => [
-              $query->errorInfo(),
-              $database->errorInfo()
-            ]
+            "error" => pg_last_error()
           ]);
           exit();
         }
-        return $query;
+        return $result;
       }
   }
 ?>

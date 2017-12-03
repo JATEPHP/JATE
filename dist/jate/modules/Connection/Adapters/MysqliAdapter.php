@@ -1,11 +1,10 @@
 <?php
   jRequire("ConnectionInterface.php");
-  class ConnectionPostgresqlAdapter implements ConnectionAdapterInterface {
+  class MysqliAdapter implements ConnectionAdapterInterface {
       public $connection;
       public function __construct( $_srv, $_db, $_usr, $_pass ) {
         try {
-          $this->connection = pg_connect("host=$_srv dbname=$_db user=$_usr password=$_pass")
-            or die('Could not connect: '.pg_last_error());
+          $this->connection = new mysqli( $_srv, $_usr, $_pass, $_db );
         } catch( Exception $error ) {
           Debug::fatal($error->getMessage());
           exit();
@@ -17,31 +16,29 @@
       }
       public function queryInsert( $_query ) {
         $this->stdQuery($_query);
-        return $this->stdQuery("SELECT lastval()");
+        return $this->connection->insert_id;
       }
       public function queryFetch( $_query ) {
         $result = $this->stdQuery($_query);
         $rows = [];
-        while($row = pg_fetch_assoc($result))
+        while($row = $result->fetch_assoc())
           $rows[] = $row;
-        pg_free_result($result);
         return $rows;
       }
       public function queryArray( $_query ) {
         $result = $this->stdQuery($_query);
         $rows = [];
-        while($row = pg_fetch_array($result))
+        while($row = $result->fetch_array())
           $rows[] = $row;
-        pg_free_result($result);
         return $rows;
       }
       protected function stdQuery( $_query ) {
         $database = $this->connection;
-        $result = pg_query($database, $_query);
+        $result = $database->query($_query);
         if(!$result) {
           Debug::fatal([
             "query" => $_query,
-            "error" => pg_last_error()
+            "error" => $database->error
           ]);
           exit();
         }
