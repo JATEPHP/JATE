@@ -8,12 +8,12 @@
 
   final class ModuleTest extends TestCase {
     public function testAddModuleWrongTypeInput() {
-      $this->expectException(InvalidArgumentException::class);
+      $this->expectException(JException::class);
       $module = new Module();
       $module->addModule(123);
     }
     public function testAddModuleWrongClassInput() {
-      $this->expectException(InvalidArgumentException::class);
+      $this->expectException(JException::class);
       $module = new Module();
       $module->addModule((object)[1,2,3]);
     }
@@ -23,12 +23,12 @@
       $this->assertEquals(1, count($module->modules));
     }
     public function testAddModulesWrongTypeInput() {
-      $this->expectException(InvalidArgumentException::class);
+      $this->expectException(JException::class);
       $module = new Module();
       $module->addModules(123);
     }
     public function testAddModulesWrongClassInput() {
-      $this->expectException(InvalidArgumentException::class);
+      $this->expectException(JException::class);
       $module = new Module();
       $module->addModules([(object)[1,2,3]]);
     }

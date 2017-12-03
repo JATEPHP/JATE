@@ -18,15 +18,15 @@
     }
     public function addModules( $_modules ) {
       if(!is_array($_modules))
-        throw new InvalidArgumentException("Parameter must be an array.");
+        throw new JException("Parameter must be an array.");
       foreach ($_modules as $value)
         $this->addModule($value);
     }
     public function addModule( $_module ) {
       if(!is_object($_module))
-        throw new InvalidArgumentException("Parameter must be a object.");
+        throw new JException("Parameter must be a object.");
       if(! is_subclass_of ($_module, "Module"))
-        throw new InvalidArgumentException("Parameter must be a object inherited from Module object.");
+        throw new JException("Parameter must be a object inherited from Module object.");
       $this->modules[$_module->name] = $_module;
     }
   }

@@ -1,6 +1,7 @@
 <?php
   requireComponent("../ServerVars/ServerVars.php");
   requireComponent("../Module/Module.php");
+  requireComponent("../JException/JException.php");
   abstract class Html extends Module {
     public $template;
     public $app;
@@ -22,6 +23,8 @@
     }
     abstract public function init();
     public function draw() {
+      if($this->template == "")
+        throw new JException("The variable \$this->template must be set in class $this->name function init().");
       $server = new ServerVars();
       $this->addDipendences();
       $this->tags["css"]  = array_unique($this->tags["css"]);

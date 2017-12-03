@@ -8,42 +8,42 @@
 
   final class FileTest extends TestCase {
     public function testAddFileWrongTypeInput() {
-      $this->expectException(InvalidArgumentException::class);
+      $this->expectException(JException::class);
       $file = $this->getMockForTrait("File");
       $file->addFile(123);
     }
     public function testAddFileRequiredWrongTypeInput() {
-      $this->expectException(InvalidArgumentException::class);
+      $this->expectException(JException::class);
       $file = $this->getMockForTrait("File");
       $file->addFileRequired(123);
     }
     public function testAddFilesWrongTypeInput() {
-      $this->expectException(InvalidArgumentException::class);
+      $this->expectException(JException::class);
       $file = $this->getMockForTrait("File");
       $file->addFiles("/file.php");
     }
     public function testAddFilesRequiredWrongTypeInput() {
-      $this->expectException(InvalidArgumentException::class);
+      $this->expectException(JException::class);
       $file = $this->getMockForTrait("File");
       $file->addFilesRequired("/file.php");
     }
     public function testAddFileBadPathInput() {
-      $this->expectException(InvalidArgumentException::class);
+      $this->expectException(JException::class);
       $file = $this->getMockForTrait("File");
       $file->addFile("tests/jate/modules/File/file/test2.js");
     }
     public function testAddFileRequiredBadPathInput() {
-      $this->expectException(InvalidArgumentException::class);
+      $this->expectException(JException::class);
       $file = $this->getMockForTrait("File");
       $file->addFileRequired("tests/jate/modules/File/file/test2.js");
     }
     public function testAddFilesBadPathInput() {
-      $this->expectException(InvalidArgumentException::class);
+      $this->expectException(JException::class);
       $file = $this->getMockForTrait("File");
       $file->addFiles(["tests/jate/modules/File/file/test2.js"]);
     }
     public function testAddFilesRequiredBadPathInput() {
-      $this->expectException(InvalidArgumentException::class);
+      $this->expectException(JException::class);
       $file = $this->getMockForTrait("File");
       $file->addFilesRequired(["tests/jate/modules/File/file/test2.js"]);
     }

@@ -8,15 +8,15 @@
 
   final class JConfigTest extends TestCase {
     public function testWrongTypeInput() {
-      $this->expectException(InvalidArgumentException::class);
+      $this->expectException(JException::class);
       $jConfig = new JConfig(0);
     }
     public function testWrongPath() {
-      $this->expectException(InvalidArgumentException::class);
+      $this->expectException(JException::class);
       $jConfig = new JConfig("something.json");
     }
     public function testBadJson() {
-      $this->expectException(InvalidArgumentException::class);
+      $this->expectException(JException::class);
       $jConfig = new JConfig("tests/jate/modules/JConfig/json/bad.json");
     }
     public function testCorrectPath() {
