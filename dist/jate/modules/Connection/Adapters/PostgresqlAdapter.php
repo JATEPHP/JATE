@@ -6,9 +6,8 @@
         try {
           $this->connection = pg_connect("host=$_srv dbname=$_db user=$_usr password=$_pass")
             or die('Could not connect: '.pg_last_error());
-        } catch( Exception $error ) {
-          Debug::fatal($error->getMessage());
-          exit();
+        } catch( Exception $e ) {
+          throw new JException($e->getMessage());
         }
       }
       public function query( $_query ) {
@@ -38,13 +37,11 @@
       protected function stdQuery( $_query ) {
         $database = $this->connection;
         $result = pg_query($database, $_query);
-        if(!$result) {
-          Debug::fatal([
+        if(!$result)
+          throw new JException(json_encode([
             "query" => $_query,
             "error" => pg_last_error()
-          ]);
-          exit();
-        }
+          ]));
         return $result;
       }
   }

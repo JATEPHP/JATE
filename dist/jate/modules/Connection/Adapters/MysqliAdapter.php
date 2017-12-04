@@ -5,9 +5,8 @@
       public function __construct( $_srv, $_db, $_usr, $_pass ) {
         try {
           $this->connection = new mysqli( $_srv, $_usr, $_pass, $_db );
-        } catch( Exception $error ) {
-          Debug::fatal($error->getMessage());
-          exit();
+        } catch( Exception $e ) {
+          throw new JException($e->getMessage());
         }
       }
       public function query( $_query ) {
@@ -35,13 +34,11 @@
       protected function stdQuery( $_query ) {
         $database = $this->connection;
         $result = $database->query($_query);
-        if(!$result) {
-          Debug::fatal([
+        if(!$result)
+          throw new JException(json_encode([
             "query" => $_query,
             "error" => $database->error
-          ]);
-          exit();
-        }
+          ]));
         return $result;
       }
   }

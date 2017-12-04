@@ -6,9 +6,8 @@
         try {
           $connection = "mysql:host=$_srv;dbname=$_db";
           $this->connection = new PDO( $connection, $_usr, $_pass, [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"] );
-        } catch( Exception $error ) {
-          Debug::fatal($error->getMessage());
-          exit();
+        } catch( Exception $e ) {
+          throw new JException($e->getMessage());
         }
       }
       public function query( $_query ) {
@@ -31,16 +30,14 @@
         $database = $this->connection;
         $query = $database->prepare($_query);
         $result = $query->execute();
-        if(!$result) {
-          Debug::fatal([
+        if(!$result)
+          throw new JException(json_encode([
             "query" => $_query,
             "error" => [
               $query->errorInfo(),
               $database->errorInfo()
             ]
-          ]);
-          exit();
-        }
+          ]));
         return $query;
       }
   }

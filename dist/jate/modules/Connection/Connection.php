@@ -27,7 +27,6 @@
           $this->database = new PdoAdapter($_srv, $_db, $_usr, $_pass);
         break;
       }
-      $this->setConnectionParameters( $_srv, $_db, $_usr, $_pass);
     }
     protected function getConnectionType( $_type ) {
       $array = (array)$_type;
