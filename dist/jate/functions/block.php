@@ -1,6 +1,6 @@
 <?php
   jRequire("../modules/Parser/Parser.php");
-  jRequire("../modules/Debug/Debug.php");
+  jRequire("../modules/JException/JException.php");
   function jBlock() {
     return ob_start();
   }
@@ -22,34 +22,12 @@
     if(!file_exists($_path))
       throw new InvalidArgumentException("File [$_path] not found.");
     $temp = file_get_contents($_path);
-    return jBlockParsing($_type, $temp, $_parameters);
+    return Parser::parseText($temp, $_parameters, $_type);
   }
 
   function jBlockEnd( $_type = "html", $_parameters = [] ) {
     $text = ob_get_clean();
-    return jBlockParsing($_type, $text, $_parameters);
-  }
-
-  function jBlockParsing( $_type = "html", $_string = "", $_parameters = [] ) {
-    switch ($_type) {
-      case "pug":
-      case "jade":
-        $Pug = new PugAdapter();
-        $_string = $Pug->drawText($_string, $_parameters);
-      break;
-      case "md":
-      case "markdown":
-      case "parsedown":
-        $Parsedown = new ParsedownAdapter();
-        $_string = $Parsedown->drawText($_string);
-      break;
-      case "twig":
-        $Twig = new TwigAdapter();
-        $_string = $Twig->drawText($_string, $_parameters);
-      break;
-      default: break;
-    }
-    return $_string;
+    return Parser::parseText($text, $_parameters, $_type);
   }
 
   function minifyOutput($_buffer) {

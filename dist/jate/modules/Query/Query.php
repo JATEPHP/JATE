@@ -1,5 +1,5 @@
 <?php
-  jRequire("../Debug/Debug.php");
+  jRequire("../JException/JException.php");
   jRequire("../JConfig/JConfig.php");
   jRequire("../Connection/Connection.php");
   trait Query {
