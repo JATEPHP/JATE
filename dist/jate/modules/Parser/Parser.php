@@ -4,6 +4,7 @@
   class Parser {
     private static function setParser ( $_type ) {
       $parser = null;
+      $_type = strtolower($_type);
       switch ($_type) {
         case "twig":
           $parser = new TwigAdapter();

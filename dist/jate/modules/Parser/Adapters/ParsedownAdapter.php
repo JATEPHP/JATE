@@ -4,7 +4,7 @@
   use Parsedown as Parsedown;
   class ParsedownAdapter implements ParserInterface {
     public function drawText( $_text, $_parameters = [] ) {
-      return $this->draw(trim($_text));
+      return $this->draw(trim($_text), $_parameters);
     }
     public function draw( $_text, $_parameters = [] ) {
       $Parsedown = new Parsedown\Parsedown();
