@@ -1,11 +1,8 @@
 <?php
-  jRequire("ParserInterface.php");
+  jRequire("ParserAbstract.php");
   jRequire("../../ExternalModules/Parsedown/Parsedown.php");
   use Parsedown as Parsedown;
-  class ParsedownAdapter implements ParserInterface {
-    public function drawText( $_text, $_parameters = [] ) {
-      return $this->draw(trim($_text), $_parameters);
-    }
+  class ParsedownAdapter extends ParserAbstract {
     public function draw( $_text, $_parameters = [] ) {
       $Parsedown = new Parsedown\Parsedown();
       $page = $Parsedown->text($_text);

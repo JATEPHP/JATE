@@ -1,9 +1,6 @@
 <?php
-  jRequire("ParserInterface.php");
-  class JTagAdapter implements ParserInterface {
-    public function drawText( $_text, $_parameters = [] ) {
-      return $this->draw(trim($_text), $_parameters);
-    }
+  jRequire("ParserAbstract.php");
+  class JTagAdapter extends ParserAbstract {
     public function draw( $_text, $_parameters = [] ) {
       foreach($_parameters as $key => $value)
         if(!is_array($value))

@@ -10,11 +10,8 @@
   }
 
   function jBlockFile( $_path, $_parameters = [] ) {
-    $extension = explode(".", $_path);
-    $extension = $extension[count($extension)-1];
-    $extension = strtolower($extension);
     try {
-      $temp = jBlockFileMan($_path, $extension, $_parameters);
+      $temp = Parser::parseFile($_path, $_parameters);
     } catch (Exception $e) {
       throw new JException($e->getMessage());
     }
@@ -22,13 +19,8 @@
   }
 
   function jBlockFileMan( $_path, $_type, $_parameters = [] ) {
-    if(!is_string($_path))
-      throw new JException("Path must be a string.");
-    if(!file_exists($_path))
-      throw new JException("File [$_path] not found.");
-    $text = file_get_contents($_path);
     try {
-      $temp = Parser::parseText($text, $_parameters, $_type);
+      $temp = Parser::parseFileMan($_path, $_parameters, $_type);
     } catch (Exception $e) {
       throw new JException($e->getMessage());
     }
