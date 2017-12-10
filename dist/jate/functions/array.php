@@ -34,14 +34,18 @@
     return $maxDepth;
   }
   function arrayDump( $_array, $_name = "Array", $_tab = "&nbsp;&nbsp;" ) {
-      $position = preg_replace('/&nbsp;&nbsp;/', '', $_tab, 1);
-      echo "$position<span style=\"color:rgb(230,0,0)\">$_name:</span><br>";
-      foreach ($_array as $k => $i)
-        if(is_array($i))
-          arrayDump( $i, $k, "&nbsp;&nbsp;$_tab" );
-        else if(is_object($i))
-          echo "$_tab<b>object:</b> [Object]<br>";
-        else
-          echo "$_tab<b>$k:</b> $i<br>";
-    }
+    $position = preg_replace('/&nbsp;&nbsp;/', '', $_tab, 1);
+    echo "$position<span style=\"color:rgb(230,0,0)\">$_name:</span><br>";
+    foreach ($_array as $k => $i)
+      if(is_array($i))
+        arrayDump( $i, $k, "&nbsp;&nbsp;$_tab" );
+      else if(is_object($i))
+        echo "$_tab<b>object:</b> [Object]<br>";
+      else
+        echo "$_tab<b>$k:</b> $i<br>";
+  }
+
+  function htmlParser( $_str) {
+    return htmlentities($_str, ENT_QUOTES | ENT_IGNORE, "UTF-8");
+  }
 ?>
