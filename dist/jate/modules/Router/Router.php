@@ -7,7 +7,7 @@
     protected $urlCaseSensitive;
     public function __construct( $_path, $_urlCaseSensitive = false ) {
       if(!is_string($_path))
-        throw new InvalidArgumentException("Parameter must be a string.");
+        throw new JException("Parameter must be a string.");
       $jConfig   = new JConfig($_path);
       $server    = new ServerVars();
       $request   = $server->server["REQUEST_URI"];
@@ -36,7 +36,7 @@
       if( $pageSelected !== null )
         return $pageSelected;
       else
-        return $this->currentPage;
+        return $this->defaultPage;
     }
     protected function pathSeeker( $_path, $_url ) {
       $urlLength = count($_url);

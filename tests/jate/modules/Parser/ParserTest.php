@@ -47,7 +47,6 @@
       $this->expectException(JException::class);
       Parser::parseFile([]);
     }
-
     public function testParserFileCorrectInputMD() {
       $temp = Parser::parseFile("tests/jate/modules/Parser/file/test.md", [], "md");
       $this->assertEquals('<h1>hello</h1>', $temp);

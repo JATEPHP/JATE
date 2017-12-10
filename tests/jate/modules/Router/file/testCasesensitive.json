@@ -3,7 +3,7 @@
   "pages": [
     ["/Page404", "Page404", []],
     ["/",        "Home",    []],
-    ["/Home",    "Home",    []],
+    ["/home",    "Home",    []],
     ["/Page1",   "Page01",  []]
   ]
 }
