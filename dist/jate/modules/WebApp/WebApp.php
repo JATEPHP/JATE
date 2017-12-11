@@ -11,7 +11,8 @@
     }
     public function draw() {
       $pageSelected = $this->router->getPage();
-      $currentPage = new $pageSelected[0](["app" => $this->misc, "page" => $pageSelected[1]]);
+      $currentPage = new $pageSelected[0]();
+      $currentPage->setParameters(["app" => $this->misc, "page" => $pageSelected[1]]);
       $currentPage->init();
       echo minifyOutput($currentPage->draw());
     }

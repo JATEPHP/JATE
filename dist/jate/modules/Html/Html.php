@@ -8,11 +8,11 @@
     public $page;
     public $tags;
     public $jsVars;
-    public function __construct( $_parameters = [ "app" => null, "page" => null] ) {
-      parent::__construct($_parameters);
+    public function __construct() {
+      parent::__construct();
       $this->template = "";
-      $this->app      = $_parameters["app"];
-      $this->page     = $_parameters["page"];
+      $this->app      = [];
+      $this->page     = [];
       $this->jsVars   = [];
       $this->tags     = [
         "css"   => [],
@@ -20,6 +20,10 @@
         "jsVar" => [],
         "base"  => ""
       ];
+    }
+    public function setParameters( $_parameters = [ "app" => null, "page" => null] ) {
+    $this->app  = $_parameters["app"];
+    $this->page = $_parameters["page"];
     }
     abstract public function init();
     public function draw() {
