@@ -1,7 +1,7 @@
 <?php
   class Template extends Html {
     public function init() {
-      $this->addConnection("config/connection.json");
+      $this->addConnection("config/connection2.json");
       $this->addFilesRequired([
         "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css",
         "https://code.jquery.com/jquery-1.11.3.min.js",

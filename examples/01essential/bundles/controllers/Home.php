@@ -4,6 +4,8 @@
       parent::init();
       $this->tags["title"]  .= "Home";
       $this->tags["content"] = $this->makePage();
+      $this->addModule(new Test());
+      $this->modules["Test"]->init();
     }
     public function makePage() {
       jBlock();

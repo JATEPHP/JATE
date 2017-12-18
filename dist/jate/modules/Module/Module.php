@@ -28,6 +28,8 @@
       if(! is_subclass_of ($_module, "Module"))
         throw new JException("Parameter must be a object inherited from Module object.");
       $this->modules[$_module->name] = $_module;
+      if($this->currentConnection)
+        $this->modules[$_module->name]->addConnectionMan($this->currentConnection);
     }
   }
 ?>

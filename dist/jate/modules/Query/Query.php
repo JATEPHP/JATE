@@ -16,12 +16,21 @@
         $jConfig = new JConfig($_path);
         if($jConfig->enable) {
           $connection = new Connection($jConfig);
-          $this->connection["$_name"] = $connection;
-          $this->currentConnection = $connection;
-          foreach ($this->modules as &$module)
-            if(isset($module->currentConnection))
-              $module->addConnection($_path, $_name);
+          $this->addConnectionMan($connection, $_name);
         }
+      } catch (Exception $e) {
+        throw new JException($e->getMessage(), 1);
+      }
+    }
+    public function addConnectionMan( $_connection, $_name = "default") {
+      if(!is_object($_connection) || !is_a($_connection, "Connection"))
+        throw new JException("Parameter must be a Connection object.", 1);
+      try {
+        $this->connection["$_name"] = $_connection;
+        $this->currentConnection = $_connection;
+        foreach ($this->modules as &$module)
+          if(isset($this->currentConnection))
+            $module->addConnectionMan($this->currentConnection, $_name);
       } catch (Exception $e) {
         throw new JException($e->getMessage(), 1);
       }
