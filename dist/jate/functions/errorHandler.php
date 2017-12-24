@@ -1,4 +1,5 @@
 <?php
+  function jateErrorHandler($number, $message, $file, $line) {
     if (!(error_reporting() & $number)) {
       return false;
     }
@@ -56,7 +57,9 @@
   function fatalErrorShutdownHandler() {
     $last_error = error_get_last();
     if ($last_error['type'] === E_ERROR) {
+      jateErrorHandler(E_ERROR, $last_error['message'], $last_error['file'], $last_error['line']);
     }
   }
+  set_error_handler('jateErrorHandler');
   register_shutdown_function('fatalErrorShutdownHandler');
 ?>
