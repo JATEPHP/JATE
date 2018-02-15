@@ -3,7 +3,7 @@ layout: default
 ---
 # Getting Started
 
-## Index
+## Index (RELEASE <= 0.2.7)
   1. [Structure](#1-structure)
   2. [Download JATE](#2-download-jate)
   3. [Run first page](#3-run-first-page)

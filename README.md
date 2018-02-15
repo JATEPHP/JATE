@@ -13,7 +13,7 @@ Just Another Template Engine
 JATE is a new light and hackable framework for PHP.<br>
 It's simple to lern and simple to customize.<br>
 JATE contains the minimum of libraries and functions to get you started.<br>
-Recommend the use of Bootstrap3, all examples use it.<br>
+Recommend the use of Bootstrap4, all examples use it.<br>
 ## FEAUTURES
 - Thought to write less code
 - Designed to focus only on the frontend
@@ -42,6 +42,10 @@ bower install JATE
 ```
 composer require xaberr/jate:dev-master
 ```
+###### NPM
+```
+npm install jate-framework
+```
 ###### MANUAL
 Download and uncompress [zip](https://github.com/XaBerr/JATE/archive/master.zip) file from GitHub.
 
@@ -51,5 +55,3 @@ Download and uncompress [zip](https://github.com/XaBerr/JATE/archive/master.zip)
 Where to start if you do not know anything about JATE.
 #### [EXAMPLES](https://github.com/XaBerr/JATE/tree/master/examples)
 A list of sample sites.
-#### [WIKI](https://github.com/XaBerr/JATE/wiki)
-We list the functions that are available in JATE.

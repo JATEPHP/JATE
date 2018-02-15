@@ -4,15 +4,15 @@
       parent::init();
       $this->tags["title"]  .= "Home";
       $this->tags["content"] = $this->makePage();
-      $this->addModule(new Test());
-      $this->modules["Test"]->init();
     }
     public function makePage() {
       jBlock();
       ?>
       <div class="col-lg-12" style="margin-top:70px">
-        <div class="well well-sm">
-          Hello World!
+        <div class="card">
+          <div class="card-body">
+            Hello World!
+          </div>
         </div>
       </div>
       <?php

@@ -22,6 +22,9 @@
         case "postgresql":
           $this->database = new PostgresqlAdapter($_srv, $_db, $_usr, $_pass);
         break;
+        case "memory":
+          $this->database = new PdoMemoryAdapter($_srv, $_db, $_usr, $_pass);
+        break;
         case "pdo":
         default:
           $this->database = new PdoAdapter($_srv, $_db, $_usr, $_pass);
