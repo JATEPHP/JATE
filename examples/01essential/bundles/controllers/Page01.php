@@ -1,16 +1,18 @@
 <?php
   class Page01 extends Template {
-    public function __construct( $_parameters ) {
-      parent::__construct( $_parameters );
+    public function init() {
+      parent::init();
       $this->tags["title"]  .= "Page01";
       $this->tags["content"] = $this->makePage();
     }
     public function makePage() {
       jBlock();
       ?>
-      <div class="col-lg-12" style="margin-top:70px;">
-        <div class="well well-sm">
-          Page 1!
+      <div class="col-lg-12" style="margin-top:70px">
+        <div class="card">
+          <div class="card-body">
+            Page 01!
+          </div>
         </div>
       </div>
       <?php

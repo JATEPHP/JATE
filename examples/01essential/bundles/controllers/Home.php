@@ -1,7 +1,7 @@
 <?php
   class Home extends Template {
-    public function __construct( $_parameters ) {
-      parent::__construct( $_parameters );
+    public function init() {
+      parent::init();
       $this->tags["title"]  .= "Home";
       $this->tags["content"] = $this->makePage();
     }
@@ -9,8 +9,10 @@
       jBlock();
       ?>
       <div class="col-lg-12" style="margin-top:70px">
-        <div class="well well-sm">
-          Hello World!
+        <div class="card">
+          <div class="card-body">
+            Hello World!
+          </div>
         </div>
       </div>
       <?php

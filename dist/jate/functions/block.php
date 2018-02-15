@@ -1,7 +1,6 @@
 <?php
-  jRequire("../modules/Pug/Pug.php");
-  jRequire("../modules/Parsedown/Parsedown.php");
-  jRequire("../modules/Debug/Debug.php");
+  jRequire("../modules/Parser/Parser.php");
+  jRequire("../modules/JException/JException.php");
   function jBlock() {
     return ob_start();
   }
@@ -11,44 +10,31 @@
   }
 
   function jBlockFile( $_path, $_parameters = [] ) {
-    $extension = explode(".", $_path);
-    $extension = $extension[count($extension)-1];
-    $extension = strtolower($extension);
-    return jBlockFileMan($_path, $extension, $_parameters);
+    try {
+      $temp = Parser::parseFile($_path, $_parameters);
+    } catch (Exception $e) {
+      throw new JException($e->getMessage());
+    }
+    return $temp;
   }
 
   function jBlockFileMan( $_path, $_type, $_parameters = [] ) {
-    if(!file_exists($_path))
-      Debug::fatal("File [$_path] not found.");
-    $temp = file_get_contents($_path);
-    return jBlockParsing($_type, $temp, $_parameters);
+    try {
+      $temp = Parser::parseFileMan($_path, $_parameters, $_type);
+    } catch (Exception $e) {
+      throw new JException($e->getMessage());
+    }
+    return $temp;
   }
 
   function jBlockEnd( $_type = "html", $_parameters = [] ) {
     $text = ob_get_clean();
-    return jBlockParsing($_type, $text, $_parameters);
-  }
-
-  function jBlockParsing( $_type = "html", $_string = "", $_parameters = [] ) {
-    switch ($_type) {
-      case "pug":
-      case "jade":
-        $Pug = new Pug();
-        $_string = $Pug->drawText($_string, $_parameters);
-      break;
-      case "md":
-      case "markdown":
-      case "parsedown":
-        $Parsedown = new Parsedown();
-        $_string = $Parsedown->drawText($_string);
-      break;
-      case "twig":
-        $Twig = new Twig();
-        $_string = $Twig->drawText($_string, $_parameters);
-      break;
-      default: break;
+    try {
+      $temp = Parser::parseText($text, $_parameters, $_type);
+    } catch (Exception $e) {
+      throw new JException($e->getMessage());
     }
-    return $_string;
+    return $temp;
   }
 
   function minifyOutput($_buffer) {

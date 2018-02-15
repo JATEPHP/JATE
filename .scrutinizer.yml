@@ -3,3 +3,4 @@ filter:
     - "examples/"
     - "dist/jate/modules/ExternalModules/"
     - "dist/jate/modules/Parsedown/Parsedown/"
+    - "tests/"
