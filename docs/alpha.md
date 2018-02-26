@@ -104,12 +104,10 @@ Doing this we say to the JATE that when it receives the following url `/heroes/v
 We have the class and we set the routing, now we can access our page through:
 http://localhost/projectHero/heros/view.
 In order to be able to access it more conveniently we include in our template page, in the menu function the following entry:
-```php
-<?php
-  <li>
-    <a href="heros/view">view</a>
-  </li>
-?>
+```html
+<li>
+  <a href="heros/view">view</a>
+</li>
 ```
 Now it will be a normal page where you can navigate from the menu. Let's continue by adding the hero list, to do this we add to our class the following display function:
 ```php
@@ -154,12 +152,10 @@ To create the page we do the same as before, we add
   ["/heros/insert", "Insert" ],
 ```
 and
-```php
-<?php
-  <li>
-    <a href="heros/insert">insert</a>
-  </li>
-?>
+```html
+<li>
+  <a href="heros/insert">insert</a>
+</li>
 ```
 and then we create the `bundles/models/Insert.php` file with the following code:
 ```php
@@ -244,12 +240,10 @@ This time make sure to put the following line above the voices `/heroes/*`:
   ["/heros", "Heros" ],
 ```
 and add it as before:
-```php
-<?php
-  <li>
-    <a href="heros">heros</a>
-  </li>
-?>
+```html
+<li>
+  <a href="heros">heros</a>
+</li>
 ```
 Here we remember to delete the items in the menu we will no longer need it. We create the `bundles/models/Heros.php` file with the following code:
 ```php
@@ -381,7 +375,6 @@ __bundles/views/heros.twig__
     <div>{{insert|raw}}</div>
     <div>{{view|raw}}</div>
   </div>
-?>
 ```
 and then we change the function in
 ```php
