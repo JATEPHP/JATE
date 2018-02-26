@@ -8,7 +8,7 @@
     public function makePage() {
       jBlock();
       ?>
-      <div class="col-lg-12" style="margin-top:70px">
+      <div class="col-lg-12">
         <div class="card">
           <div class="card-body">
             Page 01!
