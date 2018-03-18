@@ -28,7 +28,18 @@ Recommend the use of Bootstrap4, all examples use it.<br>
 ## REQUIREMENTS
 JATE requires PHP 5.4 or higher.
 ## HOW TO INSTALL
-Install or download JATE to the root folder of your project.
+Install with cli or download JATE to the root folder of your project.
+### CLI
+1. Install [npm](https://www.npmjs.com/)
+2. Run the following command to install the [cli](https://www.npmjs.com/package/jate-cli)
+```
+npm install jate-cli -g
+```
+3. Go to the folder where you want to create the new project and run
+```
+jate project_name
+```
+
 ### DOWNLOADS
 ###### GIT
 ```
