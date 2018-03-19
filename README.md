@@ -14,6 +14,7 @@ JATE is a new light and hackable framework for PHP.<br>
 It's simple to lern and simple to customize.<br>
 JATE contains the minimum of libraries and functions to get you started.<br>
 Recommend the use of Bootstrap4, all examples use it.<br>
+
 ## FEAUTURES
 - Thought to write less code
 - Designed to focus only on the frontend
@@ -27,42 +28,6 @@ Recommend the use of Bootstrap4, all examples use it.<br>
 
 ## REQUIREMENTS
 JATE requires PHP 5.4 or higher.
-## HOW TO INSTALL
-Install with cli or download JATE to the root folder of your project.
-### CLI
-1. Install [npm](https://www.npmjs.com/)
-2. Run the following command to install the [cli](https://www.npmjs.com/package/jate-cli)
-```
-npm install jate-cli -g
-```
-3. Go to the folder where you want to create the new project and run
-```
-jate project_name
-```
 
-### DOWNLOADS
-###### GIT
-```
-git clone https://github.com/XaBerr/JATE.git
-```
-###### BOWER
-```
-bower install JATE
-```
-###### COMPOSER
-```
-composer require xaberr/jate:dev-master
-```
-###### NPM
-```
-npm install jate-framework
-```
-###### MANUAL
-Download and uncompress [zip](https://github.com/XaBerr/JATE/archive/master.zip) file from GitHub.
-
-## Other contents
-
-#### [GETTING STARTED](http://xaberr.github.io/JATE/)
+## [GETTING STARTED](http://xaberr.github.io/JATE/)
 Where to start if you do not know anything about JATE.
-#### [EXAMPLES](https://github.com/XaBerr/JATE/tree/master/examples)
-A list of sample sites.
