@@ -1,9 +1,12 @@
 ---
-layout: default
+title: "Version 0.2.6"
+permalink: /version-0-2-6
+excerpt: "Version 0.2.6."
+last_modified_at: 2018-03-19T16:28:04-05:00
+toc: true
 ---
-# Getting Started
 
-## Index (RELEASE >= 0.5.0)
+## Index
   1. [Structure](#1-structure)
   2. [Download JATE](#2-download-jate)
   3. [Run first page](#3-run-first-page)
@@ -56,24 +59,33 @@ INSERT INTO `hero` (`pk_hero`, `hero_name`, `name`, `surname`) VALUES
 (1, 'Superman', 'Clark', 'Kent'),
 (2, 'Batman', 'Bruce', 'Wayne');
 ```
-Let's go to our project and look for the `projectHero/config/connection.json` file, set all connection values and make sure to enable connection setting `enable: true`.
-```json
-{
-  "enable":    false,
-  "user":      "",
-  "password":  "",
-  "database":  "",
-  "server":    "",
-  "engine": {
-    "pdo":        true,
-    "mysqli":     false,
-    "postgresql": false
-  }
-}
+Let's go to our project and look for the `projectHero/config/connection.json` file, set all connection values and make sure to enable connection setting `enable: true`. Let's go to the `bundles/models/Template.php` page and add to the` Template` class the following function that will serve to connect:
 
+```php
+<?php
+  public function makeConnection() {
+    $jConfig = $this->parameters["app"];
+    $connection = null;
+    if( $jConfig != null && $jConfig->connection["enable"])
+      $connection = new Connection(
+        $jConfig->connection["server"],
+        $jConfig->connection["database"],
+        $jConfig->connection["user"],
+        $jConfig->connection["password"],
+        $jConfig->connection["engine"]
+      );
+    $this->addConnection("base", $connection);
+  }
+?>
+```
+Now we call this function in the template constructor so that each time a page is invoked, it will automatically connect. To do this we use the following code:
+```php
+<?php
+  parent::__construct( $_parameters ); // under this line
+  $this->makeConnection();
+?>
 ```
 We launch the same page before, __if everything works correctly we will have to see it appear without errors__.
-The connection is made automatically from the `$this-> addConnection("config/connection.json");` line on the `bundles/models/Template.php` page.
 
 ## 5 View page
 We want to create a new page called __view__, it must show us the list of our heroes. The first step to do is go to `config/router.json` and add a new line inside the array pages:
@@ -84,10 +96,10 @@ Doing this we say to the JATE that when it receives the following url `/heroes/v
 ```php
 <?php
   class View extends Template {
-    public function init() {
-      parent::init();
+    public function __construct( $_parameters ) {
+      parent::__construct( $_parameters );
       $this->tags["title"]  .= "View";
-      $this->tags["content"] = "<div>Hello world!</div>";
+      $this->tags["content"] = "<div style='margin-top:70px;'>Hello world!</div>";
     }
   }
 ?>
@@ -96,8 +108,8 @@ We have the class and we set the routing, now we can access our page through:
 http://localhost/projectHero/heros/view.
 In order to be able to access it more conveniently we include in our template page, in the menu function the following entry:
 ```html
-<li class="nav-item">
-  <a class="nav-link" href="heros/view">view</a>
+<li>
+  <a href="heros/view">view</a>
 </li>
 ```
 Now it will be a normal page where you can navigate from the menu. Let's continue by adding the hero list, to do this we add to our class the following display function:
@@ -107,7 +119,7 @@ Now it will be a normal page where you can navigate from the menu. Let's continu
     $heros = $this->queryFetch("SELECT * FROM hero");
     jBlock();
     ?>
-      <div>
+      <div style='margin-top:70px;'>
         <table class="table">
           <tr>
             <th>hero</th>
@@ -131,7 +143,7 @@ Now it will be a normal page where you can navigate from the menu. Let's continu
 This feature uses an engine called `twig` for those who prefer it can use another engine called `pug`, what it does is take what we write between two _jBlock_ and return it in the form of html string. To tell the class to print this html string we need to edit a line in the constructor function:
 ```php
 <?php
-  // $this->tags["content"] = "<div>Hello world!</div>";
+  // $this->tags["content"] = "<div style='margin-top:70px;'>Hello world!</div>";
   $this->tags["content"] = $this->pageView();
 ?>
 ```
@@ -144,18 +156,18 @@ To create the page we do the same as before, we add
 ```
 and
 ```html
-<li class="nav-item">
-  <a class="nav-link" href="heros/insert">insert</a>
+<li>
+  <a href="heros/insert">insert</a>
 </li>
 ```
 and then we create the `bundles/models/Insert.php` file with the following code:
 ```php
 <?php
   class Insert extends Template {
-    public function init() {
-      parent::init();
+    public function __construct( $_parameters ) {
+      parent::__construct( $_parameters );
       $this->tags["title"]  .= "Insert";
-      $this->tags["content"] = "<div>Hello world!</div>";
+      $this->tags["content"] = "<div style='margin-top:70px;'>Hello world!</div>";
     }
   }
 ?>
@@ -166,7 +178,7 @@ Let's create this time a function to insert the heroes:
   private function pageInsert() {
     jBlock();
     ?>
-      <div>
+      <div style='margin-top:70px;'>
         <form action="" method="POST">
           <input type="hidden" name="insertHero">
           <div class="form-group">
@@ -192,7 +204,7 @@ Let's create this time a function to insert the heroes:
 and add it as before:
 ```php
 <?php
-  // $this->tags["content"] = "<div>Hello world!</div>";
+  // $this->tags["content"] = "<div style='margin-top:70px;'>Hello world!</div>";
   $this->tags["content"] = $this->pageInsert();
 ?>
 ```
@@ -218,7 +230,7 @@ Now we have the graphical interface but clicking the Add button will not do anyt
 Now let's add this feature to the constructor:
 ```php
 <?php
-  // $this->tags["content"] = "<div>Hello world!</div>";
+  // $this->tags["content"] = "<div style='margin-top:70px;'>Hello world!</div>";
   $this->insertFunction();
   $this->tags["content"] = $this->pageInsert();
 ?>
@@ -232,28 +244,36 @@ This time make sure to put the following line above the voices `/heroes/*`:
 ```
 and add it as before:
 ```html
-<li class="nav-item">
-  <a class="nav-link" href="heros">heros</a>
+<li>
+  <a href="heros">heros</a>
 </li>
 ```
 Here we remember to delete the items in the menu we will no longer need it. We create the `bundles/models/Heros.php` file with the following code:
 ```php
 <?php
   class Heros extends Template {
-    public function init() {
-      parent::init();
+    public function __construct( $_parameters ) {
+      parent::__construct( $_parameters );
       $this->tags["title"]  .= "Heros";
-      $this->tags["content"] = "<div>Hello world!</div>";
+      $this->tags["content"] = "<div style='margin-top:70px;'>Hello world!</div>";
     }
   }
 ?>
 ```
-We continue to transform it into a model. Before I start I introduce an introduction to the models. Models are classes that extend `Html`. They have two main functions: _init_ is the function that actually serves as a constructor, it serves to initialize the class; _draw_ is the function that prints html.
-We take the `bundles/views/View.php` file and move it to`bundles/models/View.php` and we modify `extends Template` in` extends Html`. We modify the init eliminating all that is not necessary:
+We continue to transform it into a model. Before I start I introduce an introduction to the models. Models are classes that extend either the `Model` class or the `Query` class depend if they need or not to run the queries. They have three main functions: _\__construct_ which is the constructor and is the same for all classes in JATE; _init_ is the function that actually serves as a constructor, it serves to initialize the class; _draw_ is the function that prints html.
+We take the `bundles/views/View.php` file and move it to`bundles/models/View.php` and we modify `extends Template` in` extends Query`. We modify the \_\_construct eliminating all that is not necessary:
 ```php
 <?php
-  public function init() {
-    parent::init();
+  public function __construct() {
+    parent::__construct();
+  }
+?>
+```
+we add the init connection:
+```php
+<?php
+  public function init( $_connession ) {
+    $this->addConnection("base", $_connection);
   }
 ?>
 ```
@@ -263,7 +283,7 @@ and we rename our private function `private function pageView()` in `public func
   $this->addModules([
     new View()
   ]);
-  $this->modules["View"]->init();
+  $this->modules["View"]->init($this->currentConnection);
   $this->tags["title"]  .= "Heros";
   $this->tags["content"] = $this->printPage();
 ?>
@@ -282,12 +302,20 @@ let's now create this function:
   }
 ?>
 ```
-Now running the page we check if everything works properly.<br>
-The next step is to introduce the block to insert the heroes, as before we take the `bundles/views/Insert.php` file and move it to `bundles/models/Insert.php` to modify `extends Template` in `extends Html`. We modify the init eliminating all not necessary:
+Now running the page we check if everything works properly.
+The next step is to introduce the block to insert the heroes, as before we take the `bundles/views/Insert.php` file and move it to `bundles/models/Insert.php` to modify `extends Template` in `extends Query`. We modify the \_\_construct eliminating all not necessary:
 ```php
 <?php
-  public function init() {
-    parent::init();
+  public function __construct() {
+    parent::__construct();
+  }
+?>
+```
+we add the init connection
+```php
+<?php
+  public function init( $_connession ) {
+    $this->addConnection("base", $_connection);
   }
 ?>
 ```
@@ -299,8 +327,8 @@ Now add this module to the hero class with 2 simple steps:
     new View(),
     new Insert()
   ]);
-  $this->modules["View"]->init();
-  $this->modules["Insert"]->init();
+  $this->modules["View"]->init($this->currentConnection);
+  $this->modules["Insert"]->init($this->currentConnection);
   $this->modules["Insert"]->listener();
   $this->tags["title"]  .= "Heros";
   $this->tags["content"] = $this->printPage();
@@ -312,7 +340,7 @@ and
   private function printPage() {
     jBlock();
     ?>
-    <div>
+    <div style='margin-top:70px;'>
       <div>{{insert|raw}}</div>
       <div>{{view|raw}}</div>
     </div>
@@ -346,10 +374,10 @@ In general, when we write the html code within our php we use the form:
 Although this methodology is very quick and easy to visualize, in general this form is not recommended, it would be best to split the php from html, to do this we introduce the views. The passage is very simple, we take the content of what we are sampling and insert it into a `html` or` twig` file depending on the need:
 __bundles/views/heros.twig__
 ```html
-<div>
-  <div>{{insert|raw}}</div>
-  <div>{{view|raw}}</div>
-</div>
+  <div style='margin-top:70px;'>
+    <div>{{insert|raw}}</div>
+    <div>{{view|raw}}</div>
+  </div>
 ```
 and then we change the function in
 ```php
@@ -375,8 +403,8 @@ body {
 Let's go to the page `Hero.php` and simply we include the file like this:
 ```php
 <?php
-  public function init() {
-    parent::init();
+  public function __construct( $_parameters ) {
+    parent::__construct( $_parameters );
     $this->addFiles([
       "css/Hero.css"
     ]);
@@ -384,8 +412,8 @@ Let's go to the page `Hero.php` and simply we include the file like this:
       new View(),
       new Insert()
     ]);
-    $this->modules["View"]->init();
-    $this->modules["Insert"]->init();
+    $this->modules["View"]->init($this->currentConnection);
+    $this->modules["Insert"]->init($this->currentConnection);
     $this->modules["Insert"]->listener();
     $this->tags["title"]  .= "Heros";
     $this->tags["content"] = $this->printPage();
