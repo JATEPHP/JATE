@@ -5,6 +5,8 @@ excerpt: "01 Essential."
 last_modified_at: 2018-03-19T16:28:04-05:00
 toc: true
 ---
+
+You can fine the example [here](https://github.com/XaBerr/JATE/tree/master/examples/01essential).
 ## Four simple steps (General Rule)
 - All files outside `/config` `/bundles` and folders are system, you don't need to know how they work.<br>
 The first file you need to know is `/config/router.json`. It contains a list of url and classes. When in the web site is called a page, in this list you can specify what will be the class to solve this call. The class must be created in `/bundles/controllers`.<br>
