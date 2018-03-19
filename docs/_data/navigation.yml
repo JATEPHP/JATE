@@ -6,44 +6,44 @@ docs:
   - title: Getting Started
     children:
       - title: "Structure"
-        url: /structure/
+        url: /structure
       - title: "Download "
-        url: /download/
+        url: /download
       - title: "Run first page"
-        url: /run-first-page/
+        url: /run-first-page
       - title: "Creating a database"
-        url: /creating-a-database/
+        url: /creating-a-database
       - title: "View page"
-        url: /view-page/
+        url: /view-page
       - title: "Insert page"
-        url: /insert-page/
+        url: /insert-page
       - title: "The use of models"
-        url: /use-of-models/
+        url: /use-of-models
       - title: "The use of views"
-        url: /use-of-views/
+        url: /use-of-views
       - title: "Js and css"
-        url: /js-and-css/
+        url: /js-and-css
   - title: Components
     children:
       - title: "jRequire"
-        url: /jrequire/
+        url: /jrequire
       - title: "jBlockFile"
-        url: /jblockfile/
+        url: /jblockfile
       - title: "jBlock"
-        url: /jblock/
+        url: /jblock
       - title: "jBlockEnd"
-        url: /jblockend/
+        url: /jblockend
       - title: "jBlockClose"
-        url: /jblockclose/
+        url: /jblockclose
       - title: "jBlockFileMan"
-        url: /jblockfileman/
+        url: /jblockfileman
   - title: Examples
     children:
       - title: "01 Essential"
-        url: /01-essential/
+        url: /01-essential
   - title: Older version
     children:
       - title: "0.2.7"
-        url: /version-0-2-7/
+        url: /version-0-2-7
       - title: "0.2.6 (or less)"
-        url: /version-0-2-6/
+        url: /version-0-2-6
