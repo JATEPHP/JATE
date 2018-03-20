@@ -11,7 +11,7 @@ Just Another Template Engine
 
 ## WHAT IS JATE?
 JATE is a new light and hackable framework for PHP.<br>
-It's simple to lern and simple to customize.<br>
+It's simple to learn and simple to customize.<br>
 JATE contains the minimum of libraries and functions to get you started.<br>
 Recommend the use of Bootstrap4, all examples use it.<br>
 

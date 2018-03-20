@@ -6,6 +6,7 @@ last_modified_at: 2018-03-19T16:28:04-05:00
 toc: true
 ---
 
+{% raw %}
 Now we've accomplished the project by associating a feature page with a page, but for example we would like to have a single page that deals with insert and display heros. The concept of the models now comes into play. What we will do in this section is: we will create a hero page, transform the two pages _insert_ and _view_ into templates and recall them in the heroes page. As usual we create the heroes page.
 This time make sure to put the following line above the voices `/heroes/*`:
 ```js
@@ -106,3 +107,4 @@ and
 ?>
 ```
 Now you can check the page to see if everything works correctly.
+{% endraw %}

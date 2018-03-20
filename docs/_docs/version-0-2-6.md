@@ -6,6 +6,7 @@ last_modified_at: 2018-03-19T16:28:04-05:00
 toc: true
 ---
 
+{% raw %}
 ## Index
   1. [Structure](#1-structure)
   2. [Download JATE](#2-download-jate)
@@ -421,3 +422,4 @@ Let's go to the page `Hero.php` and simply we include the file like this:
 ?>
 ```
 You can include js and css files, this way, on both pages and modules.
+{% endraw %}

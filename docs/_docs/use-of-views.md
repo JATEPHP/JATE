@@ -6,6 +6,7 @@ last_modified_at: 2018-03-19T16:28:04-05:00
 toc: true
 ---
 
+{% raw %}
 In general, when we write the html code within our php we use the form:
 ```php
 <?php
@@ -42,3 +43,4 @@ and then we change the function in
 ?>
 ```
 By doing this, it makes the content display independent.
+{% endraw %}

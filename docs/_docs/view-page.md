@@ -6,6 +6,7 @@ last_modified_at: 2018-03-19T16:28:04-05:00
 toc: true
 ---
 
+{% raw %}
 We want to create a new page called __view__, it must show us the list of our heroes. The first step to do is go to `config/router.json` and add a new line inside the array pages:
 ```js
   ["/heros/view", "View"],
@@ -66,3 +67,4 @@ This feature uses an engine called `twig` for those who prefer it can use anothe
 ?>
 ```
 __We run the page to check that everything is done correctly__.
+{% endraw %}
