@@ -16,7 +16,7 @@ and
   <a class="nav-link" href="heros/insert">insert</a>
 </li>
 ```
-and then we create the `bundles/models/Insert.php` file with the following code:
+and then we create the `bundles/controllers/Insert.php` file with the following code:
 ```php
 <?php
   class Insert extends Template {

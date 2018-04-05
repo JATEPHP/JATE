@@ -11,7 +11,7 @@ We want to create a new page called __view__, it must show us the list of our he
 ```js
   ["/heros/view", "View"],
 ```
-Doing this we say to the JATE that when it receives the following url `/heroes/view`  it will be the class `View` to deal with the request. Now we have to create the class and we create it in this new page `bundles/models/View.php` and insert the following code:
+Doing this we say to the JATE that when it receives the following url `/heroes/view`  it will be the class `View` to deal with the request. Now we have to create the class and we create it in this new page `bundles/controllers/View.php` and insert the following code:
 ```php
 <?php
   class View extends Template {

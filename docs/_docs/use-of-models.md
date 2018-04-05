@@ -18,7 +18,7 @@ and add it as before:
   <a class="nav-link" href="heros">heros</a>
 </li>
 ```
-Here we remember to delete the items in the menu we will no longer need it. We create the `bundles/models/Heros.php` file with the following code:
+Here we remember to delete the items in the menu we will no longer need it. We create the `bundles/controllers/Heros.php` file with the following code:
 ```php
 <?php
   class Heros extends Template {
@@ -31,7 +31,7 @@ Here we remember to delete the items in the menu we will no longer need it. We c
 ?>
 ```
 We continue to transform it into a model. Before I start I introduce an introduction to the models. Models are classes that extend `Html`. They have two main functions: _init_ is the function that actually serves as a constructor, it serves to initialize the class; _draw_ is the function that prints html.
-We take the `bundles/views/View.php` file and move it to`bundles/models/View.php` and we modify `extends Template` in` extends Html`. We modify the init eliminating all that is not necessary:
+We take the `bundles/controllers/View.php` file and move it to`bundles/models/View.php` and we modify `extends Template` in` extends Html`. We modify the init eliminating all that is not necessary:
 ```php
 <?php
   public function init() {
@@ -65,7 +65,7 @@ let's now create this function:
 ?>
 ```
 Now running the page we check if everything works properly.<br>
-The next step is to introduce the block to insert the heroes, as before we take the `bundles/views/Insert.php` file and move it to `bundles/models/Insert.php` to modify `extends Template` in `extends Html`. We modify the init eliminating all not necessary:
+The next step is to introduce the block to insert the heroes, as before we take the `bundles/controllers/Insert.php` file and move it to `bundles/models/Insert.php` to modify `extends Template` in `extends Html`. We modify the init eliminating all not necessary:
 ```php
 <?php
   public function init() {
