@@ -15,7 +15,7 @@ npm install jate-cli -g
 ```
 3. Go to the folder where you want to create the new project and run
 ```
-jate project_name
+jate projectHero
 ```
 
 ### DOWNLOADS

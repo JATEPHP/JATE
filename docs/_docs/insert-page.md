@@ -8,7 +8,7 @@ toc: true
 
 To create the page we do the same as before, we add
 ```js
-  ["/heros/insert", "Insert" ],
+  ["/heros/insert", "Insert", []],
 ```
 and
 ```html
@@ -16,7 +16,7 @@ and
   <a class="nav-link" href="heros/insert">insert</a>
 </li>
 ```
-and then we create the `bundles/controllers/Insert.php` file with the following code:
+and then we create the `bundles/models/Insert.php` file with the following code:
 ```php
 <?php
   class Insert extends Template {
@@ -34,7 +34,8 @@ Let's create this time a function to insert the heroes:
   private function pageInsert() {
     jBlock();
     ?>
-      <div>
+      <div class="col-6 offset-3">
+        <h2>Insert</h2>
         <form action="" method="POST">
           <input type="hidden" name="insertHero">
           <div class="form-group">
@@ -49,7 +50,7 @@ Let's create this time a function to insert the heroes:
             <label>surname:</label>
             <input class="form-control" type="text" name="surname"><br><br>
           </div>
-          <input type="submit" value="Add">
+          <input class="form-control" type="submit" value="Add">
         </form>
       </div>
     <?php
@@ -91,3 +92,15 @@ Now let's add this feature to the constructor:
   $this->tags["content"] = $this->pageInsert();
 ?>
 ```
+
+**Success:** We run the page to check that everything is done correctly.
+{: .notice--success}
+
+<figure>
+	<a href="https://user-images.githubusercontent.com/16030020/38466616-6bcc69f8-3b2c-11e8-8d52-bb4f25b44668.png">
+    <img src="https://user-images.githubusercontent.com/16030020/38466616-6bcc69f8-3b2c-11e8-8d52-bb4f25b44668.png">
+  </a>
+	<figcaption>
+    Insert page
+  </figcaption>
+</figure>

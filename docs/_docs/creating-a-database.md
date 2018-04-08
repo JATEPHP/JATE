@@ -6,6 +6,9 @@ last_modified_at: 2018-03-19T16:28:04-05:00
 toc: true
 ---
 
+**Warning:** This example uses MYSQL, to use different databases modify the file `config/connection.json`, putting **only** the selected database engine to true.
+{: .notice--warning}
+
 We create a database of heros, for example:
 ```sql
 CREATE DATABASE IF NOT EXISTS `db-hero`;
@@ -44,5 +47,8 @@ Let's go to our project and look for the `projectHero/config/connection.json` fi
 }
 
 ```
-We launch the same page before, __if everything works correctly we will have to see it appear without errors__.
+**Success:** We launch the same page before, __if everything works correctly we will have to see it appear without errors__.
+{: .notice--success}
+
+
 The connection is made automatically from the `$this-> addConnection("config/connection.json");` line on the `bundles/models/Template.php` page.

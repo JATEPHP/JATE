@@ -9,9 +9,9 @@ toc: true
 {% raw %}
 We want to create a new page called __view__, it must show us the list of our heroes. The first step to do is go to `config/router.json` and add a new line inside the array pages:
 ```js
-  ["/heros/view", "View"],
+  ["/heros/view", "View", []],
 ```
-Doing this we say to the JATE that when it receives the following url `/heroes/view`  it will be the class `View` to deal with the request. Now we have to create the class and we create it in this new page `bundles/controllers/View.php` and insert the following code:
+Doing this we say to the JATE that when it receives the following url `/heroes/view`  it will be the class `View` to deal with the request. Now we have to create the class and we create it in this new page `bundles/models/View.php` and insert the following code:
 ```php
 <?php
   class View extends Template {
@@ -38,7 +38,8 @@ Now it will be a normal page where you can navigate from the menu. Let's continu
     $heros = $this->queryFetch("SELECT * FROM hero");
     jBlock();
     ?>
-      <div>
+      <div class="col-6 offset-3">
+        <h2>View</h2>
         <table class="table">
           <tr>
             <th>hero</th>
@@ -46,11 +47,11 @@ Now it will be a normal page where you can navigate from the menu. Let's continu
             <th>surname</th>
           </tr>
           {% for hero in heros %}
-            <tr>
-              <td>{{hero["hero_name"]}}</td>
-              <td>{{hero["name"]}}</td>
-              <td>{{hero["surname"]}}</td>
-            </tr>
+          <tr>
+            <td>{{hero["hero_name"]}}</td>
+            <td>{{hero["name"]}}</td>
+            <td>{{hero["surname"]}}</td>
+          </tr>
           {% endfor %}
         </table>
       </div>
@@ -66,5 +67,16 @@ This feature uses an engine called `twig` for those who prefer it can use anothe
   $this->tags["content"] = $this->pageView();
 ?>
 ```
-__We run the page to check that everything is done correctly__.
+
+**Success:** We run the page to check that everything is done correctly.
+{: .notice--success}
+
+<figure>
+	<a href="https://user-images.githubusercontent.com/16030020/38466615-696d1c3e-3b2c-11e8-98fc-6ac742b22472.png">
+    <img src="https://user-images.githubusercontent.com/16030020/38466615-696d1c3e-3b2c-11e8-98fc-6ac742b22472.png">
+  </a>
+	<figcaption>
+    View page
+  </figcaption>
+</figure>
 {% endraw %}

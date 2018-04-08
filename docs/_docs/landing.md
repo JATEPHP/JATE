@@ -15,13 +15,11 @@ Just Another Template Engine<br>
 [![License](https://poser.pugx.org/xaberr/jate/license)](https://packagist.org/packages/xaberr/jate)
 [![This is a forkable respository](https://img.shields.io/badge/forkable-yes-brightgreen.svg)](https://basicallydan.github.io/forkability/?u=XaBerr&r=JATE&l=PHP)
 
-
 ## WHAT IS JATE?
 JATE is a new light and hackable framework for PHP.<br>
 It's simple to learn and simple to customize.<br>
 JATE contains the minimum of libraries and functions to get you started.<br>
 Recommend the use of Bootstrap4, all examples use it.<br>
-
 ## FEAUTURES
 - Thought to write less code
 - Designed to focus only on the frontend
