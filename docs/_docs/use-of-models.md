@@ -64,7 +64,10 @@ let's now create this function:
   }
 ?>
 ```
-Now running the page we check if everything works properly.<br>
+
+**Success:** Now running the page we check if everything works properly.
+{: .notice--success}
+
 The next step is to introduce the block to insert the heroes, as before we take the `bundles/views/Insert.php` file and move it to `bundles/models/Insert.php` to modify `extends Template` in `extends Html`. We modify the init eliminating all not necessary:
 ```php
 <?php
@@ -106,5 +109,8 @@ and
   }
 ?>
 ```
-Now you can check the page to see if everything works correctly.
+
+**Success:** Now you can check the page to see if everything works correctly.
+{: .notice--success}
+
 {% endraw %}

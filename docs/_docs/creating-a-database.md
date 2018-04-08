@@ -9,6 +9,10 @@ toc: true
 **Warning:** This example uses MYSQL, to use different databases modify the file `config/connection.json`, putting **only** the selected database engine to true.
 {: .notice--warning}
 
+**Warning:** This example uses PDO, be sure to have enabled the extension `extension=php_pdo_mysql.dll`.
+{: .notice--warning}
+
+
 We create a database of heros, for example:
 ```sql
 CREATE DATABASE IF NOT EXISTS `db-hero`;
