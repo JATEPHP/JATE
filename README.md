@@ -1,6 +1,6 @@
 <p align="center">
   <a href="http://xaberr.github.io/JATE/">
-    <img src="https://user-images.githubusercontent.com/16030020/38464888-46374c10-3b15-11e8-84e8-47e57291da5c.png" alt="" width=72 height=72>
+    <img src="https://user-images.githubusercontent.com/16030020/38464888-46374c10-3b15-11e8-84e8-47e57291da5c.png" alt="logo" width=72 height=72>
   </a>
   <h3 align="center">JATE</h3>
   <p align="center">
@@ -9,13 +9,25 @@
     <a href="http://xaberr.github.io/JATE/"><strong>- Explore JATE DOCS -</strong></a>
     <br>
     <br>
-    [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/XaBerr/JATE/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/XaBerr/JATE/?branch=master)
-    [![Code Climate](https://codeclimate.com/github/XaBerr/JATE/badges/gpa.svg)](https://codeclimate.com/github/XaBerr/JATE)
-    [![Build Status](https://travis-ci.org/XaBerr/JATE.svg?branch=master)](https://travis-ci.org/XaBerr/JATE)
+    <a href="https://scrutinizer-ci.com/g/XaBerr/JATE/?branch=master">
+      <img src="https://scrutinizer-ci.com/g/XaBerr/JATE/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality">
+    </a>
+    <a href="https://codeclimate.com/github/XaBerr/JATE">
+      <img src="https://codeclimate.com/github/XaBerr/JATE/badges/gpa.svg" alt="Code Climate">
+    </a>
+    <a href="https://travis-ci.org/XaBerr/JATE">
+      <img src="https://travis-ci.org/XaBerr/JATE.svg?branch=master" alt="Build Status">
+    </a>
     <br>
-    [![Latest Unstable Version](https://poser.pugx.org/xaberr/jate/v/unstable)](https://packagist.org/packages/xaberr/jate)
-    [![License](https://poser.pugx.org/xaberr/jate/license)](https://packagist.org/packages/xaberr/jate)
-    [![This is a forkable respository](https://img.shields.io/badge/forkable-yes-brightgreen.svg)](https://basicallydan.github.io/forkability/?u=XaBerr&r=JATE&l=PHP)
+    <a href="https://packagist.org/packages/xaberr/jate">
+      <img src="https://poser.pugx.org/xaberr/jate/v/unstable" alt="Latest Unstable Version">
+    </a>
+    <a href="https://packagist.org/packages/xaberr/jate">
+      <img src="https://poser.pugx.org/xaberr/jate/license" alt="License">
+    </a>
+    <a href="https://basicallydan.github.io/forkability/?u=XaBerr&r=JATE&l=PHP">
+      <img src="https://img.shields.io/badge/forkable-yes-brightgreen.svg" alt="This is a forkable respository">
+    </a>
   </p>
 </p>
 <br>
