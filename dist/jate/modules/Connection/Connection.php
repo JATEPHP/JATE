@@ -30,6 +30,13 @@
           $this->database = new PdoAdapter($_srv, $_db, $_usr, $_pass);
         break;
       }
+      $this->info = [
+        "srv"  => $_srv,
+        "db"   => $_db,
+        "usr"  => $_usr,
+        "pass" => $_pass,
+        "type" => $_type
+      ];
     }
     protected function getConnectionType( $_type ) {
       $array = (array)$_type;
