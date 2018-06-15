@@ -6,50 +6,53 @@
     ob_end_clean();
     $message = JException::decode($message);
     echo "
-      <div id='error'>
+    <div id='jate-body'>
+      <div id='jate-error'>
         <header>
         JATE ERROR
         </header>
-        <div class='row'>
+        <div class='jate-row'>
           <b>Error:</b> $message<br>
         </div>
-        <div class='row'>
+        <div class='jate-row'>
           <b>Line:</b> $line<br>
         </div>
-        <div class='row'>
+        <div class='jate-row'>
           <b>File:</b> $file<br>
         </div>
-        <div class='row'>
+        <div class='jate-row'>
           <b>Php:</b> ".PHP_VERSION." (".PHP_OS.")<br>
         </div>
       </div>
-      <style>
-        body {
-          background-color: #fefefe;
-          padding-left: 50%;
-        }
-        #error {
-          width: 600px;
-          margin-left: -300px;
-          padding: 10px;
-          border-radius: 5px;
-          box-shadow: rgba(0, 0, 0, 0.3) 0 1px 40px;
-          -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 40px;
-          -moz-box-shadow: rgba(0,0,0,0.3) 0 1px 40px;
-          font-family: verdana;
-          vertical-align: middle;
-          word-break: break-all;
-        }
-        #error header {
-          text-align: center;
-          display: block;
-          font-size: 30px;
-          color: rgb(175,0,0);
-        }
-        .row {
-          margin-top: 10px;
-        }
-      </style>
+    </div>
+    <style>
+      #jate-body {
+        background-color: #fefefe;
+        padding-left: 50%;
+      }
+      #jate-error {
+        background-color: #fefefe;
+        width: 600px;
+        margin-left: -300px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0 1px 40px;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 40px;
+        -moz-box-shadow: rgba(0,0,0,0.3) 0 1px 40px;
+        font-family: verdana;
+        vertical-align: middle;
+        word-break: break-all;
+      }
+      #jate-error header {
+        text-align: center;
+        display: block;
+        font-size: 30px;
+        color: rgb(175,0,0);
+      }
+      .jate-row {
+        margin-top: 10px;
+      }
+    </style>
     ";
     exit(1);
     return true;
