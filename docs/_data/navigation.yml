@@ -41,6 +41,10 @@ docs:
     children:
       - title: "01 Essential"
         url: /01-essential
+      - title: "02 Advance"
+        url: /02-advance
+      - title: "03 React"
+        url: /03-react
   - title: Older version
     children:
       - title: "0.2.7"

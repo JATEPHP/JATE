@@ -7,6 +7,18 @@ toc: true
 ---
 
 You can fine the example [here](https://github.com/XaBerr/JATE/tree/master/examples/01essential).
+
+### CLI (Recommended)
+1. Install [npm](https://www.npmjs.com/)
+2. Run the following command to install the [cli](https://www.npmjs.com/package/jate-cli)
+```
+npm install jate-cli -g
+```
+3. Go to the folder where you want to create the new project and run
+```
+jate install example
+```
+
 ## Four simple steps (General Rule)
 - All files outside `/config` `/bundles` and folders are system, you don't need to know how they work.<br>
 The first file you need to know is `/config/router.json`. It contains a list of url and classes. When in the web site is called a page, in this list you can specify what will be the class to solve this call. The class must be created in `/bundles/controllers`.<br>
