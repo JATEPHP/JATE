@@ -25,18 +25,12 @@ docs:
         url: /js-and-css
   - title: Components
     children:
-      - title: "jRequire"
-        url: /jrequire
-      - title: "jBlockFile"
-        url: /jblockfile
-      - title: "jBlock"
-        url: /jblock
-      - title: "jBlockEnd"
-        url: /jblockend
-      - title: "jBlockClose"
-        url: /jblockclose
-      - title: "jBlockFileMan"
-        url: /jblockfileman
+      - title: "Functions"
+        url: /components/functions
+      - title: "Config"
+        url: /components/config
+      - title: "Html-class"
+        url: /components/html-class
   - title: Examples
     children:
       - title: "01 Essential"
