@@ -5,7 +5,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "<img src='img/favicon.png' class='brand'>JATE"
+title                    : "<img src='/JATE/img/favicon.png' class='brand'>JATE"
 title_separator          : "-"
 name                     : &name "XaBerr" # &name is a YAML anchor which can be *referenced later
 description              : &description "PHP Framework named JATE (Just Another Template Engine)"
