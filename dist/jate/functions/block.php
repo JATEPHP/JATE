@@ -13,7 +13,25 @@
     try {
       $temp = Parser::parseFile($_path, $_parameters);
     } catch (Exception $e) {
-      throw new JException($e->getMessage());
+      throw new JException($e->getMessage(), 1);
+    }
+    return $temp;
+  }
+
+  function view( $_path, $_parameters = [] ) {
+    try {
+      $temp = jBlockFile("bundles/views/$_path", $_parameters);
+    } catch (Exception $e) {
+      throw new JException($e->getMessage(), 1);
+    }
+    return $temp;
+  }
+
+  function sql( $_path, $_parameters = [] ) {
+    try {
+      $temp = jBlockFileMan("bundles/sql/$_path", "sql", $_parameters);
+    } catch (Exception $e) {
+      throw new JException($e->getMessage(), 1);
     }
     return $temp;
   }
@@ -22,7 +40,7 @@
     try {
       $temp = Parser::parseFileMan($_path, $_parameters, $_type);
     } catch (Exception $e) {
-      throw new JException($e->getMessage());
+      throw new JException($e->getMessage(), 1);
     }
     return $temp;
   }
@@ -32,7 +50,7 @@
     try {
       $temp = Parser::parseText($text, $_parameters, $_type);
     } catch (Exception $e) {
-      throw new JException($e->getMessage());
+      throw new JException($e->getMessage(), 1);
     }
     return $temp;
   }

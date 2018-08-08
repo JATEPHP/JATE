@@ -7,6 +7,7 @@
       $_type = strtolower($_type);
       switch ($_type) {
         case "twig":
+        case "sql":
           $parser = new TwigAdapter();
         break;
         case "jate":
