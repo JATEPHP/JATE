@@ -31,5 +31,15 @@
       if($this->currentConnection)
         $this->modules[$_module->name]->addConnectionMan($this->currentConnection);
     }
+    public function addConnectionMan( $_connection, $_name = "default") {
+      try {
+        parent::addConnectionMan($_connection, $_name);
+        foreach ($this->modules as &$module)
+          if(isset($this->currentConnection))
+            $module->addConnectionMan($this->currentConnection, $_name);
+      } catch (Exception $e) {
+        throw new JException($e->getMessage(), 1);
+      }
+    }
   }
 ?>

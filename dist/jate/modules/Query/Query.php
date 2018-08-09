@@ -28,9 +28,6 @@
       try {
         $this->connection["$_name"] = $_connection;
         $this->currentConnection = $_connection;
-        foreach ($this->modules as &$module)
-          if(isset($this->currentConnection))
-            $module->addConnectionMan($this->currentConnection, $_name);
       } catch (Exception $e) {
         throw new JException($e->getMessage(), 1);
       }

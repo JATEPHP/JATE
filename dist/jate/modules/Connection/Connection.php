@@ -46,7 +46,7 @@
       foreach ($array as $key => $value)
         if($value)
           return $key;
-      return "pdo";
+      return "default";
     }
   }
 ?>
