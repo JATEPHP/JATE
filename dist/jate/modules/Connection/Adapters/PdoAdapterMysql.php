@@ -1,6 +1,6 @@
 <?php
   jRequire("ConnectionInterface.php");
-  class PdoAdapter implements ConnectionAdapterInterface {
+  class PdoAdapterMysql implements ConnectionAdapterInterface {
       public $connection;
       public function __construct( $_srv, $_db, $_usr, $_pass ) {
         try {

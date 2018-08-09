@@ -82,5 +82,15 @@
       }
       return $temp;
     }
+    public function newTable( $_query ) {
+      if(!is_string($_query))
+        throw new JException("Parameter must be a string.", 1);
+      try {
+        $temp = $this->currentConnection->database->newTable($_query);
+      } catch (Exception $e) {
+        throw new JException($e->getMessage(), 1);
+      }
+      return $temp;
+    }
   }
 ?>

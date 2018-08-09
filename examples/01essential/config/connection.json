@@ -5,8 +5,9 @@
   "database":  "",
   "server":    "",
   "engine": {
-    "pdo":        true,
-    "mysqli":     false,
-    "postgresql": false
+    "pdo-mysql":         true,
+    "pdo-sqlite-memory": false,
+    "mysqli":            false,
+    "postgresql":        false
   }
 }
