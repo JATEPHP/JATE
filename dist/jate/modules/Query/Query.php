@@ -45,6 +45,8 @@
     public function query( $_query ) {
       if(!is_string($_query))
         throw new JException("Parameter must be a string.", 1);
+      if($this->currentConnection == null)
+        throw new JException("No connection selected.", 1);
       try {
         $temp = $this->currentConnection->database->query($_query);
       } catch (Exception $e) {
@@ -55,6 +57,8 @@
     public function queryInsert( $_query ) {
       if(!is_string($_query))
         throw new JException("Parameter must be a string.", 1);
+      if($this->currentConnection == null)
+        throw new JException("No connection selected.", 1);
       try {
         $temp = $this->currentConnection->database->queryInsert($_query);
       } catch (Exception $e) {
@@ -65,6 +69,8 @@
     public function queryFetch( $_query ) {
       if(!is_string($_query))
         throw new JException("Parameter must be a string.", 1);
+      if($this->currentConnection == null)
+        throw new JException("No connection selected.", 1);
       try {
         $temp = $this->currentConnection->database->queryFetch($_query);
       } catch (Exception $e) {
@@ -75,6 +81,8 @@
     public function queryArray( $_query ) {
       if(!is_string($_query))
         throw new JException("Parameter must be a string.", 1);
+      if($this->currentConnection == null)
+        throw new JException("No connection selected.", 1);
       try {
         $temp = $this->currentConnection->database->queryArray($_query);
       } catch (Exception $e) {
@@ -85,6 +93,8 @@
     public function newTable( $_query ) {
       if(!is_string($_query))
         throw new JException("Parameter must be a string.", 1);
+      if($this->currentConnection == null)
+        throw new JException("No connection selected.", 1);
       try {
         $temp = $this->currentConnection->database->newTable($_query);
       } catch (Exception $e) {
