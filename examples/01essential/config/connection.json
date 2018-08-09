@@ -7,6 +7,7 @@
   "engine": {
     "pdo-mysql":         true,
     "pdo-sqlite-memory": false,
+    "pdo-sqlite-file":   false,
     "mysqli":            false,
     "postgresql":        false
   }

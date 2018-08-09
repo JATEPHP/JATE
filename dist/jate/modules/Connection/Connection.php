@@ -25,6 +25,9 @@
         case "pdo-sqlite-memory":
           $this->database = new PdoAdapterSqLiteMemory($_srv, $_db, $_usr, $_pass);
         break;
+        case "pdo-sqlite-file":
+          $this->database = new PdoAdapterSqLiteFile($_srv, $_db, $_usr, $_pass);
+        break;
         case "pdo-mysql":
         default:
           $this->database = new PdoAdapterMysql($_srv, $_db, $_usr, $_pass);
