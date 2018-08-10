@@ -4,6 +4,7 @@
   class Module {
     use Query {
       Query::__construct as private __queryConstruct;
+      Query::addConnectionMan as private __addConnectionMan;
     }
     use File {
       File::__construct as private __fileConstruct;
@@ -33,7 +34,7 @@
     }
     public function addConnectionMan( $_connection, $_name = "default") {
       try {
-        parent::addConnectionMan($_connection, $_name);
+        $this->__addConnectionMan($_connection, $_name);
         foreach ($this->modules as &$module)
           if(isset($this->currentConnection))
             $module->addConnectionMan($this->currentConnection, $_name);
