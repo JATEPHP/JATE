@@ -1,12 +1,12 @@
 ---
 title: "jBlockFile"
-permalink: /jblockfile
+permalink: /functions/jblockfile
 excerpt: "jBlockFile."
 last_modified_at: 2018-03-19T16:28:04-05:00
 toc: true
 ---
 
-Turn on output buffering.<br>
+Upload a file from a specific path (`$_path`) and after a parsing returns a string.<br>
 ```java
 void jBlockFile( String $_path, Array $_parameters )
 ```
@@ -21,6 +21,6 @@ Return a string of html.
 ## Examples
 ```php
 <?php
-$temp = jBlockFile("bundles/views/file1.twig"); // string with some html
+$temp = jBlockFile("bundles/views/file1.twig", ["name" => "foo"]); // string with some html
 ?>
 ```

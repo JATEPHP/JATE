@@ -23,14 +23,38 @@ docs:
         url: /use-of-views
       - title: "Js and css"
         url: /js-and-css
-  - title: Components
+  - title: Config
     children:
-      - title: "Functions"
-        url: /components/functions
-      - title: "Config"
-        url: /components/config
-      - title: "Html-class"
-        url: /components/html-class
+      - title: "App"
+        url: /config/app
+      - title: "Connection"
+        url: /config/connection
+      - title: "Loader"
+        url: /config/loader
+      - title: "Router"
+        url: /config/router
+  - title: Functions
+    children:
+      - title: "jBlock"
+        url: /functions/jblock
+      - title: "jBlockEnd"
+        url: /functions/jblockend
+      - title: "jBlockClose"
+        url: /functions/jblockclose
+      - title: "jBlockFile"
+        url: /functions/jblockfile
+      - title: "jBlockFileMan"
+        url: /functions/jblockfileman
+      - title: "view"
+        url: /functions/view
+      - title: "sql"
+        url: /functions/sql
+      - title: "jRequire"
+        url: /functions/jrequire
+  - title: Html-class
+    children:
+      - title: "List"
+        url: /html-class/list
   - title: Examples
     children:
       - title: "01 Essential"
