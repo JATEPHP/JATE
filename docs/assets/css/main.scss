@@ -53,15 +53,19 @@ $navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
   text-decoration-color: $c-main;
 }
 
-.page {
-  padding: 0px;
-}
-
-.page__footer {
-  margin-top: 10px;
-}
-
 .nav__list label:hover {
   background-color: $c-main;
   border-color: $c-main;
+}
+
+.page {
+  padding: 0px !important;
+}
+
+.page__footer {
+  margin-top: 10px !important;
+}
+
+.masthead__inner-wrap, #main {
+  max-width: 1500px !important;
 }

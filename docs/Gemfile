@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-# gem "minimal-mistakes-jekyll"# SWITCH ME
+gem "minimal-mistakes-jekyll"# SWITCH ME
 gem "github-pages", group: :jekyll_plugins
 
 gem "tzinfo-data"
