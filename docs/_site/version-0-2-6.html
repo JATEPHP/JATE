@@ -1,0 +1,930 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.10.1 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Version 0.2.6 - JATE</title>
+<meta name="description" content="Version 0.2.6.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="<img src='/JATE/img/favicon.png' class='brand'>JATE">
+<meta property="og:title" content="Version 0.2.6">
+<meta property="og:url" content="http://localhost:4000/JATE/version-0-2-6">
+
+
+  <meta property="og:description" content="Version 0.2.6.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2018-08-12T19:16:19-04:00">
+
+
+
+  <meta property="article:modified_time" content="2018-03-19T17:28:04-04:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/JATE/version-0-2-6">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="http://localhost:4000/JATE/feed.xml" type="application/atom+xml" rel="alternate" title="<img src='/JATE/img/favicon.png' class='brand'>JATE Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/JATE/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <link rel="shortcut icon" type="image/png" href="/JATE/img/favicon.png">
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="http://localhost:4000/JATE/"><img src='/JATE/img/favicon.png' class='brand'>JATE</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/JATE/" >v0.5.0 (or higher)</a>
+            </li>
+          
+        </ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Getting Started</span>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/structure" class="">Structure</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/download" class="">Download </a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/run-first-page" class="">Run first page</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/creating-a-database" class="">Creating a database</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/view-page" class="">View page</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/insert-page" class="">Insert page</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/use-of-models" class="">The use of models</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/use-of-views" class="">The use of views</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/js-and-css" class="">Js and css</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Config</span>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/config/app" class="">App</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/config/connection" class="">Connection</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/config/loader" class="">Loader</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/config/router" class="">Router</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Functions</span>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/functions/jblock" class="">jBlock</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/functions/jblockend" class="">jBlockEnd</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/functions/jblockclose" class="">jBlockClose</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/functions/jblockfile" class="">jBlockFile</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/functions/jblockfileman" class="">jBlockFileMan</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/functions/view" class="">view</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/functions/sql" class="">sql</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/functions/jrequire" class="">jRequire</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Html-class</span>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/html-class/list" class="">List</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Examples</span>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/01-essential" class="">01 Essential</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/02-advance" class="">02 Advance</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/03-react" class="">03 React</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Older version</span>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/version-0-2-7" class="">0.2.7</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/version-0-2-6" class="active">0.2.6 (or less)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Version 0.2.6">
+    <meta itemprop="description" content="Version 0.2.6.">
+    <meta itemprop="datePublished" content="August 12, 2018">
+    <meta itemprop="dateModified" content="March 19, 2018">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Version 0.2.6
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#index">Index</a></li>
+  <li><a href="#1-structure">1 Structure</a></li>
+  <li><a href="#2-download-jate">2 Download JATE</a></li>
+  <li><a href="#3-run-first-page">3 Run first page</a></li>
+  <li><a href="#4-creating-a-database-database">4 Creating a database database</a></li>
+  <li><a href="#5-view-page">5 View page</a></li>
+  <li><a href="#6-insert-page">6 Insert page</a></li>
+  <li><a href="#7-the-use-of-models">7 The use of models</a></li>
+  <li><a href="#8-the-use-of-views">8 The use of views</a></li>
+  <li><a href="#9-js-and-css">9 Js and css</a></li>
+</ul>
+            </nav>
+          </aside>
+        
+        
+<h2 id="index">Index</h2>
+<ol>
+  <li><a href="#1-structure">Structure</a></li>
+  <li><a href="#2-download-jate">Download JATE</a></li>
+  <li><a href="#3-run-first-page">Run first page</a></li>
+  <li><a href="#4-creating-a-database">Creating a database database</a></li>
+  <li><a href="#5-view-page">View page</a></li>
+  <li><a href="#6-insert-page">Insert page</a></li>
+  <li><a href="#7-the-use-of-models">The use of models</a></li>
+  <li><a href="#8-the-use-of-views">The use of views</a></li>
+  <li><a href="#9-js-and-css">Js and css</a></li>
+</ol>
+
+<h2 id="1-structure">1 Structure</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>project
+  └ bundles
+    ├ controllers
+    ├ models
+    └ views
+</code></pre></div></div>
+<p>A page is made up of two parts.
+The first is the page, the chassies, the structure that will match a file inside <code class="highlighter-rouge">bundles/controllers</code>. For example, the Login page will have a <code class="highlighter-rouge">Login.php</code> file that will contain a class that will handle the requests of the http://mywebsite/login page.
+The second part will be the content of the page, for example, always for the login page, the input form that holds the two inputs: username and password. Clearly a page can contain more content. The content can be divided into two parts: the graphical interface that is almost entirely made up of the html and the part of php code that is used to customize it. The graphical interface will be contained in <code class="highlighter-rouge">bundles/views</code> while the part of the code will be contained in<code class="highlighter-rouge"> bundles/models</code>.</p>
+
+<h2 id="2-download-jate">2 Download JATE</h2>
+<p>Go to your php root, create a folder with the name of your project in this tutorial will be <code class="highlighter-rouge">projectHero</code> and download JATE as from <a href="https://github.com/XaBerr/JATE">tutorial</a>.</p>
+
+<h2 id="3-run-first-page">3 Run first page</h2>
+<p>Once you have downloaded JATE you come up with a folder in a similar situation to <code class="highlighter-rouge">/phpRoot/projectHero/.../JATE</code>, the path may change depending on the method you used to download JATE.
+The next step is to enter in <code class="highlighter-rouge">JATE/examples/01essentials</code>, copy the contents of the folder and paste it into<code class="highlighter-rouge"> /phpRoot/projectHero</code>. By doing this you have created the minimum necessary to run JATE. Now you can access the browser through your localhost such as http://localhost/projectHero/ and see the page.</p>
+
+<h2 id="4-creating-a-database-database">4 Creating a database database</h2>
+<p>We create a database of hheros, for example:</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="nv">`db-hero`</span><span class="p">;</span>
+<span class="n">USE</span> <span class="nv">`db-hero`</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="nv">`hero`</span> <span class="p">(</span>
+  <span class="nv">`pk_hero`</span> <span class="n">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="nv">`hero_name`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">250</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="nv">`name`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">250</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="nv">`surname`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">250</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">MyISAM</span> <span class="n">AUTO_INCREMENT</span><span class="o">=</span><span class="mi">2</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8</span><span class="p">;</span>
+
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="nv">`hero`</span>
+  <span class="k">ADD</span> <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`pk_hero`</span><span class="p">);</span>
+
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="nv">`hero`</span>
+  <span class="k">MODIFY</span> <span class="nv">`pk_hero`</span> <span class="n">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span><span class="n">AUTO_INCREMENT</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
+
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="nv">`hero`</span> <span class="p">(</span><span class="nv">`pk_hero`</span><span class="p">,</span> <span class="nv">`hero_name`</span><span class="p">,</span> <span class="nv">`name`</span><span class="p">,</span> <span class="nv">`surname`</span><span class="p">)</span> <span class="k">VALUES</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'Superman'</span><span class="p">,</span> <span class="s1">'Clark'</span><span class="p">,</span> <span class="s1">'Kent'</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'Batman'</span><span class="p">,</span> <span class="s1">'Bruce'</span><span class="p">,</span> <span class="s1">'Wayne'</span><span class="p">);</span>
+</code></pre></div></div>
+<p>Let’s go to our project and look for the <code class="highlighter-rouge">projectHero/config/connection.json</code> file, set all connection values and make sure to enable connection setting <code class="highlighter-rouge">enable: true</code>. Let’s go to the <code class="highlighter-rouge">bundles/models/Template.php</code> page and add to the<code class="highlighter-rouge"> Template</code> class the following function that will serve to connect:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">makeConnection</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nv">$jConfig</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">parameters</span><span class="p">[</span><span class="s2">"app"</span><span class="p">];</span>
+    <span class="nv">$connection</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span> <span class="nv">$jConfig</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="nv">$jConfig</span><span class="o">-&gt;</span><span class="na">connection</span><span class="p">[</span><span class="s2">"enable"</span><span class="p">])</span>
+      <span class="nv">$connection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Connection</span><span class="p">(</span>
+        <span class="nv">$jConfig</span><span class="o">-&gt;</span><span class="na">connection</span><span class="p">[</span><span class="s2">"server"</span><span class="p">],</span>
+        <span class="nv">$jConfig</span><span class="o">-&gt;</span><span class="na">connection</span><span class="p">[</span><span class="s2">"database"</span><span class="p">],</span>
+        <span class="nv">$jConfig</span><span class="o">-&gt;</span><span class="na">connection</span><span class="p">[</span><span class="s2">"user"</span><span class="p">],</span>
+        <span class="nv">$jConfig</span><span class="o">-&gt;</span><span class="na">connection</span><span class="p">[</span><span class="s2">"password"</span><span class="p">],</span>
+        <span class="nv">$jConfig</span><span class="o">-&gt;</span><span class="na">connection</span><span class="p">[</span><span class="s2">"engine"</span><span class="p">]</span>
+      <span class="p">);</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addConnection</span><span class="p">(</span><span class="s2">"base"</span><span class="p">,</span> <span class="nv">$connection</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>Now we call this function in the template constructor so that each time a page is invoked, it will automatically connect. To do this we use the following code:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span> <span class="nv">$_parameters</span> <span class="p">);</span> <span class="c1">// under this line
+</span>  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">makeConnection</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>We launch the same page before, <strong>if everything works correctly we will have to see it appear without errors</strong>.</p>
+
+<h2 id="5-view-page">5 View page</h2>
+<p>We want to create a new page called <strong>view</strong>, it must show us the list of our heroes. The first step to do is go to <code class="highlighter-rouge">config/router.json</code> and add a new line inside the array pages:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">[</span><span class="s2">"/heros/view"</span><span class="p">,</span> <span class="s2">"View"</span><span class="p">],</span>
+</code></pre></div></div>
+<p>Doing this we say to the JATE that when it receives the following url <code class="highlighter-rouge">/heroes/view</code>  it will be the class <code class="highlighter-rouge">View</code> to deal with the request. Now we have to create the class and we create it in this new page <code class="highlighter-rouge">bundles/models/View.php</code> and insert the following code:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="k">class</span> <span class="nc">View</span> <span class="k">extends</span> <span class="nx">Template</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span> <span class="nv">$_parameters</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span> <span class="nv">$_parameters</span> <span class="p">);</span>
+      <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">tags</span><span class="p">[</span><span class="s2">"title"</span><span class="p">]</span>  <span class="o">.=</span> <span class="s2">"View"</span><span class="p">;</span>
+      <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">tags</span><span class="p">[</span><span class="s2">"content"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"&lt;div style='margin-top:70px;'&gt;Hello world!&lt;/div&gt;"</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>We have the class and we set the routing, now we can access our page through:
+http://localhost/projectHero/heros/view.
+In order to be able to access it more conveniently we include in our template page, in the menu function the following entry:</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;li&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"heros/view"</span><span class="nt">&gt;</span>view<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+</code></pre></div></div>
+<p>Now it will be a normal page where you can navigate from the menu. Let’s continue by adding the hero list, to do this we add to our class the following display function:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="k">private</span> <span class="k">function</span> <span class="nf">pageView</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nv">$heros</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">queryFetch</span><span class="p">(</span><span class="s2">"SELECT * FROM hero"</span><span class="p">);</span>
+    <span class="nx">jBlock</span><span class="p">();</span>
+    <span class="cp">?&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">'margin-top:70px;'</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>hero<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>name<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>surname<span class="nt">&lt;/th&gt;</span>
+          <span class="nt">&lt;/tr&gt;</span>
+          {% for hero in heros %}
+            <span class="nt">&lt;tr&gt;</span>
+              <span class="nt">&lt;td&gt;</span>{{hero["hero_name"]}}<span class="nt">&lt;/td&gt;</span>
+              <span class="nt">&lt;td&gt;</span>{{hero["name"]}}<span class="nt">&lt;/td&gt;</span>
+              <span class="nt">&lt;td&gt;</span>{{hero["surname"]}}<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;/tr&gt;</span>
+          {% endfor %}
+        <span class="nt">&lt;/table&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="cp">&lt;?php</span>
+    <span class="k">return</span> <span class="nx">jBlockEnd</span><span class="p">(</span><span class="s2">"twig"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"heros"</span> <span class="o">=&gt;</span> <span class="nv">$heros</span><span class="p">]);</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>This feature uses an engine called <code class="highlighter-rouge">twig</code> for those who prefer it can use another engine called <code class="highlighter-rouge">pug</code>, what it does is take what we write between two <em>jBlock</em> and return it in the form of html string. To tell the class to print this html string we need to edit a line in the constructor function:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="c1">// $this-&gt;tags["content"] = "&lt;div style='margin-top:70px;'&gt;Hello world!&lt;/div&gt;";
+</span>  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">tags</span><span class="p">[</span><span class="s2">"content"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">pageView</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p><strong>We run the page to check that everything is done correctly</strong>.</p>
+
+<h2 id="6-insert-page">6 Insert page</h2>
+<p>To create the page we do the same as before, we add</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">[</span><span class="s2">"/heros/insert"</span><span class="p">,</span> <span class="s2">"Insert"</span> <span class="p">],</span>
+</code></pre></div></div>
+<p>and</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;li&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"heros/insert"</span><span class="nt">&gt;</span>insert<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+</code></pre></div></div>
+<p>and then we create the <code class="highlighter-rouge">bundles/models/Insert.php</code> file with the following code:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="k">class</span> <span class="nc">Insert</span> <span class="k">extends</span> <span class="nx">Template</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span> <span class="nv">$_parameters</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span> <span class="nv">$_parameters</span> <span class="p">);</span>
+      <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">tags</span><span class="p">[</span><span class="s2">"title"</span><span class="p">]</span>  <span class="o">.=</span> <span class="s2">"Insert"</span><span class="p">;</span>
+      <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">tags</span><span class="p">[</span><span class="s2">"content"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"&lt;div style='margin-top:70px;'&gt;Hello world!&lt;/div&gt;"</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>Let’s create this time a function to insert the heroes:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="k">private</span> <span class="k">function</span> <span class="nf">pageInsert</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">jBlock</span><span class="p">();</span>
+    <span class="cp">?&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">'margin-top:70px;'</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">""</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"insertHero"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label&gt;</span>hero name:<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"hero_name"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label&gt;</span>name:<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;&lt;br&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label&gt;</span>surname:<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"surname"</span><span class="nt">&gt;&lt;br&gt;&lt;br&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Add"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/form&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="cp">&lt;?php</span>
+    <span class="k">return</span> <span class="nx">jBlockEnd</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>and add it as before:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="c1">// $this-&gt;tags["content"] = "&lt;div style='margin-top:70px;'&gt;Hello world!&lt;/div&gt;";
+</span>  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">tags</span><span class="p">[</span><span class="s2">"content"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">pageInsert</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>Now we have the graphical interface but clicking the Add button will not do anything. Let’s now create a function that manages the insertion.</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="k">private</span> <span class="k">function</span> <span class="nf">insertFunction</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s2">"insertHero"</span><span class="p">]))</span> <span class="p">{</span>
+      <span class="nv">$heroName</span>   <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">"hero_name"</span><span class="p">];</span>
+      <span class="nv">$name</span>       <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">"name"</span><span class="p">];</span>
+      <span class="nv">$surname</span>    <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">"surname"</span><span class="p">];</span>
+      <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">queryInsert</span><span class="p">(</span>
+        <span class="s2">"INSERT INTO hero
+        (`hero_name`, `name`, `surname`)
+        VALUES
+        ('</span><span class="nv">$heroName</span><span class="s2">', '</span><span class="nv">$name</span><span class="s2">', '</span><span class="nv">$surname</span><span class="s2">')"</span>
+      <span class="p">);</span>
+      <span class="nb">header</span><span class="p">(</span><span class="s1">'Location: view'</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>Now let’s add this feature to the constructor:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="c1">// $this-&gt;tags["content"] = "&lt;div style='margin-top:70px;'&gt;Hello world!&lt;/div&gt;";
+</span>  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">insertFunction</span><span class="p">();</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">tags</span><span class="p">[</span><span class="s2">"content"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">pageInsert</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<h2 id="7-the-use-of-models">7 The use of models</h2>
+<p>Now we’ve accomplished the project by associating a feature page with a page, but for example we would like to have a single page that deals with insert and display heros. The concept of the models now comes into play. What we will do in this section is: we will create a hero page, transform the two pages <em>insert</em> and <em>view</em> into templates and recall them in the heroes page. As usual we create the heroes page.
+This time make sure to put the following line above the voices <code class="highlighter-rouge">/heroes/*</code>:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">[</span><span class="s2">"/heros"</span><span class="p">,</span> <span class="s2">"Heros"</span> <span class="p">],</span>
+</code></pre></div></div>
+<p>and add it as before:</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;li&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"heros"</span><span class="nt">&gt;</span>heros<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+</code></pre></div></div>
+<p>Here we remember to delete the items in the menu we will no longer need it. We create the <code class="highlighter-rouge">bundles/models/Heros.php</code> file with the following code:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="k">class</span> <span class="nc">Heros</span> <span class="k">extends</span> <span class="nx">Template</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span> <span class="nv">$_parameters</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span> <span class="nv">$_parameters</span> <span class="p">);</span>
+      <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">tags</span><span class="p">[</span><span class="s2">"title"</span><span class="p">]</span>  <span class="o">.=</span> <span class="s2">"Heros"</span><span class="p">;</span>
+      <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">tags</span><span class="p">[</span><span class="s2">"content"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"&lt;div style='margin-top:70px;'&gt;Hello world!&lt;/div&gt;"</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>We continue to transform it into a model. Before I start I introduce an introduction to the models. Models are classes that extend either the <code class="highlighter-rouge">Model</code> class or the <code class="highlighter-rouge">Query</code> class depend if they need or not to run the queries. They have three main functions: <em>__construct</em> which is the constructor and is the same for all classes in JATE; <em>init</em> is the function that actually serves as a constructor, it serves to initialize the class; <em>draw</em> is the function that prints html.
+We take the <code class="highlighter-rouge">bundles/views/View.php</code> file and move it to<code class="highlighter-rouge">bundles/models/View.php</code> and we modify <code class="highlighter-rouge">extends Template</code> in<code class="highlighter-rouge"> extends Query</code>. We modify the __construct eliminating all that is not necessary:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>we add the init connection:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">init</span><span class="p">(</span> <span class="nv">$_connession</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addConnection</span><span class="p">(</span><span class="s2">"base"</span><span class="p">,</span> <span class="nv">$_connection</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>and we rename our private function <code class="highlighter-rouge">private function pageView()</code> in <code class="highlighter-rouge">public funcion draw()</code>. We add the new module created to the heros class and say to <code class="highlighter-rouge">$ this-&gt;tags["content"]</code> to display a new function:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addModules</span><span class="p">([</span>
+    <span class="k">new</span> <span class="nx">View</span><span class="p">()</span>
+  <span class="p">]);</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">modules</span><span class="p">[</span><span class="s2">"View"</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">init</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">currentConnection</span><span class="p">);</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">tags</span><span class="p">[</span><span class="s2">"title"</span><span class="p">]</span>  <span class="o">.=</span> <span class="s2">"Heros"</span><span class="p">;</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">tags</span><span class="p">[</span><span class="s2">"content"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">printPage</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>let’s now create this function:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="k">private</span> <span class="k">function</span> <span class="nf">printPage</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">jBlock</span><span class="p">();</span>
+    <span class="cp">?&gt;</span>
+    <span class="nt">&lt;div&gt;</span>{{view|raw}}<span class="nt">&lt;/div&gt;</span>
+    <span class="cp">&lt;?php</span>
+    <span class="k">return</span> <span class="nx">jBlockEnd</span><span class="p">(</span><span class="s2">"twig"</span><span class="p">,</span> <span class="p">[</span>
+      <span class="s2">"view"</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">modules</span><span class="p">[</span><span class="s2">"View"</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">draw</span><span class="p">()</span>
+    <span class="p">]);</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>Now running the page we check if everything works properly.
+The next step is to introduce the block to insert the heroes, as before we take the <code class="highlighter-rouge">bundles/views/Insert.php</code> file and move it to <code class="highlighter-rouge">bundles/models/Insert.php</code> to modify <code class="highlighter-rouge">extends Template</code> in <code class="highlighter-rouge">extends Query</code>. We modify the __construct eliminating all not necessary:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>we add the init connection</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">init</span><span class="p">(</span> <span class="nv">$_connession</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addConnection</span><span class="p">(</span><span class="s2">"base"</span><span class="p">,</span> <span class="nv">$_connection</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>We rename our private function <code class="highlighter-rouge">private function pageInsert()</code> in <code class="highlighter-rouge">public funcion draw ()</code> and we rename our function <code class="highlighter-rouge">private function insertFunction()</code> in <code class="highlighter-rouge">public funcion listener() </code>. We also remove <code class="highlighter-rouge">header ('Location: view');</code>, is not longer needed.
+Now add this module to the hero class with 2 simple steps:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addModules</span><span class="p">([</span>
+    <span class="k">new</span> <span class="nx">View</span><span class="p">(),</span>
+    <span class="k">new</span> <span class="nx">Insert</span><span class="p">()</span>
+  <span class="p">]);</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">modules</span><span class="p">[</span><span class="s2">"View"</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">init</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">currentConnection</span><span class="p">);</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">modules</span><span class="p">[</span><span class="s2">"Insert"</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">init</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">currentConnection</span><span class="p">);</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">modules</span><span class="p">[</span><span class="s2">"Insert"</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">listener</span><span class="p">();</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">tags</span><span class="p">[</span><span class="s2">"title"</span><span class="p">]</span>  <span class="o">.=</span> <span class="s2">"Heros"</span><span class="p">;</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">tags</span><span class="p">[</span><span class="s2">"content"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">printPage</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>and</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="k">private</span> <span class="k">function</span> <span class="nf">printPage</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">jBlock</span><span class="p">();</span>
+    <span class="cp">?&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">'margin-top:70px;'</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div&gt;</span>{{insert|raw}}<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div&gt;</span>{{view|raw}}<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="cp">&lt;?php</span>
+    <span class="k">return</span> <span class="nx">jBlockEnd</span><span class="p">(</span><span class="s2">"twig"</span><span class="p">,</span> <span class="p">[</span>
+      <span class="s2">"view"</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">modules</span><span class="p">[</span><span class="s2">"View"</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">draw</span><span class="p">(),</span>
+      <span class="s2">"insert"</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">modules</span><span class="p">[</span><span class="s2">"Insert"</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">draw</span><span class="p">()</span>
+    <span class="p">]);</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>Now you can check the page to see if everything works correctly.</p>
+
+<h2 id="8-the-use-of-views">8 The use of views</h2>
+<p>In general, when we write the html code within our php we use the form:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="k">private</span> <span class="k">function</span> <span class="nf">printPage</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">jBlock</span><span class="p">();</span>
+    <span class="cp">?&gt;</span>
+    <span class="nt">&lt;div&gt;</span>{{insert|raw}}<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>{{view|raw}}<span class="nt">&lt;/div&gt;</span>
+    <span class="cp">&lt;?php</span>
+    <span class="k">return</span> <span class="nx">jBlockEnd</span><span class="p">(</span><span class="s2">"twig"</span><span class="p">,</span> <span class="p">[</span>
+      <span class="s2">"view"</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">modules</span><span class="p">[</span><span class="s2">"View"</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">draw</span><span class="p">(),</span>
+      <span class="s2">"insert"</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">modules</span><span class="p">[</span><span class="s2">"Insert"</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">draw</span><span class="p">()</span>
+    <span class="p">]);</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>Although this methodology is very quick and easy to visualize, in general this form is not recommended, it would be best to split the php from html, to do this we introduce the views. The passage is very simple, we take the content of what we are sampling and insert it into a <code class="highlighter-rouge">html</code> or<code class="highlighter-rouge"> twig</code> file depending on the need:
+<strong>bundles/views/heros.twig</strong></p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">'margin-top:70px;'</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div&gt;</span>{{insert|raw}}<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>{{view|raw}}<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+<p>and then we change the function in</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="k">private</span> <span class="k">function</span> <span class="nf">printPage</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">jBlockFile</span><span class="p">(</span><span class="s2">"bundles/views/heros.twig"</span><span class="p">,</span> <span class="p">[</span>
+      <span class="s2">"view"</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">modules</span><span class="p">[</span><span class="s2">"View"</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">draw</span><span class="p">(),</span>
+      <span class="s2">"insert"</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">modules</span><span class="p">[</span><span class="s2">"Insert"</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">draw</span><span class="p">()</span>
+    <span class="p">]);</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>By doing this, it makes the content display independent.</p>
+
+<h2 id="9-js-and-css">9 Js and css</h2>
+<p>Suppose we want to color our heroes page with a css (works similar to js).
+We create a <code class="highlighter-rouge">/projectHero/css</code> folder and inside we create our<code class="highlighter-rouge">Hero.css</code> file</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">205</span><span class="p">,</span><span class="m">205</span><span class="p">,</span><span class="m">205</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Let’s go to the page <code class="highlighter-rouge">Hero.php</code> and simply we include the file like this:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span> <span class="nv">$_parameters</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span> <span class="nv">$_parameters</span> <span class="p">);</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addFiles</span><span class="p">([</span>
+      <span class="s2">"css/Hero.css"</span>
+    <span class="p">]);</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addModules</span><span class="p">([</span>
+      <span class="k">new</span> <span class="nx">View</span><span class="p">(),</span>
+      <span class="k">new</span> <span class="nx">Insert</span><span class="p">()</span>
+    <span class="p">]);</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">modules</span><span class="p">[</span><span class="s2">"View"</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">init</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">currentConnection</span><span class="p">);</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">modules</span><span class="p">[</span><span class="s2">"Insert"</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">init</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">currentConnection</span><span class="p">);</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">modules</span><span class="p">[</span><span class="s2">"Insert"</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">listener</span><span class="p">();</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">tags</span><span class="p">[</span><span class="s2">"title"</span><span class="p">]</span>  <span class="o">.=</span> <span class="s2">"Heros"</span><span class="p">;</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">tags</span><span class="p">[</span><span class="s2">"content"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">printPage</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>You can include js and css files, this way, on both pages and modules.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-03-19">March 19, 2018</time></p>
+        
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+    </div>
+
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+      <li><a href="https://github.com/XaBerr/JATE"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="http://localhost:4000/JATE/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 XaBerr. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="http://localhost:4000/JATE/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

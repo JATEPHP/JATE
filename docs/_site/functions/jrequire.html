@@ -1,0 +1,552 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.10.1 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>jRequire - JATE</title>
+<meta name="description" content="jRequire.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="<img src='/JATE/img/favicon.png' class='brand'>JATE">
+<meta property="og:title" content="jRequire">
+<meta property="og:url" content="http://localhost:4000/JATE/functions/jrequire">
+
+
+  <meta property="og:description" content="jRequire.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2018-08-12T19:16:19-04:00">
+
+
+
+  <meta property="article:modified_time" content="2018-03-19T17:28:04-04:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/JATE/functions/jrequire">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="http://localhost:4000/JATE/feed.xml" type="application/atom+xml" rel="alternate" title="<img src='/JATE/img/favicon.png' class='brand'>JATE Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/JATE/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <link rel="shortcut icon" type="image/png" href="/JATE/img/favicon.png">
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="http://localhost:4000/JATE/"><img src='/JATE/img/favicon.png' class='brand'>JATE</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/JATE/" >v0.5.0 (or higher)</a>
+            </li>
+          
+        </ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Getting Started</span>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/structure" class="">Structure</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/download" class="">Download </a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/run-first-page" class="">Run first page</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/creating-a-database" class="">Creating a database</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/view-page" class="">View page</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/insert-page" class="">Insert page</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/use-of-models" class="">The use of models</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/use-of-views" class="">The use of views</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/js-and-css" class="">Js and css</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Config</span>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/config/app" class="">App</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/config/connection" class="">Connection</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/config/loader" class="">Loader</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/config/router" class="">Router</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Functions</span>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/functions/jblock" class="">jBlock</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/functions/jblockend" class="">jBlockEnd</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/functions/jblockclose" class="">jBlockClose</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/functions/jblockfile" class="">jBlockFile</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/functions/jblockfileman" class="">jBlockFileMan</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/functions/view" class="">view</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/functions/sql" class="">sql</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/functions/jrequire" class="active">jRequire</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Html-class</span>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/html-class/list" class="">List</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Examples</span>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/01-essential" class="">01 Essential</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/02-advance" class="">02 Advance</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/03-react" class="">03 React</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Older version</span>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/version-0-2-7" class="">0.2.7</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="http://localhost:4000/JATE/version-0-2-6" class="">0.2.6 (or less)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="jRequire">
+    <meta itemprop="description" content="jRequire.">
+    <meta itemprop="datePublished" content="August 12, 2018">
+    <meta itemprop="dateModified" content="March 19, 2018">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">jRequire
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#parameters">Parameters</a></li>
+  <li><a href="#return-values">Return Values</a></li>
+  <li><a href="#examples">Examples</a></li>
+</ul>
+            </nav>
+          </aside>
+        
+        <p>The jRequire statement includes and evaluates the specified file using relative path.<br /></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">jRequire</span> <span class="o">(</span> <span class="n">String</span> <span class="n">$_path</span> <span class="o">)</span>
+</code></pre></div></div>
+
+<h2 id="parameters">Parameters</h2>
+<ul>
+  <li><strong>$_path</strong>: The path of the file you want to include.</li>
+</ul>
+
+<h2 id="return-values">Return Values</h2>
+
+<h2 id="examples">Examples</h2>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="nx">jRequire</span><span class="p">(</span><span class="s2">"../Module01.php"</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-03-19">March 19, 2018</time></p>
+        
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+    </div>
+
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+      <li><a href="https://github.com/XaBerr/JATE"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="http://localhost:4000/JATE/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 XaBerr. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="http://localhost:4000/JATE/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>
