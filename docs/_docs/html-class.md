@@ -7,6 +7,14 @@ toc: true
 ---
 
 ## Introduction
+<figure>
+	<a href="https://user-images.githubusercontent.com/16030020/44004136-93ac1c2c-9e5d-11e8-8df5-9db5f9bab7a8.png">
+    <img src="https://user-images.githubusercontent.com/16030020/44004136-93ac1c2c-9e5d-11e8-8df5-9db5f9bab7a8.png">
+  </a>
+	<figcaption>
+    Html inheriting
+  </figcaption>
+</figure>
 The _Html_ class is the main class, all models are built inheriting from it.
 The most important model is the _Template_ from which all the controllers used to render the pages will be inherited.
 The _Html_ class provides methods and attributes, in particular two are the most important _init_ and _draw_.

@@ -3,10 +3,18 @@ title: "View page"
 permalink: /view-page
 excerpt: "View page."
 last_modified_at: 2018-03-19T16:28:04-05:00
-toc: true
+toc: false
 ---
 
 {% raw %}
+<figure>
+	<a href="https://user-images.githubusercontent.com/16030020/44004137-93d16d88-9e5d-11e8-8d56-d1137b175524.png">
+    <img src="https://user-images.githubusercontent.com/16030020/44004137-93d16d88-9e5d-11e8-8d56-d1137b175524.png">
+  </a>
+	<figcaption>
+    Workflow JATE
+  </figcaption>
+</figure>
 We want to create a new page called __view__, it must show us the list of our heroes. The first step to do is go to `config/router.json` and add a new line inside the array pages:
 ```js
   ["/heros/view", "View", []],
