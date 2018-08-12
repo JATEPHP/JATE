@@ -8,8 +8,8 @@ toc: false
 
 {% raw %}
 <figure>
-	<a href="https://user-images.githubusercontent.com/16030020/44004137-93d16d88-9e5d-11e8-8d56-d1137b175524.png">
-    <img src="https://user-images.githubusercontent.com/16030020/44004137-93d16d88-9e5d-11e8-8d56-d1137b175524.png">
+	<a href="https://user-images.githubusercontent.com/16030020/44006260-8a509238-9e81-11e8-9313-a2fe765656f9.png">
+    <img src="https://user-images.githubusercontent.com/16030020/44006260-8a509238-9e81-11e8-9313-a2fe765656f9.png">
   </a>
 	<figcaption>
     Workflow JATE
