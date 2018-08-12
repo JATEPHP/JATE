@@ -9,6 +9,8 @@ toc: true
 **Warning:** Make sure you have enabled **.htaccess** files on your web server before using JATE.
 {: .notice--warning}
 
+Before you start make sure you have downloaded and started a web server like: [wamp](http://www.wampserver.com/en/), [xampp](https://www.apachefriends.org/it/index.html), [easyphp](http://www.easyphp.org/).
+
 Once you have downloaded JATE you come up with a folder in a similar situation to `/phpRoot/projectHero/.../JATE`, the path may change depending on the method you used to download JATE.
 
 **Warning:** If you have **not used the cli** to download the project the next step is to enter in `JATE/examples/01essentials`, copy the contents of the folder and paste it into`/phpRoot/projectHero`. By doing this you have created the minimum necessary to run JATE.
