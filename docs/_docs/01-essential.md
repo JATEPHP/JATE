@@ -3,7 +3,7 @@ title: "01 Essential"
 permalink: /01-essential
 excerpt: "01 Essential."
 last_modified_at: 2018-03-19T16:28:04-05:00
-toc: true
+toc: false
 ---
 
 You can fine the example [here](https://github.com/XaBerr/JATE/tree/master/examples/01essential).

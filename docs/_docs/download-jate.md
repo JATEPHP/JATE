@@ -3,7 +3,7 @@ title: "Download"
 permalink: /download
 excerpt: "How to quickly download or install JATE."
 last_modified_at: 2018-03-19T16:28:04-05:00
-toc: true
+toc: false
 ---
 
 Install with __cli__ or __download__ JATE to the root folder of your project.

@@ -3,7 +3,7 @@ title: "Insert page"
 permalink: /insert-page
 excerpt: "Insert page."
 last_modified_at: 2018-03-19T16:28:04-05:00
-toc: true
+toc: false
 ---
 
 To create the page we do the same as before, we add

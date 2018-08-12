@@ -3,7 +3,7 @@ title: "Js and css"
 permalink: /js-and-css
 excerpt: "Js and css."
 last_modified_at: 2018-03-19T16:28:04-05:00
-toc: true
+toc: false
 ---
 
 Suppose we want to color our heroes page with a css (works similar to js).

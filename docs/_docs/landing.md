@@ -3,7 +3,7 @@ title: "JATE Introduction"
 permalink: /
 excerpt: "Main information for jate."
 last_modified_at: 2018-03-19T16:28:04-05:00
-toc: true
+toc: false
 ---
 Just Another Template Engine<br>
 

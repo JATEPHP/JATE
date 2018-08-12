@@ -3,7 +3,7 @@ title: "View"
 permalink: /functions/view
 excerpt: "view."
 last_modified_at: 2018-03-19T16:28:04-05:00
-toc: true
+toc: false
 ---
 
 **Warning:** Require JATE 0.5.4 or higher.

@@ -3,7 +3,7 @@ title: "03 React"
 permalink: /03-react
 excerpt: "03 React."
 last_modified_at: 2018-08-05T16:28:04-05:00
-toc: true
+toc: false
 ---
 
 You can fine the example [here](https://github.com/XaBerr/jate-react).

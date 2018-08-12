@@ -3,7 +3,7 @@ title: "jBlockFileMan"
 permalink: /functions/jblockfileman
 excerpt: "jBlockFileMan."
 last_modified_at: 2018-03-19T16:28:04-05:00
-toc: true
+toc: false
 ---
 
 Upload a file with specific type (`$_type`) from a specific path (`$_path`) and after a parsing returns a string.<br>

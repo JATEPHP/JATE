@@ -3,7 +3,7 @@ title: "02 Advance"
 permalink: /02-advance
 excerpt: "02 Advance."
 last_modified_at: 2018-08-05T16:28:04-05:00
-toc: true
+toc: false
 ---
 
 You can fine the example [here](https://github.com/XaBerr/jate-advance).

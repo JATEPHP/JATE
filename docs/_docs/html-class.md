@@ -3,7 +3,7 @@ title: "Html-class"
 permalink: /html-class/list
 excerpt: "html-class."
 last_modified_at: 2018-08-05T16:28:04-05:00
-toc: true
+toc: false
 ---
 
 ## Introduction

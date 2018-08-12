@@ -3,7 +3,7 @@ title: "Creating a database"
 permalink: /creating-a-database
 excerpt: "Creating a database."
 last_modified_at: 2018-03-19T16:28:04-05:00
-toc: true
+toc: false
 ---
 
 **Warning:** This example uses MYSQL, to use different databases modify the file `config/connection.json`, putting **only** the selected database engine to true.
