@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="http://xaberr.github.io/JATE/">
+  <a href="http://xaberr.github.io/jate-docs/">
     <img src="https://user-images.githubusercontent.com/16030020/38464888-46374c10-3b15-11e8-84e8-47e57291da5c.png" alt="logo" width=72 height=72>
   </a>
   <h3 align="center">JATE</h3>
