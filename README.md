@@ -6,7 +6,7 @@
   <p align="center">
     Just Another Template Engine for PHP.
     <br>
-    <a href="http://xaberr.github.io/jate-docs/"><strong>- Explore JATE DOCS -</strong></a>
+    <a href="https://jatephp.github.io/jate-docs/"><strong>- Explore JATE DOCS -</strong></a>
     <br>
     <br>
     <a href="https://scrutinizer-ci.com/g/XaBerr/JATE/?branch=master">
